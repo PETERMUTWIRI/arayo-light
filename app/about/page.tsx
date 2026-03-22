@@ -1,44 +1,256 @@
-import { Metadata } from 'next';
-import AboutContent from './AboutContent';
+import Image from 'next/image';
+import { Heart, Shield, Users, Award, Clock, MapPin, CheckCircle } from 'lucide-react';
+import CTASection from '@/components/CTASection';
 
-export const metadata: Metadata = {
-  title: 'About | Ray Armillion',
-  description: 'Discover the inspiring journey of Ray Armillion - from Kenyan refugee to cancer survivor to celebrated gospel artist. Learn about her Maasai heritage, her music, and her mission to inspire through performance.',
-  keywords: ['Ray Armillion', 'about', 'biography', 'Kenyan artist', 'gospel singer', 'cancer survivor', 'refugee story', 'Maasai heritage'],
-  openGraph: {
-    title: 'About Ray Armillion | Official Biography',
-    description: 'From refugee to cancer survivor to celebrated performer. Discover the inspiring journey of Kenyan-American gospel artist Ray Armillion.',
-    images: [
-      {
-        url: '/images/about/Rahab.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'Ray Armillion - Kenyan Gospel Artist',
-      },
-    ],
+const values = [
+  {
+    icon: Heart,
+    title: 'Compassion',
+    description: 'We approach every client with genuine care, empathy, and understanding of their unique needs.',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Ray Armillion | Official Biography',
-    description: 'From refugee to cancer survivor to celebrated performer.',
-    images: ['/images/about/Rahab.jpeg'],
+  {
+    icon: Shield,
+    title: 'Trust',
+    description: 'Building lasting relationships through reliability, transparency, and consistent quality care.',
   },
-  alternates: {
-    canonical: '/about',
+  {
+    icon: Award,
+    title: 'Excellence',
+    description: 'Maintaining the highest standards in caregiver training, screening, and service delivery.',
   },
-};
+  {
+    icon: Users,
+    title: 'Respect',
+    description: 'Honoring the dignity and independence of every individual we serve.',
+  },
+];
+
+const milestones = [
+  { year: '2004', event: 'Caring Hands was founded with a mission to provide quality homecare' },
+  { year: '2010', event: 'Expanded services to cover all 50 states' },
+  { year: '2015', event: 'Reached 5,000 families served milestone' },
+  { year: '2020', event: 'Launched specialized dementia and Alzheimer\'s care programs' },
+  { year: '2024', event: 'Celebrated 20 years of compassionate care' },
+];
+
+const stats = [
+  { value: '20+', label: 'Years Experience' },
+  { value: '10K+', label: 'Families Served' },
+  { value: '5K+', label: 'Caregivers' },
+  { value: '50', label: 'States Covered' },
+];
 
 export default function AboutPage() {
   return (
-    <>
-      <MusicGroupSchema />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Home', path: '/' },
-          { name: 'About', path: '/about' },
-        ]}
-      />
-      <AboutContent />
-    </>
+    <main className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-hero pt-32 pb-16 md:pb-24">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
+              <Heart className="w-4 h-4" />
+              <span>About Us</span>
+            </div>
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-6">
+              Two Decades of{' '}
+              <span className="text-care-red">Compassionate Care</span>
+            </h1>
+            <p className="text-care-gray-500 text-lg leading-relaxed">
+              For over 20 years, Caring Hands has been a trusted partner for families seeking 
+              quality homecare services. Our mission is simple: to help seniors and individuals 
+              with care needs live with dignity, comfort, and independence in their own homes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-white">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="font-heading text-3xl md:text-4xl text-care-red mb-2">{stat.value}</p>
+                <p className="text-care-gray-500 text-sm">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="section-padding bg-care-gray-50">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Content */}
+            <div>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-blue/10 text-care-blue text-sm font-medium mb-6">
+                <Clock className="w-4 h-4" />
+                Our Story
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6">
+                Built on a Foundation of Care
+              </h2>
+              <div className="space-y-4 text-care-gray-500 leading-relaxed">
+                <p>
+                  Caring Hands began with a simple belief: everyone deserves to age with dignity 
+                  in the comfort of their own home. Founded in 2004 by a registered nurse who 
+                  saw the need for more personalized, compassionate care options, we&apos;ve grown 
+                  from a small local service to a nationwide network of dedicated caregivers.
+                </p>
+                <p>
+                  Over the past two decades, we&apos;ve had the privilege of serving over 10,000 families 
+                  across all 50 states. Each family&apos;s story has shaped our approach to care, 
+                  teaching us that true quality comes from treating every client like family.
+                </p>
+                <p>
+                  Today, our team of over 5,000 screened and trained caregivers continues to 
+                  deliver on our founding promise: professional care with a personal touch.
+                </p>
+              </div>
+            </div>
+
+            {/* Visual */}
+            <div className="relative">
+              <div className="rounded-3xl overflow-hidden bg-white p-8 shadow-card">
+                <h3 className="font-heading text-xl text-care-navy mb-6">Our Journey</h3>
+                <div className="space-y-6">
+                  {milestones.map((milestone, index) => (
+                    <div key={milestone.year} className="flex gap-4">
+                      <div className="flex flex-col items-center">
+                        <div className="w-3 h-3 rounded-full bg-care-red" />
+                        {index < milestones.length - 1 && (
+                          <div className="w-0.5 h-full bg-care-gray-200 mt-2" />
+                        )}
+                      </div>
+                      <div className="pb-6">
+                        <span className="font-heading text-care-red">{milestone.year}</span>
+                        <p className="text-care-gray-500 text-sm mt-1">{milestone.event}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="section-padding bg-gradient-care">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
+              <MapPin className="w-4 h-4" />
+              Our Mission
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
+              Enabling Dignified, Independent Living
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed mb-8">
+              Our mission is to enhance the quality of life for seniors and individuals with 
+              care needs by providing compassionate, professional homecare services that promote 
+              independence, dignity, and peace of mind for both clients and their families.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 text-left">
+              <div className="bg-white/10 rounded-2xl p-6">
+                <CheckCircle className="w-8 h-8 text-care-red mb-3" />
+                <h4 className="font-heading text-white mb-2">For Clients</h4>
+                <p className="text-white/70 text-sm">Live comfortably and independently in your own home with personalized care.</p>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-6">
+                <CheckCircle className="w-8 h-8 text-care-red mb-3" />
+                <h4 className="font-heading text-white mb-2">For Families</h4>
+                <p className="text-white/70 text-sm">Peace of mind knowing your loved one is in caring, capable hands.</p>
+              </div>
+              <div className="bg-white/10 rounded-2xl p-6">
+                <CheckCircle className="w-8 h-8 text-care-red mb-3" />
+                <h4 className="font-heading text-white mb-2">For Caregivers</h4>
+                <p className="text-white/70 text-sm">Meaningful work with competitive pay, flexible schedules, and growth opportunities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="section-padding bg-white">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-4">
+              <Award className="w-4 h-4" />
+              Our Values
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              What We Stand For
+            </h2>
+            <p className="text-care-gray-500">
+              Our core values guide every decision we make and every interaction we have 
+              with clients, families, and caregivers.
+            </p>
+          </div>
+
+          {/* Values Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value) => (
+              <div key={value.title} className="card-care p-6 text-center">
+                <div className="w-14 h-14 rounded-xl bg-care-red/10 flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="w-7 h-7 text-care-red" />
+                </div>
+                <h3 className="font-heading text-lg text-care-navy mb-2">{value.title}</h3>
+                <p className="text-care-gray-500 text-sm">{value.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage Section */}
+      <section className="section-padding bg-care-gray-50">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="card-care p-8 md:p-12">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-care-red flex items-center justify-center">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h2 className="font-heading text-2xl md:text-3xl text-care-navy">Nationwide Coverage</h2>
+                  <p className="text-care-gray-500">Serving All States Across the USA</p>
+                </div>
+              </div>
+              <p className="text-care-gray-500 leading-relaxed mb-6">
+                No matter where you are in the United States, Caring Hands is ready to help. 
+                Our extensive network of caregivers spans all 50 states, ensuring that quality 
+                homecare is always within reach. From major metropolitan areas to rural communities, 
+                we&apos;re committed to making professional care accessible to everyone who needs it.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                  <span className="text-care-navy">All 50 states covered</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                  <span className="text-care-navy">Urban & rural areas</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                  <span className="text-care-navy">Same-day service available</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                  <span className="text-care-navy">Local caregivers assigned</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <CTASection />
+    </main>
   );
 }

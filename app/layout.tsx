@@ -1,37 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display, Oswald } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import PageTransition from '@/components/PageTransition';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
 
 // ==========================================
-// KINITY 2027 - PRESIDENTIAL CAMPAIGN
+// CARING HANDS - PROFESSIONAL HOMECARE
 // Root Layout with SEO Optimization
 // ==========================================
 
-// Primary body font - clean and modern
+// Clean, professional font for healthcare
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-});
-
-// Headline font - authority and tradition
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair',
-  weight: ['400', '500', '600', '700', '800', '900'],
-});
-
-// Slogan font - impact and strength
-const oswald = Oswald({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-oswald',
-  weight: ['400', '500', '600', '700'],
 });
 
 // ==========================================
@@ -41,44 +25,45 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   // Core title template
   title: {
-    default: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    template: "%s | Dr. Isaac Newton Kinity 2027",
+    default: "Caring Hands | Professional Homecare Services",
+    template: "%s | Caring Hands Homecare",
   },
   
   // Primary description
-  description: "Dr. Isaac Newton Kinity - The Incoming President of Kenya 2027. Committed to the service of Kenyans. Join the movement for economic transformation, zero corruption, and a brighter future for all Kenyans.",
+  description: "Professional homecare services you can trust. Serving families across all states for over 20 years. Compassionate caregivers for seniors and individuals needing assistance at home.",
   
   // Keywords for search engines
   keywords: [
-    'Isaac Newton Kinity',
-    'Dr Kinity',
-    'Kinity 2027',
-    'Kenya President 2027',
-    'Kenya\'s Hope',
-    'Kenyan Politics',
-    'Anti-corruption Leader',
-    'Economic Transformation Kenya',
-    'Presidential Candidate Kenya',
-    'Kenya Election 2027',
-    'Kinity for President',
-    'New Leadership Kenya',
-    'Committed to Service',
+    'homecare services',
+    'senior care',
+    'in-home care',
+    'caregiver services',
+    'elderly care',
+    'home health aide',
+    'personal care assistant',
+    'respite care',
+    'companionship services',
+    'medication reminders',
+    'daily living assistance',
+    'USA homecare',
+    'professional caregivers',
+    'licensed homecare',
   ],
   
   // Authors and ownership
-  authors: [{ name: "Dr. Isaac Newton Kinity Campaign" }],
-  creator: "Dr. Isaac Newton Kinity",
-  publisher: "Kinity 2027 Campaign",
+  authors: [{ name: "Caring Hands Homecare" }],
+  creator: "Caring Hands Homecare",
+  publisher: "Caring Hands Homecare",
   
   // Format detection
   formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+    email: true,
+    address: true,
+    telephone: true,
   },
   
   // Canonical URL base
-  metadataBase: new URL('https://www.kinity2027.com'),
+  metadataBase: new URL('https://www.caringhandshomecare.com'),
   
   // Alternates
   alternates: {
@@ -94,18 +79,18 @@ export const metadata: Metadata = {
   
   // Open Graph - Social sharing
   openGraph: {
-    title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans. The Incoming President 2027.",
-    url: 'https://www.kinity2027.com',
-    siteName: "Dr. Isaac Newton Kinity 2027",
-    locale: 'en_KE',
+    title: "Caring Hands | Professional Homecare Services",
+    description: "Trusted homecare services for your loved ones. 20+ years of experience serving families across all states.",
+    url: 'https://www.caringhandshomecare.com',
+    siteName: "Caring Hands Homecare",
+    locale: 'en_US',
     type: 'website',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dr. Isaac Newton Kinity - Kenya\'s Hope 2027',
+        alt: 'Caring Hands - Professional Homecare Services',
       },
     ],
   },
@@ -113,11 +98,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: 'summary_large_image',
-    title: "Dr. Isaac Newton Kinity | Kenya's Hope 2027",
-    description: "Join the movement for a better Kenya. Dr. Isaac Newton Kinity - Committed to the service of Kenyans.",
+    title: "Caring Hands | Professional Homecare Services",
+    description: "Trusted homecare services for your loved ones. Serving all states with compassion and professionalism.",
     images: ['/og-image.jpg'],
-    creator: '@Kinity2027',
-    site: '@Kinity2027',
+    creator: '@CaringHandsCare',
+    site: '@CaringHandsCare',
   },
   
   // Robots
@@ -139,17 +124,7 @@ export const metadata: Metadata = {
   },
   
   // Category
-  category: 'politics',
-  
-  // Additional metadata
-  other: {
-    'og:country-name': 'Kenya',
-    'og:email': 'info@kinity2027.com',
-    'og:phone_number': '+254 XXX XXX XXX',
-    ' political-party': "Independent",
-    'campaign-slogan': "Kenya's Hope",
-    'election-year': '2027',
-  },
+  category: 'healthcare',
 };
 
 // ==========================================
@@ -157,7 +132,7 @@ export const metadata: Metadata = {
 // ==========================================
 
 export const viewport = {
-  themeColor: '#0074D9',
+  themeColor: '#0F172A',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -176,20 +151,12 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`${inter.variable} ${playfair.variable} ${oswald.variable}`}
+      className={`${inter.variable}`}
     >
       <head>
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.imgbb.com" />
-        <link rel="preconnect" href="https://i.ytimg.com" />
-        
-        {/* DNS prefetch */}
-        <link rel="dns-prefetch" href="https://www.youtube.com" />
-        
-        {/* Preload critical assets */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         
         {/* Structured Data - JSON-LD */}
         <script
@@ -197,72 +164,111 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Dr. Isaac Newton Kinity',
-              alternateName: 'Kinity',
-              description: "Presidential Candidate Kenya 2027. Committed to the service of Kenyans.",
-              url: 'https://www.kinity2027.com',
-              image: 'https://www.kinity2027.com/dr-kinity-profile.jpg',
-              jobTitle: 'Presidential Candidate',
-              worksFor: {
-                '@type': 'Organization',
-                name: "Kinity 2027 Campaign",
-              },
+              '@type': 'LocalBusiness',
+              name: 'Caring Hands Homecare',
+              description: 'Professional homecare services serving all states across the USA. 20+ years of experience providing compassionate care for seniors and individuals needing assistance.',
+              url: 'https://www.caringhandshomecare.com',
+              telephone: '+1-123-456-7890',
+              email: 'care@caringhandshomecare.com',
+              image: 'https://www.caringhandshomecare.com/logo.png',
               address: {
                 '@type': 'PostalAddress',
-                addressCountry: 'KE',
+                addressCountry: 'US',
+                addressRegion: 'All States',
               },
+              areaServed: {
+                '@type': 'Country',
+                name: 'United States',
+              },
+              serviceType: [
+                'Homecare Services',
+                'Senior Care',
+                'Personal Care',
+                'Companionship',
+                'Medication Reminders',
+              ],
+              priceRange: '$$',
+              openingHours: '24/7',
               sameAs: [
-                'https://twitter.com/Kinity2027',
-                'https://facebook.com/Kinity2027',
-                'https://instagram.com/Kinity2027',
+                'https://facebook.com/caringhandshomecare',
+                'https://instagram.com/caringhandshomecare',
+                'https://linkedin.com/company/caringhandshomecare',
               ],
             }),
           }}
         />
         
-        {/* Campaign Organization Schema */}
+        {/* Service Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: "Kinity 2027 Campaign",
-              alternateName: "Kenya's Hope",
-              url: 'https://www.kinity2027.com',
-              logo: 'https://www.kinity2027.com/logo.png',
-              description: "Official campaign organization for Dr. Isaac Newton Kinity's 2027 presidential bid.",
-              foundingDate: '2024',
-              politicalParty: 'Independent',
-              slogan: "Kenya's Hope - Committed to the Service of Kenyans",
-              sameAs: [
-                'https://twitter.com/Kinity2027',
-                'https://facebook.com/Kinity2027',
-              ],
+              '@type': 'Service',
+              serviceType: 'Homecare Services',
+              provider: {
+                '@type': 'LocalBusiness',
+                name: 'Caring Hands Homecare',
+              },
+              areaServed: {
+                '@type': 'Country',
+                name: 'United States',
+              },
+              hasOfferCatalog: {
+                '@type': 'OfferCatalog',
+                name: 'Homecare Services',
+                itemListElement: [
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Homecare Services',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Medication Reminder',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Daily Living Assistance',
+                    },
+                  },
+                  {
+                    '@type': 'Offer',
+                    itemOffered: {
+                      '@type': 'Service',
+                      name: 'Companionship',
+                    },
+                  },
+                ],
+              },
             }),
           }}
         />
       </head>
       
       <body 
-        className={`${inter.className} antialiased bg-slate-50 text-slate-900 overscroll-none`}
+        className={`${inter.className} antialiased bg-care-gray-50 text-care-navy`}
       >
-        {/* Mesh gradient background overlay */}
-        <div className="fixed inset-0 bg-gradient-mesh pointer-events-none z-0" />
-        
         {/* Navigation */}
         <Navbar />
         
-        {/* Main content with transition */}
-        <main className="relative z-10 pt-20">
-          <PageTransition>
-            {children}
-          </PageTransition>
+        {/* Main content */}
+        <main className="relative">
+          {children}
         </main>
         
         {/* Footer */}
         <Footer />
+        
+        {/* WhatsApp Floating Button */}
+        <WhatsAppButton />
         
         {/* Back to top button */}
         <BackToTop />

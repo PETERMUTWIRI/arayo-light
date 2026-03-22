@@ -3,45 +3,50 @@
 @tailwind utilities;
 
 /* ==========================================
-   KINITY 2027 - PRESIDENTIAL CAMPAIGN
+   CAREGIVER SERVICES - PROFESSIONAL HOMECARE
    Global Styles & Design System
    ========================================== */
 
 :root {
-  /* Core Colors */
-  --kinity-blue: #0074D9;
-  --kinity-blue-dark: #005CB0;
-  --kinity-red: #E91D0E;
-  --kinity-red-dark: #BA170C;
-  --kinity-purple: #6B2C91;
-  --kinity-purple-dark: #552374;
-  --kinity-black: #111111;
-  --kinity-charcoal: #1F2937;
-  --kinity-slate: #64748B;
-  --kinity-white: #FFFFFF;
-  --kinity-off-white: #F8FAFC;
+  /* Core Brand Colors */
+  --care-red: #C62828;
+  --care-red-dark: #991B1B;
+  --care-navy: #0F172A;
+  --care-navy-light: #1E293B;
+  --care-blue: #1E3A8A;
+  --care-blue-light: #3B82F6;
+  --care-white: #FFFFFF;
+  --care-gray-50: #F8FAFC;
+  --care-gray-100: #F1F5F9;
+  --care-gray-200: #E2E8F0;
+  --care-gray-300: #CBD5E1;
+  --care-gray-400: #94A3B8;
+  --care-gray-500: #64748B;
+  --care-gray-600: #475569;
+  --care-gray-700: #334155;
+  --care-whatsapp: #25D366;
   
   /* Shadcn Theme Variables */
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
   --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
+  --card-foreground: 222 47% 11%;
   --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 207 100% 43%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 0 72% 46%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 207 100% 43%;
-  --radius: 0.5rem;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 222 47% 11%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 0 72% 46%;
+  --radius: 0.75rem;
 }
 
 /* ==========================================
@@ -60,8 +65,8 @@ html {
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--kinity-off-white);
-  color: var(--kinity-charcoal);
+  background-color: var(--care-gray-50);
+  color: var(--care-navy);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,176 +74,141 @@ body {
 }
 
 /* ==========================================
-   PRESIDENTIAL GRADIENT BACKGROUNDS
+   GRADIENT BACKGROUNDS
    ========================================== */
 
-.bg-gradient-kinity {
-  background: linear-gradient(180deg, #0074D9 0%, #E6F2FC 50%, #FFFFFF 100%);
+.bg-gradient-care {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
 }
 
-.bg-gradient-kinity-dark {
-  background: linear-gradient(135deg, #111111 0%, #1F2937 100%);
+.bg-gradient-hero {
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 50%, #F1F5F9 100%);
 }
 
-.bg-gradient-kinity-blue {
-  background: linear-gradient(135deg, #0074D9 0%, #005CB0 100%);
+.bg-gradient-red {
+  background: linear-gradient(135deg, #C62828 0%, #991B1B 100%);
 }
 
-.bg-gradient-kinity-red {
-  background: linear-gradient(135deg, #E91D0E 0%, #BA170C 100%);
-}
-
-.bg-gradient-kinity-purple {
-  background: linear-gradient(135deg, #6B2C91 0%, #552374 100%);
-}
-
-.bg-gradient-kinity-hero {
-  background: linear-gradient(180deg, 
-    rgba(0, 116, 217, 0.95) 0%, 
-    rgba(0, 116, 217, 0.8) 30%,
-    rgba(230, 242, 252, 0.9) 70%, 
-    rgba(255, 255, 255, 1) 100%);
-}
-
-/* Mesh gradient overlay for depth */
-.bg-gradient-mesh {
-  background: 
-    radial-gradient(at 0% 0%, rgba(0, 116, 217, 0.15) 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(107, 44, 145, 0.1) 0, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(233, 29, 14, 0.08) 0, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(0, 116, 217, 0.1) 0, transparent 50%);
+.bg-gradient-subtle {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
 /* ==========================================
    TYPOGRAPHY SYSTEM
    ========================================== */
 
-.font-headline {
-  font-family: 'Playfair Display', Georgia, 'Noto Serif', serif;
+.font-heading {
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
-}
-
-.font-slogan {
-  font-family: 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.text-headline {
-  color: var(--kinity-black);
-}
-
-.text-slogan {
-  color: var(--kinity-red);
+  color: var(--care-navy);
 }
 
 .text-body {
-  color: var(--kinity-charcoal);
+  color: var(--care-gray-600);
 }
 
-.text-muted {
-  color: var(--kinity-slate);
+.text-muted-care {
+  color: var(--care-gray-500);
 }
 
 .text-on-dark {
-  color: var(--kinity-white);
+  color: var(--care-white);
 }
 
 /* ==========================================
-   BUTTON STYLES
+   BUTTON STYLES - CAREGIVER BRAND
    ========================================== */
 
 @layer components {
-  /* Primary CTA - Red for urgency */
+  /* Primary CTA - Red for urgency/action */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300;
-    background: linear-gradient(135deg, #E91D0E 0%, #BA170C 100%);
-    box-shadow: 0 4px 14px rgba(233, 29, 14, 0.4);
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #C62828 0%, #991B1B 100%);
+    box-shadow: 0 4px 14px rgba(198, 40, 40, 0.35);
   }
   
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(233, 29, 14, 0.5);
+    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.45);
   }
 
-  /* Secondary - Blue for trust */
+  /* Secondary - Navy for trust */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold text-white transition-all duration-300;
-    background: linear-gradient(135deg, #0074D9 0%, #005CB0 100%);
-    box-shadow: 0 4px 14px rgba(0, 116, 217, 0.4);
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
   }
   
   .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 116, 217, 0.5);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35);
   }
 
-  /* Outline - Purple for distinction */
+  /* Outline - Clean for secondary actions */
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold border-2 transition-all duration-300;
-    border-color: var(--kinity-purple);
-    color: var(--kinity-purple);
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold border-2 transition-all duration-300;
+    border-color: var(--care-navy);
+    color: var(--care-navy);
     background: transparent;
   }
   
   .btn-outline:hover {
-    background: var(--kinity-purple);
+    background: var(--care-navy);
     color: white;
     transform: translateY(-2px);
   }
 
-  /* White button for dark backgrounds */
-  .btn-white {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-300;
-    background: white;
-    color: var(--kinity-blue);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  /* WhatsApp Button */
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
+    background: #25D366;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
   }
   
-  .btn-white:hover {
+  .btn-whatsapp:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    color: var(--kinity-red);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    background: #128C7E;
   }
 
   /* Ghost button */
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    backdrop-filter: blur(10px);
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-300;
+    background: rgba(15, 23, 42, 0.05);
+    color: var(--care-navy);
   }
   
   .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(15, 23, 42, 0.1);
   }
 }
 
 /* ==========================================
-   CARD STYLES
+   CARD STYLES - CLEAN & PROFESSIONAL
    ========================================== */
 
 @layer components {
-  .card-presidential {
-    @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300;
-    border: 1px solid rgba(0, 116, 217, 0.1);
+  .card-care {
+    @apply bg-white rounded-2xl overflow-hidden transition-all duration-300;
+    border: 1px solid var(--care-gray-200);
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
   }
   
-  .card-presidential:hover {
+  .card-care:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 116, 217, 0.15);
+    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+    border-color: var(--care-gray-300);
   }
 
   .card-dark {
     @apply rounded-2xl overflow-hidden transition-all duration-300;
-    background: linear-gradient(145deg, #1F2937 0%, #111111 100%);
+    background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .card-dark:hover {
-    border-color: rgba(0, 116, 217, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -248,10 +218,10 @@ body {
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
+    @apply py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8;
   }
 
-  .container-presidential {
+  .container-care {
     @apply max-w-7xl mx-auto;
   }
 }
@@ -269,14 +239,6 @@ body {
     animation: slideUp 0.5s ease-out forwards;
   }
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  .animate-shimmer {
-    animation: shimmer 2s linear infinite;
-  }
-
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -287,7 +249,7 @@ body {
 
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
   }
 }
 
@@ -311,213 +273,136 @@ body {
   }
 }
 
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 20px rgba(0, 116, 217, 0.5);
-  }
-  100% {
-    box-shadow: 0 0 40px rgba(233, 29, 14, 0.6);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
 /* ==========================================
-   GLOW EFFECTS
-   ========================================== */
-
-.glow-blue {
-  box-shadow: 0 0 30px rgba(0, 116, 217, 0.4);
-}
-
-.glow-red {
-  box-shadow: 0 0 30px rgba(233, 29, 14, 0.4);
-}
-
-.glow-purple {
-  box-shadow: 0 0 30px rgba(107, 44, 145, 0.4);
-}
-
-/* ==========================================
-   TEXT GRADIENTS
-   ========================================== */
-
-.text-gradient-blue {
-  background: linear-gradient(135deg, #0074D9 0%, #005CB0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-red {
-  background: linear-gradient(135deg, #E91D0E 0%, #BA170C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-purple {
-  background: linear-gradient(135deg, #6B2C91 0%, #552374 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ==========================================
-   GLASS MORPHISM
-   ========================================== */
-
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.glass-dark {
-  background: rgba(17, 17, 17, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ==========================================
-   HERO SECTION OVERLAYS
-   ========================================== */
-
-.hero-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 116, 217, 0.7) 0%,
-    rgba(0, 116, 217, 0.4) 40%,
-    rgba(230, 242, 252, 0.6) 70%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
-}
-
-.hero-overlay-dark {
-  background: linear-gradient(
-    180deg,
-    rgba(17, 17, 17, 0.8) 0%,
-    rgba(17, 17, 17, 0.6) 50%,
-    rgba(17, 17, 17, 0.8) 100%
-  );
-}
-
-/* ==========================================
-   IMAGE TREATMENTS
-   ========================================== */
-
-.img-presidential {
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.img-presidential:hover {
-  transform: scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-}
-
-/* ==========================================
-   DIVIDERS & DECORATIONS
-   ========================================== */
-
-.divider-blue {
-  height: 4px;
-  background: linear-gradient(90deg, #0074D9 0%, transparent 100%);
-}
-
-.divider-red {
-  height: 4px;
-  background: linear-gradient(90deg, #E91D0E 0%, transparent 100%);
-}
-
-.divider-purple {
-  height: 4px;
-  background: linear-gradient(90deg, #6B2C91 0%, transparent 100%);
-}
-
-/* Decorative corner accents */
-.corner-accent {
-  position: relative;
-}
-
-.corner-accent::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  border-top: 3px solid var(--kinity-blue);
-  border-left: 3px solid var(--kinity-blue);
-}
-
-.corner-accent::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border-bottom: 3px solid var(--kinity-red);
-  border-right: 3px solid var(--kinity-red);
-}
-
-/* ==========================================
-   FORM STYLES
+   FORM STYLES - CLEAN & ACCESSIBLE
    ========================================== */
 
 .form-input {
-  @apply w-full px-4 py-3 rounded-lg border transition-all duration-300;
+  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300;
   background: white;
-  border-color: rgba(0, 116, 217, 0.2);
-  color: var(--kinity-charcoal);
+  border-color: var(--care-gray-200);
+  color: var(--care-navy);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--kinity-blue);
-  box-shadow: 0 0 0 3px rgba(0, 116, 217, 0.1);
+  border-color: var(--care-blue-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-input::placeholder {
-  color: var(--kinity-slate);
+  color: var(--care-gray-400);
 }
 
 .form-label {
-  @apply block text-sm font-semibold mb-2;
-  color: var(--kinity-charcoal);
+  @apply block text-sm font-medium mb-2;
+  color: var(--care-navy);
+}
+
+.form-select {
+  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300 appearance-none;
+  background: white;
+  border-color: var(--care-gray-200);
+  color: var(--care-navy);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--care-blue-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300 resize-none;
+  background: white;
+  border-color: var(--care-gray-200);
+  color: var(--care-navy);
+  min-height: 120px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--care-blue-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* File upload */
+.form-file {
+  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300;
+  background: white;
+  border-color: var(--care-gray-200);
+  color: var(--care-navy);
+}
+
+.form-file:focus {
+  outline: none;
+  border-color: var(--care-blue-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* ==========================================
    BADGE STYLES
    ========================================== */
 
-.badge-blue {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(0, 116, 217, 0.1);
-  color: var(--kinity-blue);
-}
-
 .badge-red {
   @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(233, 29, 14, 0.1);
-  color: var(--kinity-red);
+  background: rgba(198, 40, 40, 0.1);
+  color: var(--care-red);
 }
 
-.badge-purple {
+.badge-blue {
   @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(107, 44, 145, 0.1);
-  color: var(--kinity-purple);
+  background: rgba(30, 58, 138, 0.1);
+  color: var(--care-blue);
+}
+
+.badge-navy {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  background: rgba(15, 23, 42, 0.1);
+  color: var(--care-navy);
+}
+
+/* ==========================================
+   WHATSAPP FLOATING BUTTON
+   ========================================== */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
 
 /* ==========================================
@@ -536,8 +421,61 @@ body {
 
 /* Focus visible styles */
 *:focus-visible {
-  outline: 2px solid var(--kinity-blue);
+  outline: 2px solid var(--care-blue-light);
   outline-offset: 2px;
+}
+
+/* ==========================================
+   PROSE STYLES (for content pages)
+   ========================================== */
+
+.prose-care h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--care-navy);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose-care h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--care-navy);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-care p {
+  color: var(--care-gray-500);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.prose-care ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-care li {
+  color: var(--care-gray-500);
+  margin-bottom: 0.5rem;
+}
+
+.prose-care a {
+  color: var(--care-red);
+  text-decoration: none;
+}
+
+.prose-care a:hover {
+  text-decoration: underline;
+}
+
+.prose-care strong {
+  color: var(--care-navy);
+  font-weight: 600;
 }
 
 /* ==========================================

@@ -45,134 +45,101 @@ const config: Config = {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         
-        // KINITY 2027 BRAND COLORS - Presidential Campaign Palette
-        kinity: {
-          // Primary Trust Blue - Stability, presidential authority
-          blue: {
-            DEFAULT: '#0074D9',
-            50: '#E6F2FC',
-            100: '#CCE5F9',
-            200: '#99CBF3',
-            300: '#66B1ED',
-            400: '#3397E7',
-            500: '#0074D9', // Primary
-            600: '#005CB0',
-            700: '#004588',
-            800: '#002E5B',
-            900: '#00172D',
-          },
-          // Power Red - Energy, urgency, anti-corruption passion
+        // Caregiver Brand Colors - Professional Healthcare Palette
+        care: {
+          // Primary Deep Red - CTAs only, use sparingly
           red: {
-            DEFAULT: '#E91D0E',
-            50: '#FDE8E7',
-            100: '#FBD1CE',
-            200: '#F7A39D',
-            300: '#F3756C',
-            400: '#EF473B',
-            500: '#E91D0E', // Primary
-            600: '#BA170C',
-            700: '#8B1109',
-            800: '#5D0C06',
-            900: '#2E0603',
+            DEFAULT: '#C62828',
+            50: '#FEE2E2',
+            100: '#FECACA',
+            200: '#FCA5A5',
+            300: '#F87171',
+            400: '#EF4444',
+            500: '#C62828', // Primary CTA
+            600: '#B91C1C',
+            700: '#991B1B',
+            800: '#7F1D1D',
+            900: '#450A0A',
           },
-          // Royal Purple - Wisdom, leadership, distinction
-          purple: {
-            DEFAULT: '#6B2C91',
-            50: '#F0E6F5',
-            100: '#E1CCEB',
-            200: '#C399D7',
-            300: '#A566C3',
-            400: '#8733AF',
-            500: '#6B2C91', // Primary
-            600: '#552374',
-            700: '#401A57',
-            800: '#2A123A',
-            900: '#15091D',
+          // Base Dark Navy - Primary text and dark sections
+          navy: {
+            DEFAULT: '#0F172A',
+            50: '#F1F5F9',
+            100: '#E2E8F0',
+            200: '#CBD5E1',
+            300: '#94A3B8',
+            400: '#64748B',
+            500: '#475569',
+            600: '#334155',
+            700: '#1E293B',
+            800: '#0F172A', // Primary dark
+            900: '#020617',
           },
-          // Authority colors
-          black: '#111111',
-          charcoal: '#1F2937',
-          slate: '#64748B',
+          // Soft Blue - Trust, healthcare feel
+          blue: {
+            DEFAULT: '#1E3A8A',
+            50: '#EFF6FF',
+            100: '#DBEAFE',
+            200: '#BFDBFE',
+            300: '#93C5FD',
+            400: '#60A5FA',
+            500: '#3B82F6',
+            600: '#2563EB',
+            700: '#1D4ED8',
+            800: '#1E3A8A', // Primary blue
+            900: '#1E3A5F',
+          },
+          // Support colors
           white: '#FFFFFF',
-          'off-white': '#F8FAFC',
+          gray: {
+            50: '#F8FAFC',
+            100: '#F1F5F9',
+            200: '#E2E8F0',
+            300: '#CBD5E1',
+            400: '#94A3B8',
+            500: '#64748B',
+          },
+          // WhatsApp Green
+          whatsapp: '#25D366',
         },
       },
       fontFamily: {
-        // Presidential typography system
-        headline: ['Playfair Display', 'Georgia', 'Noto Serif', 'serif'],
-        body: ['Inter', 'system-ui', 'Noto Sans', 'sans-serif'],
-        slogan: ['Oswald', 'Impact', 'Arial Narrow', 'sans-serif'],
+        // Clean, professional healthcare typography
+        heading: ['Inter', 'system-ui', 'sans-serif'],
+        body: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        // Presidential gradients
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-kinity': 'linear-gradient(135deg, #0074D9 0%, #FFFFFF 100%)',
-        'gradient-hero': 'linear-gradient(180deg, #0074D9 0%, #E6F2FC 50%, #FFFFFF 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #111111 0%, #1F2937 100%)',
-        'gradient-purple': 'linear-gradient(135deg, #6B2C91 0%, #552374 100%)',
-        'gradient-red': 'linear-gradient(135deg, #E91D0E 0%, #BA170C 100%)',
-        'gradient-shine': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+        'gradient-care': 'linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%)',
+        'gradient-hero': 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)',
+        'gradient-red': 'linear-gradient(135deg, #C62828 0%, #991B1B 100%)',
       },
       boxShadow: {
-        'glow-blue': '0 0 30px rgba(0, 116, 217, 0.4)',
-        'glow-red': '0 0 30px rgba(233, 29, 14, 0.4)',
-        'glow-purple': '0 0 30px rgba(107, 44, 145, 0.4)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'card-hover': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'presidential': '0 10px 40px -10px rgba(0, 116, 217, 0.3)',
+        'soft': '0 4px 20px -2px rgba(15, 23, 42, 0.08)',
+        'card': '0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03)',
+        'card-hover': '0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05)',
+        'glow-red': '0 0 30px rgba(198, 40, 40, 0.3)',
       },
       animation: {
-        'gradient': 'gradient 8s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'slide-up': 'slideUp 0.5s ease-out',
         'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
       },
       keyframes: {
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        shimmer: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(0, 116, 217, 0.5)' },
-          '100%': { boxShadow: '0 0 40px rgba(233, 29, 14, 0.6)' },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         slideUp: {
           '0%': { transform: 'translateY(20px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
-      typography: ({ theme }: any) => ({
-        DEFAULT: {
-          css: {
-            '--tw-prose-body': theme('colors.kinity.charcoal'),
-            '--tw-prose-headings': theme('colors.kinity.black'),
-            '--tw-prose-links': theme('colors.kinity.blue.DEFAULT'),
-            '--tw-prose-bold': theme('colors.kinity.black'),
-            '--tw-prose-counters': theme('colors.kinity.slate'),
-            '--tw-prose-bullets': theme('colors.kinity.blue.DEFAULT'),
-            '--tw-prose-hr': theme('colors.kinity.slate'),
-            '--tw-prose-quotes': theme('colors.kinity.purple.DEFAULT'),
-            '--tw-prose-quote-borders': theme('colors.kinity.purple.DEFAULT'),
-            '--tw-prose-captions': theme('colors.kinity.slate'),
-            maxWidth: 'none',
-          },
-        },
-      }),
     },
   },
   plugins: [

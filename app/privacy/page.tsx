@@ -1,193 +1,138 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
+import { Shield, ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Ray Armillion',
-  description: 'Learn how Ray Armillion Music collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
-  keywords: ['privacy policy', 'data protection', 'GDPR', 'personal information', 'cookies'],
-  alternates: {
-    canonical: 'https://staramillion.com/privacy',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: 'Privacy Policy',
+  description: 'Learn how Caring Hands Homecare collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+  keywords: ['privacy policy', 'data protection', 'personal information', 'homecare privacy'],
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      <BreadcrumbSchema items={[
-        { name: 'Home', path: '/' },
-        { name: 'Privacy Policy', path: '/privacy' },
-      ]} />
-
-      <div className="min-h-screen bg-brand-background">
-        {/* HERO */}
-        <section className="bg-brand-background pt-32 pb-16">
-          <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-black text-brand-text mb-4">
+    <main className="min-h-screen bg-gradient-hero pt-32 pb-16">
+      {/* Header */}
+      <section className="mb-12">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
+              <Shield className="w-4 h-4" />
+              <span>Privacy Policy</span>
+            </div>
+            <h1 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
               Privacy Policy
             </h1>
-            <p className="text-brand-text/70">
-              Last updated: January 2025
+            <p className="text-care-gray-500">
+              Last updated: March 2026
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CONTENT */}
-        <section className="py-16 bg-brand-background">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <div className="prose prose-lg max-w-none text-brand-text/80">
-              
-              <p className="text-xl text-brand-text/70 mb-8">
-                Ray Armillion Music is committed to protecting your privacy. This Privacy Policy explains 
-                how we collect, use, and safeguard your personal information when you visit our 
-                website, purchase tickets, buy merchandise, or subscribe to our newsletter.
-              </p>
+      {/* Content */}
+      <section>
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="card-care p-8 md:p-12">
+              <div className="prose prose-care max-w-none">
+                <p className="text-lg text-care-gray-500 mb-8">
+                  Caring Hands Homecare is committed to protecting your privacy. This Privacy Policy explains 
+                  how we collect, use, and safeguard your personal information when you use our website 
+                  to request care services or apply as a caregiver.
+                </p>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">1. Information We Collect</h2>
-              
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Personal Information</h3>
-              <p className="mb-4">
-                We collect personal information that you voluntarily provide when you:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Purchase tickets for events (name, email address)</li>
-                <li>Subscribe to our newsletter (email address, name optional)</li>
-                <li>Buy merchandise (name, email, shipping address)</li>
-                <li>Contact us via email or contact forms</li>
-                <li>Comment on blog posts or community features</li>
-              </ul>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">1. Information We Collect</h2>
+                
+                <h3 className="font-semibold text-care-navy mt-6 mb-2">Personal Information</h3>
+                <p className="text-care-gray-500 mb-4">
+                  We collect personal information that you voluntarily provide when you:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Submit a care request (name, phone number, location)</li>
+                  <li>Apply as a caregiver (name, phone, email, experience)</li>
+                  <li>Contact us via email or phone</li>
+                </ul>
 
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Payment Information</h3>
-              <p className="mb-4">
-                All payment processing is handled securely by Stripe, our third-party payment 
-                processor. We do not store your credit card information on our servers. Stripe 
-                processes your payment details in accordance with their own privacy policy and 
-                security standards (PCI DSS compliant).
-              </p>
+                <h3 className="font-semibold text-care-navy mt-6 mb-2">Automatically Collected Information</h3>
+                <p className="text-care-gray-500 mb-4">
+                  We may automatically collect certain information when you visit our website:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>IP address and browser type</li>
+                  <li>Device information</li>
+                  <li>Pages visited and time spent on site</li>
+                </ul>
 
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Automatically Collected Information</h3>
-              <p className="mb-4">
-                We may automatically collect certain information when you visit our website:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>IP address and browser type</li>
-                <li>Device information and operating system</li>
-                <li>Pages visited and time spent on site</li>
-                <li>Referring website or search terms</li>
-                <li>Music streaming preferences and playlist interactions</li>
-              </ul>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">2. How We Use Your Information</h2>
+                <p className="text-care-gray-500 mb-4">
+                  We use the information we collect to:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Process care requests and match you with caregivers</li>
+                  <li>Review caregiver applications</li>
+                  <li>Communicate with you about our services</li>
+                  <li>Improve our website and services</li>
+                </ul>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">2. How We Use Your Information</h2>
-              <p className="mb-4">
-                We use the information we collect to:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Process and confirm ticket purchases and merchandise orders</li>
-                <li>Send event notifications and tour date announcements</li>
-                <li>Deliver our newsletter with updates on new music and releases</li>
-                <li>Respond to your inquiries and provide customer support</li>
-                <li>Improve our website and personalize your experience</li>
-                <li>Comply with legal obligations</li>
-              </ul>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">3. WhatsApp Communication</h2>
+                <p className="text-care-gray-500 mb-4">
+                  When you submit a form on our website, we may open WhatsApp with a pre-filled message 
+                  containing your information. This allows us to respond to your request quickly. Your 
+                  information is sent directly to us via WhatsApp and is not stored on our servers unless 
+                  you explicitly consent to follow-up communication.
+                </p>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">3. Data Sharing and Third Parties</h2>
-              <p className="mb-4">
-                <strong>We do not sell, trade, or rent your personal information to third parties.</strong>
-              </p>
-              <p className="mb-4">
-                We may share your information only with:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Stripe:</strong> For secure payment processing (PCI DSS compliant)</li>
-                <li><strong>Email Service Providers:</strong> To deliver newsletters and event notifications</li>
-                <li><strong>Analytics Services:</strong> To understand website usage and improve our services</li>
-                <li><strong>Legal Authorities:</strong> When required by law or to protect our rights</li>
-              </ul>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">4. Data Sharing</h2>
+                <p className="text-care-gray-500 mb-4">
+                  <strong>We do not sell, trade, or rent your personal information to third parties.</strong>
+                  We may share your information only with:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Our trusted caregivers (only relevant information for care provision)</li>
+                  <li>Legal authorities when required by law</li>
+                </ul>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">4. Cookies and Tracking</h2>
-              <p className="mb-4">
-                We use cookies and similar technologies to enhance your browsing experience:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><strong>Essential Cookies:</strong> Required for basic site functionality</li>
-                <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
-                <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our site</li>
-                <li><strong>Marketing Cookies:</strong> Used to deliver relevant promotional content</li>
-              </ul>
-              <p className="mb-4">
-                You can control cookies through your browser settings. Disabling certain cookies 
-                may affect the functionality of the website.
-              </p>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">5. Data Security</h2>
+                <p className="text-care-gray-500 mb-4">
+                  We implement appropriate technical measures to protect your personal information. 
+                  All data transmission is encrypted using SSL/TLS technology.
+                </p>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">5. Data Security</h2>
-              <p className="mb-4">
-                We implement appropriate technical and organizational measures to protect your 
-                personal information against unauthorized access, alteration, disclosure, or 
-                destruction. All data transmission is encrypted using SSL/TLS technology.
-              </p>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">6. Your Rights</h2>
+                <p className="text-care-gray-500 mb-4">
+                  You have the right to:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Access the personal information we hold about you</li>
+                  <li>Request correction of inaccurate information</li>
+                  <li>Request deletion of your personal data</li>
+                  <li>Opt-out of communications at any time</li>
+                </ul>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">6. Your Rights</h2>
-              <p className="mb-4">
-                You have the right to:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Access the personal information we hold about you</li>
-                <li>Request correction of inaccurate or incomplete information</li>
-                <li>Request deletion of your personal data (subject to legal requirements)</li>
-                <li>Unsubscribe from newsletters at any time via the unsubscribe link</li>
-                <li>Object to certain types of data processing</li>
-                <li>Request a copy of your data in a portable format</li>
-              </ul>
-              <p className="mb-4">
-                To exercise these rights, please contact us at <a href="mailto:privacy@staramillion.com" className="text-brand-dark hover:underline">privacy@staramillion.com</a>.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">7. Data Retention</h2>
-              <p className="mb-4">
-                We retain your personal information only for as long as necessary to fulfill the 
-                purposes for which it was collected, including legal, accounting, or reporting 
-                requirements. Newsletter subscriber data is retained until you unsubscribe.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">8. Children&apos;s Privacy</h2>
-              <p className="mb-4">
-                Our website is not directed at children under 13 years of age. We do not knowingly 
-                collect personal information from children under 13. If you believe we have 
-                collected information from a child under 13, please contact us immediately.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">9. Changes to This Policy</h2>
-              <p className="mb-4">
-                We may update this Privacy Policy from time to time. We will notify you of any 
-                significant changes by posting the new policy on this page with an updated date. 
-                We encourage you to review this policy periodically.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">10. Contact Us</h2>
-              <p className="mb-4">
-                If you have any questions or concerns about this Privacy Policy or our data 
-                practices, please contact us:
-              </p>
-              <div className="bg-white rounded-xl p-6 mt-4 shadow-sm">
-                <p className="mb-1"><strong>Ray Armillion Music</strong></p>
-                <p className="mb-1">Email: <a href="mailto:privacy@staramillion.com" className="text-brand-dark hover:underline">privacy@staramillion.com</a></p>
-                <p>Management: <a href="mailto:booking@staramillion.com" className="text-brand-dark hover:underline">booking@staramillion.com</a></p>
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">7. Contact Us</h2>
+                <p className="text-care-gray-500 mb-4">
+                  If you have any questions about this Privacy Policy, please contact us:
+                </p>
+                <div className="bg-care-gray-50 rounded-xl p-6 mt-4">
+                  <p className="mb-1 font-semibold text-care-navy">Caring Hands Homecare</p>
+                  <p className="text-care-gray-500">Email: <a href="mailto:privacy@caringhands.com" className="text-care-red hover:underline">privacy@caringhands.com</a></p>
+                  <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
+                </div>
               </div>
 
-            </div>
-
-            <div className="mt-16 pt-8 border-t border-brand-text/10 text-center">
-              <Link href="/" className="inline-flex items-center gap-2 text-brand-dark font-semibold hover:underline">
-                ← Back to Home
-              </Link>
+              <div className="mt-12 pt-8 border-t border-care-gray-200">
+                <Link 
+                  href="/" 
+                  className="inline-flex items-center gap-2 text-care-red font-medium hover:underline"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Home
+                </Link>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }

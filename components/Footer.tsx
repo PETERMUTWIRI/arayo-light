@@ -1,216 +1,169 @@
 'use client';
 
 import Link from 'next/link';
-import { 
-  FaFacebook, 
-  FaTwitter, 
-  FaInstagram, 
-  FaYoutube, 
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaHeart,
-  FaHandshake,
-  FaArrowRight,
-} from 'react-icons/fa';
-
-// ==========================================
-// KINITY 2027 - FOOTER
-// Presidential Campaign Footer
-// ==========================================
+import { Heart, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const footerLinks = {
-  campaign: [
-    { name: 'Our Story', href: '/our-story' },
-    { name: 'Vision 2027', href: '/vision-2027' },
-    { name: 'On The Ground', href: '/on-the-ground' },
-    { name: 'Events', href: '/events' },
-    { name: 'Gallery', href: '/gallery' },
+  services: [
+    { label: 'Homecare Services', href: '/request-care' },
+    { label: 'Medication Reminder', href: '/request-care' },
+    { label: 'Light Housekeeping', href: '/request-care' },
+    { label: 'Daily Living Assistance', href: '/request-care' },
+    { label: 'Companionship', href: '/request-care' },
   ],
-  getInvolved: [
-    { name: 'Join as Volunteer', href: '/join-us' },
-    { name: 'Support the Campaign', href: '/support' },
-    { name: 'Host an Event', href: '/contact' },
-    { name: 'Become a County Coordinator', href: '/join-us' },
+  company: [
+    { label: 'About Us', href: '/about' },
+    { label: 'Join Our Team', href: '/apply' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Request Care', href: '/request-care' },
   ],
-  resources: [
-    { name: 'Press Kit', href: '/press' },
-    { name: 'Media Inquiries', href: '/press' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+  legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Accessibility', href: '/accessibility' },
   ],
 };
 
-const socialLinks = [
-  { icon: FaFacebook, href: 'https://facebook.com/Kinity2027', label: 'Facebook', color: '#1877F2' },
-  { icon: FaTwitter, href: 'https://twitter.com/Kinity2027', label: 'Twitter', color: '#1DA1F2' },
-  { icon: FaInstagram, href: 'https://instagram.com/Kinity2027', label: 'Instagram', color: '#E4405F' },
-  { icon: FaYoutube, href: 'https://youtube.com/@Kinity2027', label: 'YouTube', color: '#FF0000' },
-];
-
 export default function Footer() {
   return (
-    <footer className="bg-[#111111] text-white">
-      {/* CTA Banner */}
-      <div className="bg-gradient-to-r from-[#0074D9] to-[#6B2C91]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="font-slogan text-2xl md:text-3xl mb-2">
-                READY TO JOIN THE MOVEMENT?
-              </h3>
-              <p className="text-white/80">
-                Be part of the change Kenya needs. Volunteer, donate, or spread the word.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/join-us"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#E91D0E] text-white font-bold hover:bg-[#BA170C] transition-all duration-300"
-              >
-                <FaHandshake className="w-5 h-5" />
-                Join Us
-              </Link>
-              <Link
-                href="/support"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white text-[#0074D9] font-bold hover:bg-slate-100 transition-all duration-300"
-              >
-                <FaHeart className="w-5 h-5" />
-                Donate
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <footer className="bg-care-navy text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <span className="font-slogan text-3xl text-[#E91D0E]">KINITY 2027</span>
-            </Link>
-            <p className="text-slate-400 mb-6 max-w-sm">
-              Kenya&apos;s Hope. A movement for economic transformation, zero corruption, 
-              and a brighter future for all Kenyans. Committed to the service of Kenyans.
-            </p>
-            
-            {/* Contact Info */}
-            <div className="space-y-3">
-              <a 
-                href="mailto:info@kinity2027.com" 
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
-              >
-                <FaEnvelope className="w-5 h-5 text-[#0074D9]" />
-                info@kinity2027.com
-              </a>
-              <a 
-                href="tel:+254XXXXXXXXX" 
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors"
-              >
-                <FaPhone className="w-5 h-5 text-[#0074D9]" />
-                +254 XXX XXX XXX
-              </a>
-              <div className="flex items-center gap-3 text-slate-400">
-                <FaMapMarkerAlt className="w-5 h-5 text-[#0074D9]" />
-                Nairobi, Kenya
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-red flex items-center justify-center">
+                <Heart className="w-6 h-6 text-white" />
               </div>
-            </div>
-
+              <div>
+                <span className="font-heading text-xl block">Caring Hands</span>
+                <span className="text-care-gray-400 text-sm">Homecare Services</span>
+              </div>
+            </Link>
+            <p className="text-care-gray-300 text-sm leading-relaxed mb-6">
+              Professional, compassionate homecare services you can trust. 
+              Serving families across all states for over 20 years.
+            </p>
             {/* Social Links */}
-            <div className="flex gap-3 mt-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0074D9] transition-all duration-300"
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+            <div className="flex items-center gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
-          {/* Campaign Links */}
+          {/* Services Column */}
           <div>
-            <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#E91D0E] rounded-full" />
-              Campaign
-            </h4>
+            <h3 className="font-heading text-lg mb-6">Our Services</h3>
             <ul className="space-y-3">
-              {footerLinks.campaign.map((link) => (
-                <li key={link.name}>
+              {footerLinks.services.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-care-gray-300 hover:text-white transition-colors text-sm"
                   >
-                    <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {link.name}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Get Involved Links */}
+          {/* Company Column */}
           <div>
-            <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#0074D9] rounded-full" />
-              Get Involved
-            </h4>
+            <h3 className="font-heading text-lg mb-6">Company</h3>
             <ul className="space-y-3">
-              {footerLinks.getInvolved.map((link) => (
-                <li key={link.name}>
+              {footerLinks.company.map((link) => (
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-care-gray-300 hover:text-white transition-colors text-sm"
                   >
-                    <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {link.name}
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Resources Links */}
+          {/* Contact Column */}
           <div>
-            <h4 className="font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="w-1 h-4 bg-[#6B2C91] rounded-full" />
-              Resources
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 group"
-                  >
-                    <FaArrowRight className="w-3 h-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+            <h3 className="font-heading text-lg mb-6">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm text-care-gray-300">Phone</p>
+                  <a href="tel:+1234567890" className="text-white hover:text-care-red transition-colors">
+                    (123) 456-7890
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm text-care-gray-300">Email</p>
+                  <a href="mailto:care@caringhands.com" className="text-white hover:text-care-red transition-colors">
+                    care@caringhands.com
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm text-care-gray-300">Coverage</p>
+                  <p className="text-white">All States (USA)</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm text-care-gray-300">Availability</p>
+                  <p className="text-white">24/7 Support</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="border-t border-white/10">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-slate-500 text-sm text-center md:text-left">
-              &copy; {new Date().getFullYear()} Dr. Isaac Newton Kinity Campaign. 
-              All rights reserved. Kenya&apos;s Hope 2027.
+            <p className="text-care-gray-400 text-sm text-center md:text-left">
+              © {new Date().getFullYear()} Caring Hands Homecare. All rights reserved.
             </p>
-            <p className="text-slate-600 text-sm flex items-center gap-2">
-              Made with <FaHeart className="w-4 h-4 text-[#E91D0E]" /> for Kenya
-            </p>
+            <div className="flex items-center gap-6">
+              {footerLinks.legal.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-care-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

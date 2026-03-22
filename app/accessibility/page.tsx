@@ -1,219 +1,138 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-
+import { Accessibility, ArrowLeft, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Accessibility Statement | Ray Armillion',
-  description: 'Our commitment to making music and digital content accessible to everyone. Learn about our WCAG 2.1 Level AA compliance and accessibility features.',
-  keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design', 'disability access'],
-  alternates: {
-    canonical: 'https://staramillion.com/accessibility',
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  title: 'Accessibility Statement',
+  description: 'Our commitment to making homecare services accessible to everyone. Learn about our accessibility features and WCAG compliance.',
+  keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design'],
 };
 
 export default function AccessibilityPage() {
   return (
-    <>
-      <BreadcrumbSchema items={[
-        { name: 'Home', path: '/' },
-        { name: 'Accessibility Statement', path: '/accessibility' },
-      ]} />
-
-      <div className="min-h-screen bg-brand-background">
-        {/* HERO */}
-        <section className="bg-brand-background pt-32 pb-16">
-          <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-black text-brand-text mb-4">
+    <main className="min-h-screen bg-gradient-hero pt-32 pb-16">
+      {/* Header */}
+      <section className="mb-12">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
+              <Accessibility className="w-4 h-4" />
+              <span>Accessibility Statement</span>
+            </div>
+            <h1 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
               Accessibility Statement
             </h1>
-            <p className="text-brand-text/70">
-              Our commitment to making music accessible to everyone
+            <p className="text-care-gray-500">
+              Our commitment to making homecare accessible to everyone
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CONTENT */}
-        <section className="py-16 bg-brand-background">
-          <div className="max-w-4xl mx-auto px-6 md:px-12">
-            <div className="prose prose-lg max-w-none text-brand-text/80">
-              
-              <p className="text-xl text-brand-text/70 mb-8">
-                Ray Armillion Music is committed to ensuring digital accessibility for people with 
-                disabilities. We believe that music should be accessible to everyone, and we 
-                continually work to improve the user experience for all visitors to our website.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Our Commitment</h2>
-              <p className="mb-4">
-                We are dedicated to creating an inclusive digital experience that allows all fans 
-                to engage with our music, videos, events, and merchandise. Whether you are using 
-                assistive technologies or have specific accessibility needs, we want you to be able 
-                to enjoy everything Ray Armillion Music has to offer.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Conformance Status</h2>
-              <p className="mb-4">
-                The Web Content Accessibility Guidelines (WCAG) define requirements for designers 
-                and developers to improve accessibility for people with disabilities. It defines 
-                three levels of conformance:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Level A (minimum)</li>
-                <li>Level AA (mid-range)</li>
-                <li>Level AAA (highest)</li>
-              </ul>
-              <p className="mb-4">
-                Ray Armillion Music strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
-                We are continuously working to improve the accessibility of our website to ensure 
-                all fans can access our content.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Accessibility Features</h2>
-              
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Keyboard Navigation</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>All interactive elements are accessible via keyboard</li>
-                <li>Visible focus indicators to show your current position</li>
-                <li>Logical tab order for intuitive navigation</li>
-                <li>Skip links to bypass repetitive content</li>
-                <li>Keyboard-accessible music and video players</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Screen Reader Support</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Semantic HTML structure for clear content organization</li>
-                <li>Descriptive alt text for images and album artwork</li>
-                <li>ARIA labels for interactive elements</li>
-                <li>Announcements for dynamic content updates</li>
-                <li>Proper heading hierarchy for easy navigation</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Visual Design</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Sufficient color contrast between text and background</li>
-                <li>Text can be resized up to 200% without loss of functionality</li>
-                <li>Information is not conveyed by color alone</li>
-                <li>Clear, readable fonts with consistent styling</li>
-                <li>Responsive design that works on all screen sizes</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-brand-text mt-8 mb-3">Multimedia Accessibility</h3>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Closed captions for video content where possible</li>
-                <li>Lyrics provided for music tracks</li>
-                <li>Transcripts for audio interviews and podcasts</li>
-                <li>Audio descriptions for visual content when applicable</li>
-                <li>Controls to pause, stop, or adjust volume</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Assistive Technology Compatibility</h2>
-              <p className="mb-4">
-                Our website is designed to be compatible with commonly used assistive technologies, 
-                including:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Screen readers (NVDA, JAWS, VoiceOver, TalkBack)</li>
-                <li>Screen magnification software</li>
-                <li>Speech recognition software</li>
-                <li>Alternative input devices and switches</li>
-                <li>Browser zoom and text-only modes</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Known Limitations</h2>
-              <p className="mb-4">
-                Despite our best efforts to ensure accessibility, there may be some limitations:
-              </p>
-              
-              <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
-                <h3 className="font-semibold text-brand-text mb-2">Third-Party Content</h3>
-                <p className="text-sm text-brand-text/70">
-                  Some embedded content from third-party platforms (such as external music players 
-                  or social media feeds) may not fully meet our accessibility standards. We work 
-                  with these providers and advocate for improved accessibility.
+      {/* Content */}
+      <section>
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <div className="card-care p-8 md:p-12">
+              <div className="prose prose-care max-w-none">
+                <p className="text-lg text-care-gray-500 mb-8">
+                  Caring Hands Homecare is committed to ensuring digital accessibility for people with 
+                  disabilities. We continually work to improve the user experience for all visitors 
+                  to our website.
                 </p>
-              </div>
 
-              <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
-                <h3 className="font-semibold text-brand-text mb-2">Legacy Content</h3>
-                <p className="text-sm text-brand-text/70">
-                  Some older archived content may not yet be fully accessible. We are working to 
-                  update historical content to meet current accessibility standards.
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Our Commitment</h2>
+                <p className="text-care-gray-500 mb-4">
+                  We are dedicated to creating an inclusive digital experience that allows all users 
+                  to access our services. Whether you are using assistive technologies or have specific 
+                  accessibility needs, we want you to be able to use our website with ease.
                 </p>
-              </div>
 
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Feedback and Contact</h2>
-              <p className="mb-4">
-                We welcome your feedback on the accessibility of our website. If you encounter 
-                accessibility barriers, have suggestions for improvement, or need assistance 
-                accessing any content, please contact us:
-              </p>
-              
-              <div className="bg-white rounded-xl p-6 mb-6 shadow-sm">
-                <p className="mb-1"><strong>Email:</strong> <a href="mailto:accessibility@staramillion.com" className="text-brand-dark hover:underline">accessibility@staramillion.com</a></p>
-                <p className="mb-1"><strong>General Contact:</strong> <a href="mailto:booking@staramillion.com" className="text-brand-dark hover:underline">booking@staramillion.com</a></p>
-              </div>
-
-              <p className="mb-4">
-                We aim to respond to accessibility feedback within 2 business days and will work 
-                to address any issues as quickly as possible.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Alternative Formats</h2>
-              <p className="mb-4">
-                If you need content in an alternative format (large print, audio description, 
-                or other accessible format), please contact us and we will do our best to 
-                accommodate your request.
-              </p>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Ongoing Improvements</h2>
-              <p className="mb-4">
-                Accessibility is an ongoing effort. We regularly:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li>Conduct accessibility audits of our website</li>
-                <li>Test with assistive technologies</li>
-                <li>Incorporate accessibility into our design and development process</li>
-                <li>Stay informed about evolving accessibility standards</li>
-                <li>Train our team on accessibility best practices</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Third-Party Resources</h2>
-              <p className="mb-4">
-                For additional information about web accessibility, we recommend:
-              </p>
-              <ul className="list-disc pl-6 mb-6 space-y-2">
-                <li><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:underline">W3C Web Accessibility Initiative (WAI)</a></li>
-                <li><a href="https://webaim.org/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:underline">WebAIM</a></li>
-                <li><a href="https://www.ada.gov/" target="_blank" rel="noopener noreferrer" className="text-brand-dark hover:underline">ADA.gov</a></li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-brand-text mt-12 mb-4">Statement Updates</h2>
-              <p className="mb-4">
-                This Accessibility Statement was last updated on January 2025. We regularly review 
-                and update this statement as we continue to improve the accessibility of our website.
-              </p>
-
-              <div className="bg-brand-primary/10 rounded-xl p-6 mt-12 border border-brand-primary/20">
-                <p className="text-brand-text font-medium">
-                  Music is for everyone. We are committed to making our website and digital 
-                  content accessible to all fans, regardless of ability or technology.
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Conformance Status</h2>
+                <p className="text-care-gray-500 mb-4">
+                  Caring Hands Homecare strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
+                  We are continuously working to improve the accessibility of our website to ensure 
+                  all users can access our content.
                 </p>
+
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Accessibility Features</h2>
+                
+                <h3 className="font-semibold text-care-navy mt-6 mb-2">Keyboard Navigation</h3>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>All interactive elements are accessible via keyboard</li>
+                  <li>Visible focus indicators to show your current position</li>
+                  <li>Logical tab order for intuitive navigation</li>
+                  <li>Skip links to bypass repetitive content</li>
+                </ul>
+
+                <h3 className="font-semibold text-care-navy mt-6 mb-2">Screen Reader Support</h3>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Semantic HTML structure for clear content organization</li>
+                  <li>Descriptive labels for all interactive elements</li>
+                  <li>Proper heading hierarchy for easy navigation</li>
+                  <li>ARIA labels where necessary</li>
+                </ul>
+
+                <h3 className="font-semibold text-care-navy mt-6 mb-2">Visual Design</h3>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Sufficient color contrast between text and background</li>
+                  <li>Text can be resized up to 200% without loss of functionality</li>
+                  <li>Information is not conveyed by color alone</li>
+                  <li>Clear, readable fonts with consistent styling</li>
+                  <li>Responsive design that works on all screen sizes</li>
+                </ul>
+
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Feedback and Contact</h2>
+                <p className="text-care-gray-500 mb-4">
+                  We welcome your feedback on the accessibility of our website. If you encounter 
+                  accessibility barriers or have suggestions for improvement, please contact us:
+                </p>
+                
+                <div className="bg-care-gray-50 rounded-xl p-6 mb-6">
+                  <p className="text-care-gray-500">Email: <a href="mailto:accessibility@caringhands.com" className="text-care-red hover:underline">accessibility@caringhands.com</a></p>
+                  <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
+                </div>
+
+                <p className="text-care-gray-500 mb-4">
+                  We aim to respond to accessibility feedback within 2 business days and will work 
+                  to address any issues as quickly as possible.
+                </p>
+
+                <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Ongoing Improvements</h2>
+                <p className="text-care-gray-500 mb-4">
+                  Accessibility is an ongoing effort. We regularly:
+                </p>
+                <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
+                  <li>Review and test our website for accessibility</li>
+                  <li>Incorporate accessibility into our design and development process</li>
+                  <li>Stay informed about evolving accessibility standards</li>
+                  <li>Train our team on accessibility best practices</li>
+                </ul>
+
+                <div className="bg-care-blue/5 rounded-xl p-6 mt-12 border border-care-blue/20">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-care-blue flex-shrink-0 mt-0.5" />
+                    <p className="text-care-navy font-medium">
+                      Quality care should be accessible to everyone. We are committed to making our 
+                      website and services accessible to all users, regardless of ability.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-            </div>
-
-            <div className="mt-16 pt-8 border-t border-brand-text/10 text-center">
-              <Link href="/" className="inline-flex items-center gap-2 text-brand-dark font-semibold hover:underline">
-                ← Back to Home
-              </Link>
+              <div className="mt-12 pt-8 border-t border-care-gray-200">
+                <Link 
+                  href="/" 
+                  className="inline-flex items-center gap-2 text-care-red font-medium hover:underline"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Back to Home
+                </Link>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
