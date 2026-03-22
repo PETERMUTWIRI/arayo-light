@@ -27,7 +27,7 @@ interface CaregiverApplicationData {
  * Format client request message for WhatsApp
  */
 export function formatClientRequestMessage(data: ClientRequestData): string {
-  const message = `*New Client Request*%0A%0A` +
+  const message = `*New Client Request - ArayoLight*%0A%0A` +
     `*Name:* ${encodeURIComponent(data.name)}%0A` +
     `*Phone:* ${encodeURIComponent(data.phone)}%0A` +
     `*Location:* ${encodeURIComponent(data.location)}%0A` +
@@ -45,7 +45,7 @@ export function formatClientRequestMessage(data: ClientRequestData): string {
  * Format caregiver application message for WhatsApp
  */
 export function formatCaregiverApplicationMessage(data: CaregiverApplicationData): string {
-  let message = `*New Caregiver Application*%0A%0A` +
+  let message = `*New Caregiver Application - ArayoLight*%0A%0A` +
     `*Name:* ${encodeURIComponent(data.name)}%0A` +
     `*Phone:* ${encodeURIComponent(data.phone)}%0A` +
     `*Email:* ${encodeURIComponent(data.email)}%0A` +

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, Heart } from 'lucide-react';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -51,7 +52,7 @@ export default function Navbar() {
               <span className={`font-heading text-lg leading-tight transition-colors ${
                 isScrolled ? 'text-care-navy' : 'text-care-navy'
               }`}>
-                Caring Hands
+                ArayoLight
               </span>
               <span className={`text-xs transition-colors ${
                 isScrolled ? 'text-care-gray-500' : 'text-care-gray-500'

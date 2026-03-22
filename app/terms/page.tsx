@@ -4,8 +4,8 @@ import { FileText, ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'Read the Terms of Service for using Caring Hands Homecare services. Guidelines for care requests and caregiver applications.',
-  keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal'],
+  description: 'Read the Terms of Service for using ArayoLight Homecare services. Guidelines for care requests and caregiver applications.',
+  keywords: ['terms of service', 'terms and conditions', 'user agreement', 'legal', 'ArayoLight'],
 };
 
 export default function TermsOfServicePage() {
@@ -36,20 +36,20 @@ export default function TermsOfServicePage() {
             <div className="card-care p-8 md:p-12">
               <div className="prose prose-care max-w-none">
                 <p className="text-lg text-care-gray-500 mb-8">
-                  Welcome to Caring Hands Homecare. By accessing or using our website and services, 
+                  Welcome to ArayoLight Homecare. By accessing or using our website and services, 
                   you agree to be bound by these Terms of Service. Please read them carefully.
                 </p>
 
                 <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">1. Introduction</h2>
                 <p className="text-care-gray-500 mb-4">
-                  These Terms of Service govern your use of the Caring Hands Homecare website and all 
+                  These Terms of Service govern your use of the ArayoLight Homecare website and all 
                   related services, including care requests and caregiver applications. By accessing 
                   or using our website, you agree to comply with these terms.
                 </p>
 
                 <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">2. Services</h2>
                 <p className="text-care-gray-500 mb-4">
-                  Caring Hands Homecare provides:
+                  ArayoLight Homecare provides:
                 </p>
                 <ul className="list-disc pl-6 mb-6 space-y-2 text-care-gray-500">
                   <li>Homecare service matching for clients seeking care</li>
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
 
                 <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">6. Limitation of Liability</h2>
                 <p className="text-care-gray-500 mb-4">
-                  To the fullest extent permitted by law, Caring Hands Homecare shall not be liable for any 
+                  To the fullest extent permitted by law, ArayoLight Homecare shall not be liable for any 
                   indirect, incidental, special, consequential, or punitive damages arising out of 
                   or relating to your use of our services.
                 </p>
@@ -107,8 +107,8 @@ export default function TermsOfServicePage() {
                   If you have any questions about these Terms of Service, please contact us:
                 </p>
                 <div className="bg-care-gray-50 rounded-xl p-6 mt-4">
-                  <p className="mb-1 font-semibold text-care-navy">Caring Hands Homecare</p>
-                  <p className="text-care-gray-500">Email: <a href="mailto:legal@caringhands.com" className="text-care-red hover:underline">legal@caringhands.com</a></p>
+                  <p className="mb-1 font-semibold text-care-navy">ArayoLight Homecare</p>
+                  <p className="text-care-gray-500">Email: <a href="mailto:legal@arayolight.com" className="text-care-red hover:underline">legal@arayolight.com</a></p>
                   <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
                 </div>
 

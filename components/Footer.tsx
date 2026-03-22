@@ -37,7 +37,7 @@ export default function Footer() {
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <div>
-                <span className="font-heading text-xl block">Caring Hands</span>
+                <span className="font-heading text-xl block">ArayoLight</span>
                 <span className="text-care-gray-400 text-sm">Homecare Services</span>
               </div>
             </Link>
@@ -122,8 +122,8 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-care-gray-300">Email</p>
-                  <a href="mailto:care@caringhands.com" className="text-white hover:text-care-red transition-colors">
-                    care@caringhands.com
+                  <a href="mailto:care@arayolight.com" className="text-white hover:text-care-red transition-colors">
+                    care@arayolight.com
                   </a>
                 </div>
               </li>
@@ -151,7 +151,7 @@ export default function Footer() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-care-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Caring Hands Homecare. All rights reserved.
+              © {new Date().getFullYear()} ArayoLight Homecare. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               {footerLinks.legal.map((link) => (

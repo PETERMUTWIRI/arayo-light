@@ -57,7 +57,7 @@ export default function NotFound() {
         {/* Support Message */}
         <div className="mt-12 pt-8 border-t border-care-gray-200">
           <p className="text-care-gray-400 text-sm">
-            Need help? Contact us at{' '}
+            Need help? Contact ArayoLight at{' '}
             <a href="tel:+1234567890" className="text-care-red hover:underline">
               (123) 456-7890
             </a>

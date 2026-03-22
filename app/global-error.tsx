@@ -24,7 +24,7 @@ export default function GlobalError({
           </div>
           <h1 className="font-heading text-4xl mb-4">Critical Error</h1>
           <p className="text-care-gray-500 mb-8">
-            A critical error has occurred. Please refresh the page or try again later.
+            ArayoLight is experiencing technical difficulties. Please refresh the page or try again later.
           </p>
           <button
             onClick={reset}

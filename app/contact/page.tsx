@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
@@ -25,8 +26,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Email',
     description: 'Send us your questions anytime',
-    action: 'care@caringhands.com',
-    href: 'mailto:care@caringhands.com',
+    action: 'care@arayolight.com',
+    href: 'mailto:care@arayolight.com',
     cta: 'Send Email',
   },
 ];
@@ -48,7 +49,7 @@ export default function ContactPage() {
               <span>Contact Us</span>
             </div>
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
-              Get in Touch
+              Get in Touch with ArayoLight
             </h1>
             <p className="text-care-gray-500 text-lg">
               Have questions about our services? We&apos;re here to help. Reach out to us through 
@@ -90,26 +91,36 @@ export default function ContactPage() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Coverage Info */}
-              <div className="card-care p-6 md:p-8">
-                <h3 className="font-heading text-xl text-care-navy mb-6">Coverage Information</h3>
-                <div className="space-y-4">
-                  {coverageInfo.map((info) => (
-                    <div key={info.title} className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-care-blue/10 flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-care-blue" />
+              {/* Coverage Info with Image */}
+              <div className="card-care overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/contact-office.jpg"
+                    alt="ArayoLight support team ready to help"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-heading text-xl text-care-navy mb-6">Coverage Information</h3>
+                  <div className="space-y-4">
+                    {coverageInfo.map((info) => (
+                      <div key={info.title} className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-care-blue/10 flex items-center justify-center flex-shrink-0">
+                          <info.icon className="w-6 h-6 text-care-blue" />
+                        </div>
+                        <div>
+                          <p className="text-sm text-care-gray-500">{info.title}</p>
+                          <p className="font-medium text-care-navy">{info.value}</p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-sm text-care-gray-500">{info.title}</p>
-                        <p className="font-medium text-care-navy">{info.value}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
 
               {/* Quick Actions */}
-              <div className="card-care p-6 md:p-8">
+              <div className="card-care p-6">
                 <h3 className="font-heading text-xl text-care-navy mb-6">Quick Actions</h3>
                 <div className="space-y-4">
                   <Link
@@ -148,23 +159,35 @@ export default function ContactPage() {
       {/* Response Time Notice */}
       <section className="pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="bg-care-navy rounded-2xl p-8 md:p-12">
-              <Clock className="w-12 h-12 text-care-red mx-auto mb-4" />
-              <h2 className="font-heading text-2xl text-white mb-4">Fast Response Times</h2>
-              <p className="text-white/80 mb-6">
-                We understand that care needs can be urgent. That&apos;s why we prioritize 
-                quick responses to all inquiries.
-              </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div>
-                  <p className="font-heading text-3xl text-care-red">30 min</p>
-                  <p className="text-white/70 text-sm">Average WhatsApp response</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 items-center">
+              <div className="bg-care-navy rounded-2xl p-8 md:p-12">
+                <Clock className="w-12 h-12 text-care-red mb-4" />
+                <h2 className="font-heading text-2xl text-white mb-4">Fast Response Times</h2>
+                <p className="text-white/80 mb-6">
+                  We understand that care needs can be urgent. That&apos;s why ArayoLight prioritizes 
+                  quick responses to all inquiries.
+                </p>
+                <div className="grid grid-cols-2 gap-6">
+                  <div>
+                    <p className="font-heading text-3xl text-care-red">30 min</p>
+                    <p className="text-white/70 text-sm">Average WhatsApp response</p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-3xl text-care-red">24/7</p>
+                    <p className="text-white/70 text-sm">Emergency support available</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-heading text-3xl text-care-red">24/7</p>
-                  <p className="text-white/70 text-sm">Emergency support available</p>
-                </div>
+              </div>
+              
+              {/* Support Image */}
+              <div className="relative rounded-2xl overflow-hidden h-80">
+                <Image
+                  src="/images/support-team.jpg"
+                  alt="ArayoLight customer support team"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>

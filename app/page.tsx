@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Heart, 
   Clock, 
@@ -61,8 +62,9 @@ export default function HomePage() {
                 <span className="text-care-red">You Can Trust</span>
               </h1>
               <p className="text-care-gray-500 text-lg md:text-xl mb-8 leading-relaxed">
-                Compassionate, reliable care for your loved ones in the comfort of their own home. 
-                Serving families across all states with dedication and excellence.
+                ArayoLight provides compassionate, reliable care for your loved ones in the comfort 
+                of their own home. Serving families across all states with dedication and excellence 
+                for over 20 years.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
                 <Link
@@ -97,20 +99,18 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Image/Illustration */}
+            {/* Hero Image */}
             <div className="relative hidden lg:block">
               <div className="relative">
-                {/* Main image placeholder */}
-                <div className="relative rounded-3xl overflow-hidden bg-care-gray-100 aspect-[4/3] shadow-card">
-                  <div className="absolute inset-0 bg-gradient-to-br from-care-blue/20 to-care-red/10" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-32 h-32 rounded-full bg-care-red/10 flex items-center justify-center mx-auto mb-4">
-                        <Heart className="w-16 h-16 text-care-red" />
-                      </div>
-                      <p className="text-care-gray-500 font-medium">Compassionate Care</p>
-                    </div>
-                  </div>
+                {/* Main hero image - caregiver with senior */}
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
+                  <Image
+                    src="/images/hero-caregiver-senior.jpg"
+                    alt="ArayoLight caregiver providing compassionate care to a senior at home"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
                 
                 {/* Floating card - Experience */}
@@ -162,91 +162,132 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Services Grid - Inline to avoid Server->Client component prop issues */}
+          {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Homecare Services */}
-            <Link href="/request-care" className="card-care group block p-6 md:p-8">
-              <div className="w-14 h-14 rounded-xl bg-care-red-50 flex items-center justify-center mb-6 group-hover:bg-care-red transition-colors">
-                <Home className="w-7 h-7 text-care-red group-hover:text-white transition-colors" />
+            <Link href="/request-care" className="card-care group block overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="/images/service-homecare.jpg"
+                  alt="Professional homecare services - caregiver assisting senior at home"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-care-navy group-hover:text-care-red transition-colors">
-                Homecare Services
-              </h3>
-              <p className="text-care-gray-500 text-sm leading-relaxed mb-4">
-                Comprehensive in-home care services tailored to meet the unique needs of each client, ensuring comfort and dignity.
-              </p>
-              <div className="flex items-center gap-2 text-care-red text-sm font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-care-red-50 flex items-center justify-center mb-4 group-hover:bg-care-red transition-colors">
+                  <Home className="w-6 h-6 text-care-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-heading text-xl mb-2 text-care-navy group-hover:text-care-red transition-colors">
+                  Homecare Services
+                </h3>
+                <p className="text-care-gray-500 text-sm leading-relaxed">
+                  Comprehensive in-home care services tailored to meet the unique needs of each client.
+                </p>
               </div>
             </Link>
 
             {/* Medication Reminder */}
-            <Link href="/request-care" className="card-care group block p-6 md:p-8">
-              <div className="w-14 h-14 rounded-xl bg-care-red-50 flex items-center justify-center mb-6 group-hover:bg-care-red transition-colors">
-                <Pill className="w-7 h-7 text-care-red group-hover:text-white transition-colors" />
+            <Link href="/request-care" className="card-care group block overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="/images/service-medication.jpg"
+                  alt="Medication reminder service - caregiver helping with medication management"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-care-navy group-hover:text-care-red transition-colors">
-                Medication Reminder
-              </h3>
-              <p className="text-care-gray-500 text-sm leading-relaxed mb-4">
-                Timely medication reminders to ensure proper adherence to prescribed treatments and health schedules.
-              </p>
-              <div className="flex items-center gap-2 text-care-red text-sm font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-care-red-50 flex items-center justify-center mb-4 group-hover:bg-care-red transition-colors">
+                  <Pill className="w-6 h-6 text-care-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-heading text-xl mb-2 text-care-navy group-hover:text-care-red transition-colors">
+                  Medication Reminder
+                </h3>
+                <p className="text-care-gray-500 text-sm leading-relaxed">
+                  Timely medication reminders to ensure proper adherence to prescribed treatments.
+                </p>
               </div>
             </Link>
 
             {/* Light Housekeeping */}
-            <Link href="/request-care" className="card-care group block p-6 md:p-8">
-              <div className="w-14 h-14 rounded-xl bg-care-red-50 flex items-center justify-center mb-6 group-hover:bg-care-red transition-colors">
-                <Sparkles className="w-7 h-7 text-care-red group-hover:text-white transition-colors" />
+            <Link href="/request-care" className="card-care group block overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="/images/service-housekeeping.jpg"
+                  alt="Light housekeeping service - caregiver maintaining clean living space"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-care-navy group-hover:text-care-red transition-colors">
-                Light Housekeeping
-              </h3>
-              <p className="text-care-gray-500 text-sm leading-relaxed mb-4">
-                Keeping the living space clean, organized, and safe with light housekeeping and maintenance tasks.
-              </p>
-              <div className="flex items-center gap-2 text-care-red text-sm font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-care-red-50 flex items-center justify-center mb-4 group-hover:bg-care-red transition-colors">
+                  <Sparkles className="w-6 h-6 text-care-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-heading text-xl mb-2 text-care-navy group-hover:text-care-red transition-colors">
+                  Light Housekeeping
+                </h3>
+                <p className="text-care-gray-500 text-sm leading-relaxed">
+                  Keeping the living space clean, organized, and safe with light housekeeping.
+                </p>
               </div>
             </Link>
 
             {/* Daily Living Assistance */}
-            <Link href="/request-care" className="card-care group block p-6 md:p-8">
-              <div className="w-14 h-14 rounded-xl bg-care-red-50 flex items-center justify-center mb-6 group-hover:bg-care-red transition-colors">
-                <HandHeart className="w-7 h-7 text-care-red group-hover:text-white transition-colors" />
+            <Link href="/request-care" className="card-care group block overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="/images/service-daily-living.jpg"
+                  alt="Daily living assistance - caregiver helping senior with daily activities"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-care-navy group-hover:text-care-red transition-colors">
-                Daily Living Assistance
-              </h3>
-              <p className="text-care-gray-500 text-sm leading-relaxed mb-4">
-                Support with daily activities like bathing, dressing, meal preparation, and mobility assistance.
-              </p>
-              <div className="flex items-center gap-2 text-care-red text-sm font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-care-red-50 flex items-center justify-center mb-4 group-hover:bg-care-red transition-colors">
+                  <HandHeart className="w-6 h-6 text-care-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-heading text-xl mb-2 text-care-navy group-hover:text-care-red transition-colors">
+                  Daily Living Assistance
+                </h3>
+                <p className="text-care-gray-500 text-sm leading-relaxed">
+                  Support with bathing, dressing, meal preparation, and mobility assistance.
+                </p>
               </div>
             </Link>
 
             {/* Companionship */}
-            <Link href="/request-care" className="card-care group block p-6 md:p-8">
-              <div className="w-14 h-14 rounded-xl bg-care-red-50 flex items-center justify-center mb-6 group-hover:bg-care-red transition-colors">
-                <UserCircle className="w-7 h-7 text-care-red group-hover:text-white transition-colors" />
+            <Link href="/request-care" className="card-care group block overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="/images/service-companionship.jpg"
+                  alt="Companionship service - caregiver and senior enjoying conversation"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <h3 className="font-heading text-xl mb-3 text-care-navy group-hover:text-care-red transition-colors">
-                Companionship
-              </h3>
-              <p className="text-care-gray-500 text-sm leading-relaxed mb-4">
-                Meaningful companionship and social engagement to prevent isolation and promote mental well-being.
+              <div className="p-6">
+                <div className="w-12 h-12 rounded-xl bg-care-red-50 flex items-center justify-center mb-4 group-hover:bg-care-red transition-colors">
+                  <UserCircle className="w-6 h-6 text-care-red group-hover:text-white transition-colors" />
+                </div>
+                <h3 className="font-heading text-xl mb-2 text-care-navy group-hover:text-care-red transition-colors">
+                  Companionship
+                </h3>
+                <p className="text-care-gray-500 text-sm leading-relaxed">
+                  Meaningful companionship and social engagement to prevent isolation.
+                </p>
+              </div>
+            </Link>
+
+            {/* View All Services Card */}
+            <Link href="/request-care" className="card-care group flex flex-col items-center justify-center p-8 bg-care-navy text-white hover:bg-care-red transition-colors">
+              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
+                <ArrowRight className="w-8 h-8" />
+              </div>
+              <h3 className="font-heading text-xl mb-2">View All Services</h3>
+              <p className="text-white/70 text-sm text-center">
+                Explore our complete range of homecare solutions
               </p>
-              <div className="flex items-center gap-2 text-care-red text-sm font-medium">
-                <span>Learn more</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
             </Link>
           </div>
         </div>
@@ -265,36 +306,89 @@ export default function HomePage() {
               How It Works
             </h2>
             <p className="text-care-gray-500">
-              Getting started with our homecare services is easy. Three simple steps to quality care.
+              Getting started with ArayoLight homecare services is easy. Three simple steps to quality care.
             </p>
           </div>
 
-          {/* Steps */}
+          {/* Steps with Images */}
           <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={step.number} className="relative">
-                <div className="card-care p-8 text-center h-full">
-                  <div className="w-16 h-16 rounded-2xl bg-care-red flex items-center justify-center mx-auto mb-6">
-                    {index === 0 && <CheckCircle className="w-8 h-8 text-white" />}
-                    {index === 1 && <Users className="w-8 h-8 text-white" />}
-                    {index === 2 && <Heart className="w-8 h-8 text-white" />}
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="card-care overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/step-1-submit.jpg"
+                    alt="Submit care request - family filling out form"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <span className="text-care-red/30 font-heading text-4xl absolute top-4 right-4">01</span>
+                  <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 border-4 border-white">
+                    <CheckCircle className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-care-red/30 font-heading text-5xl absolute top-4 right-4">
-                    {step.number}
-                  </span>
-                  <h3 className="font-heading text-xl text-care-navy mb-3">
-                    {step.title}
-                  </h3>
+                  <h3 className="font-heading text-xl text-care-navy mb-2">Submit Request</h3>
                   <p className="text-care-gray-500 text-sm">
-                    {step.description}
+                    Fill out our simple form or call us to tell us about your care needs.
                   </p>
                 </div>
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-care-gray-200" />
-                )}
               </div>
-            ))}
+              {steps.length > 1 && (
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-care-gray-200" />
+              )}
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="card-care overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/step-2-match.jpg"
+                    alt="Caregiver matching - professional team selecting the right caregiver"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <span className="text-care-red/30 font-heading text-4xl absolute top-4 right-4">02</span>
+                  <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 border-4 border-white">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-heading text-xl text-care-navy mb-2">We Match You</h3>
+                  <p className="text-care-gray-500 text-sm">
+                    Our team carefully matches you with a qualified, compassionate caregiver.
+                  </p>
+                </div>
+              </div>
+              {steps.length > 2 && (
+                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-care-gray-200" />
+              )}
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="card-care overflow-hidden">
+                <div className="relative h-48">
+                  <Image
+                    src="/images/step-3-care.jpg"
+                    alt="Care begins - caregiver providing in-home care to senior"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 text-center">
+                  <span className="text-care-red/30 font-heading text-4xl absolute top-4 right-4">03</span>
+                  <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center mx-auto mb-4 -mt-12 relative z-10 border-4 border-white">
+                    <Heart className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="font-heading text-xl text-care-navy mb-2">Care Begins</h3>
+                  <p className="text-care-gray-500 text-sm">
+                    Your matched caregiver begins providing personalized care in your home.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -307,14 +401,14 @@ export default function HomePage() {
             <div>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
                 <Shield className="w-4 h-4" />
-                Why Choose Us
+                Why Choose ArayoLight
               </span>
               <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
                 Trusted Care for Over 20 Years
               </h2>
               <p className="text-white/80 text-lg mb-8 leading-relaxed">
                 We understand that choosing a caregiver for your loved one is one of the most 
-                important decisions you&apos;ll make. That&apos;s why we&apos;ve built our reputation on 
+                important decisions you&apos;ll make. That&apos;s why ArayoLight has built its reputation on 
                 trust, compassion, and excellence in care.
               </p>
               
@@ -334,48 +428,100 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Trust Visual */}
+            {/* Trust Image */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden bg-white/5 p-8">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-care-red flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading text-lg text-white mb-1">Licensed & Insured</h4>
-                      <p className="text-white/70 text-sm">Fully licensed and insured for your peace of mind.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-care-red flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading text-lg text-white mb-1">Background Checked</h4>
-                      <p className="text-white/70 text-sm">All caregivers undergo thorough background checks.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-care-red flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading text-lg text-white mb-1">Personalized Care Plans</h4>
-                      <p className="text-white/70 text-sm">Tailored care plans to meet individual needs.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-care-red flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading text-lg text-white mb-1">Continuous Support</h4>
-                      <p className="text-white/70 text-sm">24/7 support team always available to help.</p>
-                    </div>
-                  </div>
+              <div className="rounded-3xl overflow-hidden">
+                <Image
+                  src="/images/trust-team.jpg"
+                  alt="ArayoLight professional caregiving team"
+                  width={600}
+                  height={500}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding bg-white">
+        <div className="container-care mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-4">
+              <Heart className="w-4 h-4" />
+              Testimonials
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              What Families Say About ArayoLight
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="card-care p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/testimonial-1.jpg"
+                    alt="Happy family client"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-heading text-care-navy">Sarah Johnson</p>
+                  <p className="text-care-gray-500 text-sm">Daughter of Client</p>
                 </div>
               </div>
+              <p className="text-care-gray-500 text-sm italic">
+                &ldquo;ArayoLight has been a blessing for our family. The caregiver is compassionate, 
+                reliable, and truly cares about my mother&apos;s well-being.&rdquo;
+              </p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="card-care p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/testimonial-2.jpg"
+                    alt="Satisfied family member"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-heading text-care-navy">Michael Chen</p>
+                  <p className="text-care-gray-500 text-sm">Son of Client</p>
+                </div>
+              </div>
+              <p className="text-care-gray-500 text-sm italic">
+                &ldquo;The peace of mind ArayoLight provides is priceless. Knowing my father is in 
+                good hands allows me to focus on my work without worry.&rdquo;
+              </p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="card-care p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                  <Image
+                    src="/images/testimonial-3.jpg"
+                    alt="Grateful family member"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-heading text-care-navy">Emily Rodriguez</p>
+                  <p className="text-care-gray-500 text-sm">Daughter of Client</p>
+                </div>
+              </div>
+              <p className="text-care-gray-500 text-sm italic">
+                &ldquo;Professional, caring, and responsive. ArayoLight exceeded our expectations 
+                in every way. Highly recommend their services!&rdquo;
+              </p>
             </div>
           </div>
         </div>

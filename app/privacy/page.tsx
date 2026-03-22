@@ -4,8 +4,8 @@ import { Shield, ArrowLeft } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Learn how Caring Hands Homecare collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
-  keywords: ['privacy policy', 'data protection', 'personal information', 'homecare privacy'],
+  description: 'Learn how ArayoLight Homecare collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+  keywords: ['privacy policy', 'data protection', 'personal information', 'homecare privacy', 'ArayoLight'],
 };
 
 export default function PrivacyPolicyPage() {
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
             <div className="card-care p-8 md:p-12">
               <div className="prose prose-care max-w-none">
                 <p className="text-lg text-care-gray-500 mb-8">
-                  Caring Hands Homecare is committed to protecting your privacy. This Privacy Policy explains 
+                  ArayoLight Homecare is committed to protecting your privacy. This Privacy Policy explains 
                   how we collect, use, and safeguard your personal information when you use our website 
                   to request care services or apply as a caregiver.
                 </p>
@@ -114,8 +114,8 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about this Privacy Policy, please contact us:
                 </p>
                 <div className="bg-care-gray-50 rounded-xl p-6 mt-4">
-                  <p className="mb-1 font-semibold text-care-navy">Caring Hands Homecare</p>
-                  <p className="text-care-gray-500">Email: <a href="mailto:privacy@caringhands.com" className="text-care-red hover:underline">privacy@caringhands.com</a></p>
+                  <p className="mb-1 font-semibold text-care-navy">ArayoLight Homecare</p>
+                  <p className="text-care-gray-500">Email: <a href="mailto:privacy@arayolight.com" className="text-care-red hover:underline">privacy@arayolight.com</a></p>
                   <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
                 </div>
               </div>

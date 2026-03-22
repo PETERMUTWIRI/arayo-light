@@ -7,7 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
 
 // ==========================================
-// CARING HANDS - PROFESSIONAL HOMECARE
+// ARAYOLIGHT - PROFESSIONAL HOMECARE
 // Root Layout with SEO Optimization
 // ==========================================
 
@@ -25,8 +25,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   // Core title template
   title: {
-    default: "Caring Hands | Professional Homecare Services",
-    template: "%s | Caring Hands Homecare",
+    default: "ArayoLight | Professional Homecare Services",
+    template: "%s | ArayoLight Homecare",
   },
   
   // Primary description
@@ -48,12 +48,13 @@ export const metadata: Metadata = {
     'USA homecare',
     'professional caregivers',
     'licensed homecare',
+    'ArayoLight',
   ],
   
   // Authors and ownership
-  authors: [{ name: "Caring Hands Homecare" }],
-  creator: "Caring Hands Homecare",
-  publisher: "Caring Hands Homecare",
+  authors: [{ name: "ArayoLight Homecare" }],
+  creator: "ArayoLight Homecare",
+  publisher: "ArayoLight Homecare",
   
   // Format detection
   formatDetection: {
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   },
   
   // Canonical URL base
-  metadataBase: new URL('https://www.caringhandshomecare.com'),
+  metadataBase: new URL('https://www.arayolight.com'),
   
   // Alternates
   alternates: {
@@ -79,18 +80,18 @@ export const metadata: Metadata = {
   
   // Open Graph - Social sharing
   openGraph: {
-    title: "Caring Hands | Professional Homecare Services",
+    title: "ArayoLight | Professional Homecare Services",
     description: "Trusted homecare services for your loved ones. 20+ years of experience serving families across all states.",
-    url: 'https://www.caringhandshomecare.com',
-    siteName: "Caring Hands Homecare",
+    url: 'https://www.arayolight.com',
+    siteName: "ArayoLight Homecare",
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Caring Hands - Professional Homecare Services',
+        alt: 'ArayoLight - Professional Homecare Services',
       },
     ],
   },
@@ -98,11 +99,11 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: 'summary_large_image',
-    title: "Caring Hands | Professional Homecare Services",
+    title: "ArayoLight | Professional Homecare Services",
     description: "Trusted homecare services for your loved ones. Serving all states with compassion and professionalism.",
-    images: ['/og-image.jpg'],
-    creator: '@CaringHandsCare',
-    site: '@CaringHandsCare',
+    images: ['/images/og-image.jpg'],
+    creator: '@ArayoLight',
+    site: '@ArayoLight',
   },
   
   // Robots
@@ -165,12 +166,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'LocalBusiness',
-              name: 'Caring Hands Homecare',
+              name: 'ArayoLight Homecare',
               description: 'Professional homecare services serving all states across the USA. 20+ years of experience providing compassionate care for seniors and individuals needing assistance.',
-              url: 'https://www.caringhandshomecare.com',
+              url: 'https://www.arayolight.com',
               telephone: '+1-123-456-7890',
-              email: 'care@caringhandshomecare.com',
-              image: 'https://www.caringhandshomecare.com/logo.png',
+              email: 'care@arayolight.com',
+              image: 'https://www.arayolight.com/images/logo.png',
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'US',
@@ -190,9 +191,9 @@ export default function RootLayout({
               priceRange: '$$',
               openingHours: '24/7',
               sameAs: [
-                'https://facebook.com/caringhandshomecare',
-                'https://instagram.com/caringhandshomecare',
-                'https://linkedin.com/company/caringhandshomecare',
+                'https://facebook.com/arayolight',
+                'https://instagram.com/arayolight',
+                'https://linkedin.com/company/arayolight',
               ],
             }),
           }}
@@ -208,7 +209,7 @@ export default function RootLayout({
               serviceType: 'Homecare Services',
               provider: {
                 '@type': 'LocalBusiness',
-                name: 'Caring Hands Homecare',
+                name: 'ArayoLight Homecare',
               },
               areaServed: {
                 '@type': 'Country',

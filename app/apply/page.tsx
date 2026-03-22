@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Heart, ArrowRight, CheckCircle, User, Phone, Mail, Award, FileUp, Briefcase, FileText } from 'lucide-react';
 import { submitCaregiverApplication, generateCVMailto } from '@/lib/whatsapp';
 
@@ -51,7 +52,7 @@ export default function ApplyPage() {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        recipientEmail: 'careers@caringhands.com',
+        recipientEmail: 'careers@arayolight.com',
       });
       window.open(mailtoLink, '_blank');
     }
@@ -144,7 +145,7 @@ export default function ApplyPage() {
               <span>Join Our Team</span>
             </div>
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
-              Apply to Be a Caregiver
+              Apply to Be an ArayoLight Caregiver
             </h1>
             <p className="text-care-gray-500 text-lg">
               Join our team of compassionate caregivers. Fill out the form below and we&apos;ll connect with you via WhatsApp.
@@ -156,7 +157,8 @@ export default function ApplyPage() {
       {/* Form Section */}
       <section className="pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Form */}
             <div className="card-care p-6 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
@@ -352,17 +354,62 @@ export default function ApplyPage() {
               </form>
             </div>
 
-            {/* Info Cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <div className="card-care p-6">
-                <Heart className="w-8 h-8 text-care-red mb-3" />
-                <h3 className="font-heading text-care-navy mb-1">Why Join Us?</h3>
-                <p className="text-care-gray-500 text-sm">Competitive pay, flexible schedules, and ongoing training.</p>
+            {/* Side Content with Images */}
+            <div className="space-y-6">
+              {/* Hero Image */}
+              <div className="relative rounded-2xl overflow-hidden h-64">
+                <Image
+                  src="/images/caregiver-team.jpg"
+                  alt="ArayoLight professional caregiving team"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="card-care p-6">
-                <Award className="w-8 h-8 text-care-red mb-3" />
-                <h3 className="font-heading text-care-navy mb-1">Requirements</h3>
-                <p className="text-care-gray-500 text-sm">Background check, references, and a passion for helping others.</p>
+
+              {/* Benefits Cards */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card-care p-6">
+                  <Heart className="w-8 h-8 text-care-red mb-3" />
+                  <h3 className="font-heading text-care-navy mb-1">Why Join Us?</h3>
+                  <p className="text-care-gray-500 text-sm">Competitive pay, flexible schedules, and ongoing training.</p>
+                </div>
+                <div className="card-care p-6">
+                  <Award className="w-8 h-8 text-care-red mb-3" />
+                  <h3 className="font-heading text-care-navy mb-1">Requirements</h3>
+                  <p className="text-care-gray-500 text-sm">Background check, references, and passion for helping others.</p>
+                </div>
+              </div>
+
+              {/* Training Image */}
+              <div className="relative rounded-2xl overflow-hidden h-48">
+                <Image
+                  src="/images/caregiver-training.jpg"
+                  alt="ArayoLight caregiver training program"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
+                  <p className="text-white font-medium">Comprehensive training provided</p>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="card-care p-6 bg-care-navy text-white">
+                <h3 className="font-heading text-lg mb-4">Join 5,000+ ArayoLight Caregivers</h3>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <p className="font-heading text-2xl text-care-red">$25</p>
+                    <p className="text-white/70 text-xs">Avg. Hourly Rate</p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl text-care-red">Flexible</p>
+                    <p className="text-white/70 text-xs">Scheduling</p>
+                  </div>
+                  <div>
+                    <p className="font-heading text-2xl text-care-red">50</p>
+                    <p className="text-white/70 text-xs">States</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Heart, ArrowRight, CheckCircle, MapPin, Clock, User, Phone, FileText, Calendar } from 'lucide-react';
 import { submitClientRequest } from '@/lib/whatsapp';
 
@@ -118,7 +119,8 @@ export default function RequestCarePage() {
       {/* Form Section */}
       <section className="pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Form */}
             <div className="card-care p-6 md:p-10">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
@@ -258,17 +260,43 @@ export default function RequestCarePage() {
               </form>
             </div>
 
-            {/* Info Cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              <div className="card-care p-6">
-                <Clock className="w-8 h-8 text-care-red mb-3" />
-                <h3 className="font-heading text-care-navy mb-1">Quick Response</h3>
-                <p className="text-care-gray-500 text-sm">We typically respond within 30 minutes during business hours.</p>
+            {/* Side Content with Images */}
+            <div className="space-y-6">
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden h-64">
+                <Image
+                  src="/images/request-care-hero.jpg"
+                  alt="Compassionate caregiver providing care to senior"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <div className="card-care p-6">
-                <Heart className="w-8 h-8 text-care-red mb-3" />
-                <h3 className="font-heading text-care-navy mb-1">No Obligation</h3>
-                <p className="text-care-gray-500 text-sm">Free consultation to discuss your care needs.</p>
+
+              {/* Info Cards */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="card-care p-6">
+                  <Clock className="w-8 h-8 text-care-red mb-3" />
+                  <h3 className="font-heading text-care-navy mb-1">Quick Response</h3>
+                  <p className="text-care-gray-500 text-sm">We typically respond within 30 minutes during business hours.</p>
+                </div>
+                <div className="card-care p-6">
+                  <Heart className="w-8 h-8 text-care-red mb-3" />
+                  <h3 className="font-heading text-care-navy mb-1">No Obligation</h3>
+                  <p className="text-care-gray-500 text-sm">Free consultation to discuss your care needs.</p>
+                </div>
+              </div>
+
+              {/* Trust Image */}
+              <div className="relative rounded-2xl overflow-hidden h-48">
+                <Image
+                  src="/images/caregiver-family.jpg"
+                  alt="ArayoLight caregiver with happy family"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
+                  <p className="text-white font-medium">Trusted by 10,000+ families nationwide</p>
+                </div>
               </div>
             </div>
           </div>

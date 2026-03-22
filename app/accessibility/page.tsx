@@ -4,8 +4,8 @@ import { Accessibility, ArrowLeft, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement',
-  description: 'Our commitment to making homecare services accessible to everyone. Learn about our accessibility features and WCAG compliance.',
-  keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design'],
+  description: 'Our commitment to making ArayoLight homecare services accessible to everyone. Learn about our accessibility features and WCAG compliance.',
+  keywords: ['accessibility', 'WCAG', 'screen reader', 'keyboard navigation', 'inclusive design', 'ArayoLight'],
 };
 
 export default function AccessibilityPage() {
@@ -36,7 +36,7 @@ export default function AccessibilityPage() {
             <div className="card-care p-8 md:p-12">
               <div className="prose prose-care max-w-none">
                 <p className="text-lg text-care-gray-500 mb-8">
-                  Caring Hands Homecare is committed to ensuring digital accessibility for people with 
+                  ArayoLight Homecare is committed to ensuring digital accessibility for people with 
                   disabilities. We continually work to improve the user experience for all visitors 
                   to our website.
                 </p>
@@ -50,7 +50,7 @@ export default function AccessibilityPage() {
 
                 <h2 className="font-heading text-xl text-care-navy mt-8 mb-4">Conformance Status</h2>
                 <p className="text-care-gray-500 mb-4">
-                  Caring Hands Homecare strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
+                  ArayoLight Homecare strives to conform to <strong>WCAG 2.1 Level AA</strong> standards. 
                   We are continuously working to improve the accessibility of our website to ensure 
                   all users can access our content.
                 </p>
@@ -89,7 +89,7 @@ export default function AccessibilityPage() {
                 </p>
                 
                 <div className="bg-care-gray-50 rounded-xl p-6 mb-6">
-                  <p className="text-care-gray-500">Email: <a href="mailto:accessibility@caringhands.com" className="text-care-red hover:underline">accessibility@caringhands.com</a></p>
+                  <p className="text-care-gray-500">Email: <a href="mailto:accessibility@arayolight.com" className="text-care-red hover:underline">accessibility@arayolight.com</a></p>
                   <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
                 </div>
 
@@ -113,7 +113,7 @@ export default function AccessibilityPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-care-blue flex-shrink-0 mt-0.5" />
                     <p className="text-care-navy font-medium">
-                      Quality care should be accessible to everyone. We are committed to making our 
+                      Quality care should be accessible to everyone. ArayoLight is committed to making our 
                       website and services accessible to all users, regardless of ability.
                     </p>
                   </div>

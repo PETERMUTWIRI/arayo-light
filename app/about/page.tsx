@@ -26,7 +26,7 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2004', event: 'Caring Hands was founded with a mission to provide quality homecare' },
+  { year: '2004', event: 'ArayoLight was founded with a mission to provide quality homecare' },
   { year: '2010', event: 'Expanded services to cover all 50 states' },
   { year: '2015', event: 'Reached 5,000 families served milestone' },
   { year: '2020', event: 'Launched specialized dementia and Alzheimer\'s care programs' },
@@ -56,7 +56,7 @@ export default function AboutPage() {
               <span className="text-care-red">Compassionate Care</span>
             </h1>
             <p className="text-care-gray-500 text-lg leading-relaxed">
-              For over 20 years, Caring Hands has been a trusted partner for families seeking 
+              For over 20 years, ArayoLight has been a trusted partner for families seeking 
               quality homecare services. Our mission is simple: to help seniors and individuals 
               with care needs live with dignity, comfort, and independence in their own homes.
             </p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-care-gray-500 leading-relaxed">
                 <p>
-                  Caring Hands began with a simple belief: everyone deserves to age with dignity 
+                  ArayoLight began with a simple belief: everyone deserves to age with dignity 
                   in the comfort of their own home. Founded in 2004 by a registered nurse who 
                   saw the need for more personalized, compassionate care options, we&apos;ve grown 
                   from a small local service to a nationwide network of dedicated caregivers.
@@ -110,23 +110,26 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Visual */}
+            {/* Story Image */}
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden bg-white p-8 shadow-card">
-                <h3 className="font-heading text-xl text-care-navy mb-6">Our Journey</h3>
-                <div className="space-y-6">
-                  {milestones.map((milestone, index) => (
-                    <div key={milestone.year} className="flex gap-4">
-                      <div className="flex flex-col items-center">
-                        <div className="w-3 h-3 rounded-full bg-care-red" />
-                        {index < milestones.length - 1 && (
-                          <div className="w-0.5 h-full bg-care-gray-200 mt-2" />
-                        )}
-                      </div>
-                      <div className="pb-6">
-                        <span className="font-heading text-care-red">{milestone.year}</span>
-                        <p className="text-care-gray-500 text-sm mt-1">{milestone.event}</p>
-                      </div>
+              <div className="rounded-3xl overflow-hidden">
+                <Image
+                  src="/images/about-story.jpg"
+                  alt="ArayoLight founders and early team"
+                  width={600}
+                  height={500}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              
+              {/* Timeline Card */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-card max-w-xs">
+                <h3 className="font-heading text-lg text-care-navy mb-4">Our Journey</h3>
+                <div className="space-y-3">
+                  {milestones.slice(0, 3).map((milestone) => (
+                    <div key={milestone.year} className="flex gap-3">
+                      <span className="font-heading text-care-red text-sm">{milestone.year}</span>
+                      <p className="text-care-gray-500 text-xs">{milestone.event}</p>
                     </div>
                   ))}
                 </div>
@@ -173,8 +176,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Team Section */}
       <section className="section-padding bg-white">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-blue/10 text-care-blue text-sm font-medium mb-4">
+              <Users className="w-4 h-4" />
+              Our Team
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              Meet the ArayoLight Leadership
+            </h2>
+            <p className="text-care-gray-500">
+              Dedicated professionals committed to delivering excellence in homecare.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Team Member 1 */}
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                <Image
+                  src="/images/team-founder.jpg"
+                  alt="Founder & CEO of ArayoLight"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="font-heading text-xl text-care-navy">Dr. Sarah Mitchell</h3>
+              <p className="text-care-red text-sm mb-2">Founder & CEO</p>
+              <p className="text-care-gray-500 text-sm">Registered Nurse with 25+ years of healthcare experience</p>
+            </div>
+
+            {/* Team Member 2 */}
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                <Image
+                  src="/images/team-director.jpg"
+                  alt="Care Director at ArayoLight"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="font-heading text-xl text-care-navy">James Thompson</h3>
+              <p className="text-care-red text-sm mb-2">Care Director</p>
+              <p className="text-care-gray-500 text-sm">Expert in caregiver training and quality assurance</p>
+            </div>
+
+            {/* Team Member 3 */}
+            <div className="text-center">
+              <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                <Image
+                  src="/images/team-operations.jpg"
+                  alt="Operations Manager at ArayoLight"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="font-heading text-xl text-care-navy">Maria Garcia</h3>
+              <p className="text-care-red text-sm mb-2">Operations Manager</p>
+              <p className="text-care-gray-500 text-sm">Ensuring seamless care coordination nationwide</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="section-padding bg-care-gray-50">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -207,41 +275,53 @@ export default function AboutPage() {
       </section>
 
       {/* Coverage Section */}
-      <section className="section-padding bg-care-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="card-care p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-care-red flex items-center justify-center">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="font-heading text-2xl md:text-3xl text-care-navy">Nationwide Coverage</h2>
-                  <p className="text-care-gray-500">Serving All States Across the USA</p>
-                </div>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Coverage Image */}
+              <div className="relative rounded-3xl overflow-hidden h-80">
+                <Image
+                  src="/images/nationwide-coverage.jpg"
+                  alt="ArayoLight nationwide coverage map - serving all US states"
+                  fill
+                  className="object-cover"
+                />
               </div>
-              <p className="text-care-gray-500 leading-relaxed mb-6">
-                No matter where you are in the United States, Caring Hands is ready to help. 
-                Our extensive network of caregivers spans all 50 states, ensuring that quality 
-                homecare is always within reach. From major metropolitan areas to rural communities, 
-                we&apos;re committed to making professional care accessible to everyone who needs it.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
-                  <span className="text-care-navy">All 50 states covered</span>
+              
+              {/* Coverage Content */}
+              <div className="card-care p-8">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-care-red flex items-center justify-center">
+                    <MapPin className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="font-heading text-2xl text-care-navy">Nationwide Coverage</h2>
+                    <p className="text-care-gray-500">Serving All States Across the USA</p>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
-                  <span className="text-care-navy">Urban & rural areas</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
-                  <span className="text-care-navy">Same-day service available</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
-                  <span className="text-care-navy">Local caregivers assigned</span>
+                <p className="text-care-gray-500 leading-relaxed mb-6">
+                  No matter where you are in the United States, ArayoLight is ready to help. 
+                  Our extensive network of caregivers spans all 50 states, ensuring that quality 
+                  homecare is always within reach.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                    <span className="text-care-navy text-sm">All 50 states covered</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                    <span className="text-care-navy text-sm">Urban & rural areas</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                    <span className="text-care-navy text-sm">Same-day service available</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-care-red flex-shrink-0" />
+                    <span className="text-care-navy text-sm">Local caregivers assigned</span>
+                  </div>
                 </div>
               </div>
             </div>
