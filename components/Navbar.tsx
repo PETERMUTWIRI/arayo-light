@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-14 h-14">
+            <div className="relative w-20 h-20">
               <Image
                 src="/images/Arayolight-logo.jpeg"
                 alt="ArayoLight Homecare Services"

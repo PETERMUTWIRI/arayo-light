@@ -203,7 +203,7 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-heading text-xl text-care-navy">Dr. Sarah Mitchell</h3>
+              <h3 className="font-heading text-xl text-care-navy">Rahab Kinity</h3>
               <p className="text-care-red text-sm mb-2">Founder & CEO</p>
               <p className="text-care-gray-500 text-sm">Registered Nurse with 25+ years of healthcare experience</p>
             </div>

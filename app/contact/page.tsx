@@ -9,8 +9,8 @@ const contactMethods = [
     icon: Phone,
     title: 'Phone',
     description: 'Speak directly with our care coordinators',
-    action: '(123) 456-7890',
-    href: 'tel:+1234567890',
+    action: '(984) 256-5837',
+    href: 'tel:+19842565837',
     cta: 'Call Now',
   },
   {
