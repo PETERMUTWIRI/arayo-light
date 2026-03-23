@@ -51,10 +51,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-lg leading-tight text-white">
+              <span className="font-heading text-xl leading-tight text-white font-bold drop-shadow-sm">
                 ArayoLight
               </span>
-              <span className="text-xs text-white/80">
+              <span className="text-sm text-white font-medium">
                 Homecare Services
               </span>
             </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+19842565837"
               className="flex items-center gap-2 text-sm font-medium text-white hover:text-white/80 transition-colors"
             >
               <Phone className="w-4 h-4" />

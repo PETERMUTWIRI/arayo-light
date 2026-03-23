@@ -109,7 +109,7 @@ export default function TermsOfServicePage() {
                 <div className="bg-care-gray-50 rounded-xl p-6 mt-4">
                   <p className="mb-1 font-semibold text-care-navy">ArayoLight Homecare</p>
                   <p className="text-care-gray-500">Email: <a href="mailto:legal@arayolight.com" className="text-care-red hover:underline">legal@arayolight.com</a></p>
-                  <p className="text-care-gray-500">Phone: <a href="tel:+1234567890" className="text-care-red hover:underline">(123) 456-7890</a></p>
+                  <p className="text-care-gray-500">Phone: <a href="tel:+19842565837" className="text-care-red hover:underline">(984) 256-5837</a></p>
                 </div>
 
                 <p className="mt-8 text-sm text-care-gray-400">

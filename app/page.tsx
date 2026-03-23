@@ -394,19 +394,19 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="section-padding bg-care-red">
+      <section className="section-padding bg-white">
         <div className="container-care mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Trust Content */}
             <div>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
                 <Shield className="w-4 h-4" />
                 Why Choose ArayoLight
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6">
                 Trusted Care for Over 20 Years
               </h2>
-              <p className="text-white/80 text-lg mb-8 leading-relaxed">
+              <p className="text-care-gray-500 text-lg mb-8 leading-relaxed">
                 We understand that choosing a caregiver for your loved one is one of the most 
                 important decisions you&apos;ll make. That&apos;s why ArayoLight has built its reputation on 
                 trust, compassion, and excellence in care.
@@ -416,12 +416,12 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-6">
                 {trustIndicators.map((indicator) => (
                   <div key={indicator.label} className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-xl bg-care-red/10 flex items-center justify-center">
                       <indicator.icon className="w-7 h-7 text-care-red" />
                     </div>
                     <div>
-                      <p className="font-heading text-2xl text-white">{indicator.value}</p>
-                      <p className="text-white/70 text-sm">{indicator.label}</p>
+                      <p className="font-heading text-2xl text-care-navy">{indicator.value}</p>
+                      <p className="text-care-gray-500 text-sm">{indicator.label}</p>
                     </div>
                   </div>
                 ))}

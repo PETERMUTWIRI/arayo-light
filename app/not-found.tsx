@@ -58,8 +58,8 @@ export default function NotFound() {
         <div className="mt-12 pt-8 border-t border-care-gray-200">
           <p className="text-care-gray-400 text-sm">
             Need help? Contact ArayoLight at{' '}
-            <a href="tel:+1234567890" className="text-care-red hover:underline">
-              (123) 456-7890
+            <a href="tel:+19842565837" className="text-care-red hover:underline">
+              (984) 256-5837
             </a>
           </p>
         </div>
