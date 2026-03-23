@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Heart, Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -33,8 +34,13 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-red flex items-center justify-center">
-                <Heart className="w-6 h-6 text-white" />
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/images/Arayolight-logo.jpeg"
+                  alt="ArayoLight Homecare Services"
+                  fill
+                  className="object-contain rounded-lg"
+                />
               </div>
               <div>
                 <span className="font-heading text-xl block">ArayoLight</span>

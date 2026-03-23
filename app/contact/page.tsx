@@ -95,7 +95,7 @@ export default function ContactPage() {
               <div className="card-care overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/images/contact-office.jpg"
+                    src="/images/contact-office.jpeg"
                     alt="ArayoLight support team ready to help"
                     fill
                     className="object-cover"
@@ -183,7 +183,7 @@ export default function ContactPage() {
               {/* Support Image */}
               <div className="relative rounded-2xl overflow-hidden h-80">
                 <Image
-                  src="/images/support-team.jpg"
+                  src="/images/support-team.jpeg"
                   alt="ArayoLight customer support team"
                   fill
                   className="object-cover"

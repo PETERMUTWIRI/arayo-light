@@ -44,9 +44,15 @@ export default function Navbar() {
       <nav className="container-care mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-red flex items-center justify-center">
-              <Heart className="w-5 h-5 text-white" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10">
+              <Image
+                src="/images/Arayolight-logo.jpeg"
+                alt="ArayoLight Homecare Services"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className={`font-heading text-lg leading-tight transition-colors ${

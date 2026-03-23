@@ -265,7 +265,7 @@ export default function RequestCarePage() {
               {/* Image */}
               <div className="relative rounded-2xl overflow-hidden h-64">
                 <Image
-                  src="/images/request-care-hero.jpg"
+                  src="/images/request-care-hero.jpeg"
                   alt="Compassionate caregiver providing care to senior"
                   fill
                   className="object-cover"
@@ -289,7 +289,7 @@ export default function RequestCarePage() {
               {/* Trust Image */}
               <div className="relative rounded-2xl overflow-hidden h-48">
                 <Image
-                  src="/images/caregiver-family.jpg"
+                  src="/images/caregiver-family.jpeg"
                   alt="ArayoLight caregiver with happy family"
                   fill
                   className="object-cover"

@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/images/about-story.jpg"
+                  src="/images/about-story.jpeg"
                   alt="ArayoLight founders and early team"
                   width={600}
                   height={500}
@@ -197,7 +197,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team-founder.jpg"
+                  src="/images/team-founder.jpeg"
                   alt="Founder & CEO of ArayoLight"
                   fill
                   className="object-cover"
@@ -212,7 +212,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team-director.jpg"
+                  src="/images/team-director.jpeg"
                   alt="Care Director at ArayoLight"
                   fill
                   className="object-cover"
@@ -227,7 +227,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
                 <Image
-                  src="/images/team-operations.jpg"
+                  src="/images/team-operations.jpeg"
                   alt="Operations Manager at ArayoLight"
                   fill
                   className="object-cover"
@@ -282,7 +282,7 @@ export default function AboutPage() {
               {/* Coverage Image */}
               <div className="relative rounded-3xl overflow-hidden h-80">
                 <Image
-                  src="/images/nationwide-coverage.jpg"
+                  src="/images/nationwide-coverage.jpeg"
                   alt="ArayoLight nationwide coverage map - serving all US states"
                   fill
                   className="object-cover"

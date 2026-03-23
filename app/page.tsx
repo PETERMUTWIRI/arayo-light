@@ -105,7 +105,7 @@ export default function HomePage() {
                 {/* Main hero image - caregiver with senior */}
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
                   <Image
-                    src="/images/hero-caregiver-senior.jpg"
+                    src="/images/hero-caregiver-senior.jpeg"
                     alt="ArayoLight caregiver providing compassionate care to a senior at home"
                     fill
                     className="object-cover"
@@ -168,7 +168,7 @@ export default function HomePage() {
             <Link href="/request-care" className="card-care group block overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/images/service-homecare.jpg"
+                  src="/images/service-homecare.jpeg"
                   alt="Professional homecare services - caregiver assisting senior at home"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -191,7 +191,7 @@ export default function HomePage() {
             <Link href="/request-care" className="card-care group block overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/images/service-medication.jpg"
+                  src="/images/service-medication.jpeg"
                   alt="Medication reminder service - caregiver helping with medication management"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -214,7 +214,7 @@ export default function HomePage() {
             <Link href="/request-care" className="card-care group block overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/images/service-housekeeping.jpg"
+                  src="/images/service-housekeeping.jpeg"
                   alt="Light housekeeping service - caregiver maintaining clean living space"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -237,7 +237,7 @@ export default function HomePage() {
             <Link href="/request-care" className="card-care group block overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/images/service-daily-living.jpg"
+                  src="/images/service-daily-living.jpeg"
                   alt="Daily living assistance - caregiver helping senior with daily activities"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -260,7 +260,7 @@ export default function HomePage() {
             <Link href="/request-care" className="card-care group block overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="/images/service-companionship.jpg"
+                  src="/images/service-companionship.jpeg"
                   alt="Companionship service - caregiver and senior enjoying conversation"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -317,7 +317,7 @@ export default function HomePage() {
               <div className="card-care overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/images/step-1-submit.jpg"
+                    src="/images/step-1-submit.jpeg"
                     alt="Submit care request - family filling out form"
                     fill
                     className="object-cover"
@@ -344,7 +344,7 @@ export default function HomePage() {
               <div className="card-care overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/images/step-2-match.jpg"
+                    src="/images/step-2-match.jpeg"
                     alt="Caregiver matching - professional team selecting the right caregiver"
                     fill
                     className="object-cover"
@@ -371,7 +371,7 @@ export default function HomePage() {
               <div className="card-care overflow-hidden">
                 <div className="relative h-48">
                   <Image
-                    src="/images/step-3-care.jpg"
+                    src="/images/step-3-care.jpeg"
                     alt="Care begins - caregiver providing in-home care to senior"
                     fill
                     className="object-cover"
@@ -432,7 +432,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/images/trust-team.jpg"
+                  src="/images/trust-team.jpeg"
                   alt="ArayoLight professional caregiving team"
                   width={600}
                   height={500}
@@ -463,7 +463,7 @@ export default function HomePage() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image
-                    src="/images/testimonial-1.jpg"
+                    src="/images/testimonial-1.jpeg"
                     alt="Happy family client"
                     fill
                     className="object-cover"
@@ -485,7 +485,7 @@ export default function HomePage() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image
-                    src="/images/testimonial-2.jpg"
+                    src="/images/testimonial-2.jpeg"
                     alt="Satisfied family member"
                     fill
                     className="object-cover"
@@ -507,7 +507,7 @@ export default function HomePage() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="relative w-14 h-14 rounded-full overflow-hidden">
                   <Image
-                    src="/images/testimonial-3.jpg"
+                    src="/images/testimonial-3.jpeg"
                     alt="Grateful family member"
                     fill
                     className="object-cover"

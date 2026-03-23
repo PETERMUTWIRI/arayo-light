@@ -359,7 +359,7 @@ export default function ApplyPage() {
               {/* Hero Image */}
               <div className="relative rounded-2xl overflow-hidden h-64">
                 <Image
-                  src="/images/caregiver-team.jpg"
+                  src="/images/caregiver-team.jpeg"
                   alt="ArayoLight professional caregiving team"
                   fill
                   className="object-cover"
@@ -383,7 +383,7 @@ export default function ApplyPage() {
               {/* Training Image */}
               <div className="relative rounded-2xl overflow-hidden h-48">
                 <Image
-                  src="/images/caregiver-training.jpg"
+                  src="/images/caregiver-training.jpeg"
                   alt="ArayoLight caregiver training program"
                   fill
                   className="object-cover"
