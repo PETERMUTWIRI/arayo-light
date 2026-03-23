@@ -394,7 +394,7 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="section-padding bg-gradient-care">
+      <section className="section-padding bg-care-red">
         <div className="container-care mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Trust Content */}

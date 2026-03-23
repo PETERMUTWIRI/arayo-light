@@ -20,7 +20,7 @@ export default function CTASection({
   primaryButtonHref = "/request-care",
   secondaryButtonText = "Apply as Caregiver",
   secondaryButtonHref = "/apply",
-  variant = 'navy',
+  variant = 'red',
 }: CTASectionProps) {
   if (variant === 'red') {
     return (

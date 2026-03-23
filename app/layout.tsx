@@ -25,7 +25,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   // Core title template
   title: {
-    default: "ArayoLight | Professional Homecare Services",
+    default: "ArayoLight Homecare Service",
     template: "%s | ArayoLight Homecare",
   },
   
@@ -71,16 +71,18 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   
-  // Icons
+  // Icons - Using ArayoLight logo as favicon
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: '/images/Arayolight-logo.jpeg', type: 'image/jpeg' },
+    ],
+    shortcut: '/images/Arayolight-logo.jpeg',
+    apple: '/images/Arayolight-logo.jpeg',
   },
   
   // Open Graph - Social sharing
   openGraph: {
-    title: "ArayoLight | Professional Homecare Services",
+    title: "ArayoLight Homecare Service",
     description: "Trusted homecare services for your loved ones. 20+ years of experience serving families across all states.",
     url: 'https://www.arayolight.com',
     siteName: "ArayoLight Homecare",
@@ -99,7 +101,7 @@ export const metadata: Metadata = {
   // Twitter Cards
   twitter: {
     card: 'summary_large_image',
-    title: "ArayoLight | Professional Homecare Services",
+    title: "ArayoLight Homecare Service",
     description: "Trusted homecare services for your loved ones. Serving all states with compassion and professionalism.",
     images: ['/images/og-image.jpg'],
     creator: '@ArayoLight',

@@ -35,34 +35,26 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-soft'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-care-red shadow-soft`}
     >
       <nav className="container-care mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10">
+            <div className="relative w-14 h-14">
               <Image
                 src="/images/Arayolight-logo.jpeg"
                 alt="ArayoLight Homecare Services"
                 fill
-                className="object-contain rounded-lg"
+                className="object-contain rounded-xl"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className={`font-heading text-lg leading-tight transition-colors ${
-                isScrolled ? 'text-care-navy' : 'text-care-navy'
-              }`}>
+              <span className="font-heading text-lg leading-tight text-white">
                 ArayoLight
               </span>
-              <span className={`text-xs transition-colors ${
-                isScrolled ? 'text-care-gray-500' : 'text-care-gray-500'
-              }`}>
+              <span className="text-xs text-white/80">
                 Homecare Services
               </span>
             </div>
@@ -74,12 +66,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-care-red ${
+                className={`text-sm font-medium transition-colors hover:text-white/80 ${
                   pathname === link.href
-                    ? 'text-care-red'
-                    : isScrolled
-                    ? 'text-care-navy'
-                    : 'text-care-navy'
+                    ? 'text-white font-semibold'
+                    : 'text-white/90'
                 }`}
               >
                 {link.label}
@@ -91,14 +81,14 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+1234567890"
-              className="flex items-center gap-2 text-sm font-medium text-care-navy hover:text-care-red transition-colors"
+              className="flex items-center gap-2 text-sm font-medium text-white hover:text-white/80 transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span>Call Us</span>
             </a>
             <Link
               href="/request-care"
-              className="btn-primary text-sm py-3 px-6"
+              className="bg-white text-care-red text-sm font-semibold py-3 px-6 rounded-full hover:bg-white/90 transition-colors shadow-md"
             >
               Request Care
             </Link>
@@ -107,7 +97,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-care-navy hover:bg-care-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-white/20 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -120,7 +110,7 @@ export default function Navbar() {
             isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="py-4 space-y-2 bg-white/95 backdrop-blur-md rounded-2xl mb-4 px-4 shadow-soft">
+          <div className="py-4 space-y-2 bg-white rounded-2xl mb-4 px-4 shadow-soft">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -144,7 +134,7 @@ export default function Navbar() {
               </a>
               <Link
                 href="/request-care"
-                className="block btn-primary text-center text-sm py-3 mt-2"
+                className="block bg-care-red text-white text-center text-sm font-semibold py-3 mt-2 rounded-xl hover:bg-care-red/90 transition-colors"
               >
                 Request Care Now
               </Link>

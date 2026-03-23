@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="section-padding bg-gradient-care">
+      <section className="section-padding bg-care-red">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
