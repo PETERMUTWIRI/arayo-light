@@ -38,10 +38,10 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-care-red shadow-soft`}
     >
       <nav className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-20 h-20">
+            <div className="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20">
               <Image
                 src="/images/Arayolight-logo.jpeg"
                 alt="ArayoLight Homecare Services"
@@ -51,10 +51,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-xl leading-tight text-white font-bold drop-shadow-sm">
+              <span className="font-heading text-base md:text-lg lg:text-xl leading-tight text-white font-bold drop-shadow-sm">
                 ArayoLight
               </span>
-              <span className="text-sm text-white font-medium">
+              <span className="text-xs md:text-sm text-white font-medium hidden sm:block">
                 Homecare Services
               </span>
             </div>
@@ -126,7 +126,7 @@ export default function Navbar() {
             ))}
             <div className="pt-2 border-t border-care-gray-200">
               <a
-                href="tel:+1234567890"
+                href="tel:+19842565837"
                 className="flex items-center gap-2 py-3 px-4 text-sm font-medium text-care-navy"
               >
                 <Phone className="w-4 h-4" />

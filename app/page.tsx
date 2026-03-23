@@ -48,8 +48,8 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-hero pt-20">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <section className="relative min-h-[auto] lg:min-h-screen flex items-center bg-gradient-hero pt-16 md:pt-20">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Hero Content */}
             <div className="max-w-2xl">
@@ -100,10 +100,10 @@ export default function HomePage() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative hidden lg:block">
+            <div className="relative mt-8 lg:mt-0">
               <div className="relative">
                 {/* Main hero image - caregiver with senior */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
+                <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
                   <Image
                     src="/images/hero-caregiver-senior.jpeg"
                     alt="ArayoLight caregiver providing compassionate care to a senior at home"
@@ -114,27 +114,27 @@ export default function HomePage() {
                 </div>
                 
                 {/* Floating card - Experience */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-card">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center">
-                      <Award className="w-6 h-6 text-white" />
+                <div className="absolute -bottom-4 -left-2 lg:-bottom-6 lg:-left-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card">
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-red flex items-center justify-center">
+                      <Award className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-heading text-2xl text-care-navy">20+</p>
-                      <p className="text-care-gray-500 text-sm">Years Experience</p>
+                      <p className="font-heading text-lg lg:text-2xl text-care-navy">20+</p>
+                      <p className="text-care-gray-500 text-xs lg:text-sm">Years Experience</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating card - Support */}
-                <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-card">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-care-blue flex items-center justify-center">
-                      <Clock className="w-6 h-6 text-white" />
+                <div className="absolute -top-4 -right-2 lg:-top-6 lg:-right-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card">
+                  <div className="flex items-center gap-2 lg:gap-3">
+                    <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-blue flex items-center justify-center">
+                      <Clock className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
                     </div>
                     <div>
-                      <p className="font-heading text-2xl text-care-navy">24/7</p>
-                      <p className="text-care-gray-500 text-sm">Support</p>
+                      <p className="font-heading text-lg lg:text-2xl text-care-navy">24/7</p>
+                      <p className="text-care-gray-500 text-xs lg:text-sm">Support</p>
                     </div>
                   </div>
                 </div>
