@@ -14,42 +14,56 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  title = "Get Matched with a Caregiver Today",
-  description = "Take the first step towards quality homecare. Our compassionate caregivers are ready to help your loved ones live comfortably at home.",
-  primaryButtonText = "Request Care Now",
+  title = "Ready to Get Started?",
+  description = "Let us help you find the perfect caregiver for your loved one.",
+  primaryButtonText = "Request Care",
   primaryButtonHref = "/request-care",
-  secondaryButtonText = "Apply as Caregiver",
+  secondaryButtonText = "Join Our Team",
   secondaryButtonHref = "/apply",
   variant = 'red',
 }: CTASectionProps) {
   if (variant === 'red') {
     return (
-      <section className="bg-gradient-red py-16 md:py-20">
+      <section className="py-8 md:py-12">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="font-heading text-3xl md:text-4xl text-white mb-4">
-              {title}
-            </h2>
-            <p className="text-white/90 text-lg mb-8">
-              {description}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href={primaryButtonHref}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold bg-white text-care-red hover:bg-care-gray-50 transition-all duration-300 hover:shadow-lg w-full sm:w-auto"
-              >
-                {primaryButtonText}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link
-                href={secondaryButtonHref}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold border-2 border-white text-white hover:bg-white/10 transition-all duration-300 w-full sm:w-auto"
-              >
-                {secondaryButtonText}
-              </Link>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Red background canvas */}
+            <div className="absolute inset-0 bg-care-red rounded-3xl transform -rotate-1"></div>
+            
+            {/* White overlay card */}
+            <div className="relative bg-white rounded-3xl p-6 md:p-10 shadow-xl">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                {/* Text content */}
+                <div className="text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-3">
+                    <Heart className="w-4 h-4" />
+                    <span>Get Started Today</span>
+                  </div>
+                  <h2 className="font-heading text-2xl md:text-3xl text-care-navy mb-2">
+                    {title}
+                  </h2>
+                  <p className="text-care-gray-500 text-sm md:text-base max-w-md">
+                    {description}
+                  </p>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <Link
+                    href={primaryButtonHref}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold bg-care-red text-white hover:bg-care-red/90 transition-all duration-300 hover:shadow-lg text-sm whitespace-nowrap"
+                  >
+                    {primaryButtonText}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href={secondaryButtonHref}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-care-gray-200 text-care-navy hover:border-care-red hover:text-care-red transition-all duration-300 text-sm whitespace-nowrap"
+                  >
+                    {secondaryButtonText}
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>

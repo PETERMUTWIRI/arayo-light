@@ -140,36 +140,36 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="section-padding bg-care-red">
+      <section className="section-padding bg-white">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
               Our Mission
             </span>
-            <h2 className="font-heading text-3xl md:text-4xl text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6">
               Enabling Dignified, Independent Living
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
+            <p className="text-care-gray-500 text-lg leading-relaxed mb-8">
               Our mission is to enhance the quality of life for seniors and individuals with 
               care needs by providing compassionate, professional homecare services that promote 
               independence, dignity, and peace of mind for both clients and their families.
             </p>
             <div className="grid sm:grid-cols-3 gap-6 text-left">
-              <div className="bg-white/10 rounded-2xl p-6">
+              <div className="bg-care-gray-50 rounded-2xl p-6">
                 <CheckCircle className="w-8 h-8 text-care-red mb-3" />
-                <h4 className="font-heading text-white mb-2">For Clients</h4>
-                <p className="text-white/70 text-sm">Live comfortably and independently in your own home with personalized care.</p>
+                <h4 className="font-heading text-care-navy mb-2">For Clients</h4>
+                <p className="text-care-gray-500 text-sm">Live comfortably and independently in your own home with personalized care.</p>
               </div>
-              <div className="bg-white/10 rounded-2xl p-6">
+              <div className="bg-care-gray-50 rounded-2xl p-6">
                 <CheckCircle className="w-8 h-8 text-care-red mb-3" />
-                <h4 className="font-heading text-white mb-2">For Families</h4>
-                <p className="text-white/70 text-sm">Peace of mind knowing your loved one is in caring, capable hands.</p>
+                <h4 className="font-heading text-care-navy mb-2">For Families</h4>
+                <p className="text-care-gray-500 text-sm">Peace of mind knowing your loved one is in caring, capable hands.</p>
               </div>
-              <div className="bg-white/10 rounded-2xl p-6">
+              <div className="bg-care-gray-50 rounded-2xl p-6">
                 <CheckCircle className="w-8 h-8 text-care-red mb-3" />
-                <h4 className="font-heading text-white mb-2">For Caregivers</h4>
-                <p className="text-white/70 text-sm">Meaningful work with competitive pay, flexible schedules, and growth opportunities.</p>
+                <h4 className="font-heading text-care-navy mb-2">For Caregivers</h4>
+                <p className="text-care-gray-500 text-sm">Meaningful work with competitive pay, flexible schedules, and growth opportunities.</p>
               </div>
             </div>
           </div>
