@@ -58,8 +58,8 @@ export default function HomePage() {
                 <span>Trusted Homecare Services</span>
               </div>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy leading-tight mb-6">
-                Professional Homecare Services{' '}
-                <span className="text-care-red">You Can Trust</span>
+                <span className="text-care-red">Arayolight</span>{' '}
+                Professional Homecare Services
               </h1>
               <p className="text-care-gray-500 text-lg md:text-xl mb-8 leading-relaxed">
                 ArayoLight provides compassionate, reliable care for your loved ones in the comfort 
