@@ -43,7 +43,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20">
               <Image
-                src="/Arayolight-logo.jpeg"
+                src="/Arayolight-logo.png"
                 alt="ArayoLight Homecare Services"
                 fill
                 className="object-contain rounded-xl"
