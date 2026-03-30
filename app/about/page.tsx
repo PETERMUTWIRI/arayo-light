@@ -133,12 +133,12 @@ export default function AboutPage() {
               
               {/* Timeline Card */}
               <div className="absolute -bottom-6 -left-6 bg-care-navy rounded-2xl p-6 shadow-card max-w-xs border border-white/10">
-                <h3 className="font-heading text-lg text-white mb-4">Our Journey</h3>
+                <h3 className="font-heading text-xl text-white mb-4 font-bold">Our Journey</h3>
                 <div className="space-y-3">
                   {milestones.slice(0, 3).map((milestone) => (
                     <div key={milestone.year} className="flex gap-3">
-                      <span className="font-heading text-care-red text-sm">{milestone.year}</span>
-                      <p className="text-white/80 text-xs">{milestone.event}</p>
+                      <span className="font-heading text-care-red text-base font-bold">{milestone.year}</span>
+                      <p className="text-white text-sm font-medium">{milestone.event}</p>
                     </div>
                   ))}
                 </div>

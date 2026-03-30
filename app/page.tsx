@@ -581,10 +581,10 @@ export default function HomePage() {
                 <Shield className="w-4 h-4" />
                 Why Choose ArayoLight
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6 font-bold">
                 Trusted Care for Over 20 Years
               </h2>
-              <p className="text-care-gray-500 text-lg mb-8 leading-relaxed">
+              <p className="text-care-gray-600 text-lg mb-8 leading-relaxed font-medium">
                 We understand that choosing a caregiver for your loved one is one of the most 
                 important decisions you&apos;ll make. That&apos;s why ArayoLight has built its reputation on 
                 trust, compassion, and excellence in care.
@@ -598,8 +598,8 @@ export default function HomePage() {
                       <indicator.icon className="w-7 h-7 text-care-red" />
                     </div>
                     <div>
-                      <p className="font-heading text-2xl text-care-navy">{indicator.value}</p>
-                      <p className="text-care-gray-500 text-sm">{indicator.label}</p>
+                      <p className="font-heading text-2xl text-care-red font-bold">{indicator.value}</p>
+                      <p className="text-care-navy text-sm font-medium">{indicator.label}</p>
                     </div>
                   </div>
                 ))}
