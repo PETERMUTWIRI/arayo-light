@@ -34,12 +34,12 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12">
+              <div className="relative w-14 h-14">
                 <Image
-                  src="/images/Arayolight-logo.jpeg"
+                  src="/Arayolight-logo.png"
                   alt="ArayoLight Homecare Services"
                   fill
-                  className="object-contain rounded-lg"
+                  className="object-contain"
                 />
               </div>
               <div>

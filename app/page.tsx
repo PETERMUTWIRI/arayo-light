@@ -274,7 +274,7 @@ export default function HomePage() {
                   src="/images/service-homecare.jpeg"
                   alt="Professional homecare services - caregiver assisting senior at home"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -297,7 +297,7 @@ export default function HomePage() {
                   src="/images/service-medication.jpeg"
                   alt="Medication reminder service - caregiver helping with medication management"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -320,7 +320,7 @@ export default function HomePage() {
                   src="/images/service-housekeeping.jpeg"
                   alt="Light housekeeping service - caregiver maintaining clean living space"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -343,7 +343,7 @@ export default function HomePage() {
                   src="/images/service-daily-living.jpeg"
                   alt="Daily living assistance - caregiver helping senior with daily activities"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -366,7 +366,7 @@ export default function HomePage() {
                   src="/images/service-companionship.jpeg"
                   alt="Companionship service - caregiver and senior enjoying conversation"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -423,7 +423,7 @@ export default function HomePage() {
                     src="/images/step-1-submit.jpeg"
                     alt="Submit care request - family filling out form"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -450,7 +450,7 @@ export default function HomePage() {
                     src="/images/step-2-match.jpeg"
                     alt="Caregiver matching - professional team selecting the right caregiver"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -477,7 +477,7 @@ export default function HomePage() {
                     src="/images/step-3-care.jpeg"
                     alt="Care begins - caregiver providing in-home care to senior"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -539,7 +539,7 @@ export default function HomePage() {
                   alt="ArayoLight professional caregiving team"
                   width={600}
                   height={500}
-                  className="object-cover w-full h-full"
+                  className="object-cover object-top w-full h-full"
                 />
               </div>
             </div>
@@ -569,7 +569,7 @@ export default function HomePage() {
                     src="/images/testimonial-1.jpeg"
                     alt="Happy family client"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div>
@@ -591,7 +591,7 @@ export default function HomePage() {
                     src="/images/testimonial-2.jpeg"
                     alt="Satisfied family member"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div>
@@ -613,7 +613,7 @@ export default function HomePage() {
                     src="/images/testimonial-3.jpeg"
                     alt="Grateful family member"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div>

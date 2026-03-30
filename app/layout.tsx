@@ -74,10 +74,10 @@ export const metadata: Metadata = {
   // Icons - Using ArayoLight logo as favicon
   icons: {
     icon: [
-      { url: '/images/Arayolight-logo.jpeg', type: 'image/jpeg' },
+      { url: '/Arayolight-logo.png', type: 'image/png' },
     ],
-    shortcut: '/images/Arayolight-logo.jpeg',
-    apple: '/images/Arayolight-logo.jpeg',
+    shortcut: '/Arayolight-logo.png',
+    apple: '/Arayolight-logo.png',
   },
   
   // Open Graph - Social sharing
