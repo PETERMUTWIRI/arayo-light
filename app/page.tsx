@@ -706,7 +706,13 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <CTASection />
+      <section className="relative bg-care-navy">
+        {/* White Overlay */}
+        <div className="absolute inset-0 bg-white/90" />
+        <div className="relative z-10">
+          <CTASection />
+        </div>
+      </section>
     </main>
   );
 }
