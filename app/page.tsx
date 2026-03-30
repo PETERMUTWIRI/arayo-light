@@ -255,6 +255,53 @@ function ViewAllServicesCard() {
   );
 }
 
+// Partner Logos Infinite Marquee
+function PartnerLogos() {
+  const partners = [
+    { name: 'Access Home Health', logo: '/images/partners/Acess_home_health.png' },
+    { name: 'Caring Hand Home', logo: '/images/partners/caring-hand-home.png' },
+    { name: 'CMC', logo: '/images/partners/cmc-logo.png' },
+    { name: 'Epic Home Care', logo: '/images/partners/epichomechare.png' },
+    { name: 'The Joint Commission', logo: '/images/partners/the-joint-commission.png' },
+  ];
+
+  // Duplicate for seamless loop
+  const allPartners = [...partners, ...partners];
+
+  return (
+    <div className="bg-white border-y border-care-gray-200 py-6 md:py-8 overflow-hidden">
+      <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <p className="text-center text-care-gray-400 text-xs md:text-sm uppercase tracking-widest font-medium">
+          Trusted by Leading Healthcare Organizations
+        </p>
+      </div>
+      <div className="relative">
+        {/* Gradient masks for smooth edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+        
+        {/* Scrolling container */}
+        <div className="flex animate-marquee">
+          {allPartners.map((partner, index) => (
+            <div 
+              key={index}
+              className="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center h-12 md:h-16 w-24 md:w-32 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
+            >
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={120}
+                height={60}
+                className="object-contain max-h-full w-auto"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
@@ -316,6 +363,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Logos Marquee */}
+      <PartnerLogos />
 
       {/* Services Section */}
       <section className="section-padding relative">
