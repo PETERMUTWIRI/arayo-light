@@ -64,15 +64,15 @@ export default function Navbar() {
               </div>
               
               {/* 5 Stars */}
-              <div className="flex items-center gap-0.5">
+              <div className="flex items-center gap-0.5 mx-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               
               {/* Logos */}
-              <div className="flex items-center gap-2 md:gap-3">
-                <div className="relative w-10 h-6 md:w-14 md:h-8">
+              <div className="flex items-center gap-3 md:gap-4 ml-2">
+                <div className="relative w-12 h-7 md:w-16 md:h-9">
                   <Image
                     src="/images/cmc-logo.png"
                     alt="CMC Accreditation"
@@ -80,7 +80,7 @@ export default function Navbar() {
                     className="object-contain"
                   />
                 </div>
-                <div className="relative w-10 h-6 md:w-14 md:h-8">
+                <div className="relative w-12 h-7 md:w-16 md:h-9">
                   <Image
                     src="/images/the-joint-commission.png"
                     alt="The Joint Commission"
@@ -92,21 +92,20 @@ export default function Navbar() {
             </div>
             
             {/* Right: Contact Info */}
-            <div className="flex items-center gap-3 md:gap-6">
+            <div className="flex items-center gap-4 md:gap-8 ml-4">
               <a 
                 href="tel:+19194498913" 
-                className="flex items-center gap-1.5 text-care-navy hover:text-care-red transition-colors"
+                className="flex items-center gap-2 text-care-navy hover:text-care-red transition-colors"
               >
-                <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span className="text-xs md:text-sm font-medium hidden sm:inline">+1 (919) 449-8913</span>
-                <span className="text-xs md:text-sm font-medium sm:hidden">Call</span>
+                <Phone className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-xs md:text-sm font-medium whitespace-nowrap">+1 (919) 449-8913</span>
               </a>
               <a 
                 href="mailto:raylightcare76@gmail.com" 
-                className="flex items-center gap-1.5 text-care-navy hover:text-care-red transition-colors hidden md:flex"
+                className="flex items-center gap-2 text-care-navy hover:text-care-red transition-colors hidden lg:flex"
               >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm font-medium">raylightcare76@gmail.com</span>
+                <Mail className="w-4 h-4 md:w-5 md:h-5" />
+                <span className="text-sm font-medium whitespace-nowrap">raylightcare76@gmail.com</span>
               </a>
             </div>
           </div>

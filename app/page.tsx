@@ -189,25 +189,25 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[auto] lg:min-h-screen flex items-center bg-gradient-hero pt-28 md:pt-36">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-24">
+      <section className="relative min-h-[auto] flex items-center bg-gradient-hero pt-24 md:pt-28 pb-8 md:pb-12">
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Hero Content */}
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-4">
                 <Heart className="w-4 h-4" />
                 <span>Trusted Homecare Services</span>
               </div>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy leading-tight mb-6">
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy leading-tight mb-4">
                 <span className="text-care-red">Arayolight</span>{' '}
                 Professional Homecare Services
               </h1>
-              <p className="text-care-gray-500 text-lg md:text-xl mb-8 leading-relaxed">
+              <p className="text-care-gray-500 text-base md:text-lg mb-6 leading-relaxed">
                 ArayoLight provides compassionate, reliable care for your loved ones in the comfort 
                 of their own home. Serving families across all states with dedication and excellence 
                 for over 20 years.
               </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
                 <Link
                   href="/request-care"
                   className="btn-primary text-lg"
@@ -225,7 +225,7 @@ export default function HomePage() {
               </div>
               
               {/* Trust badges */}
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="flex flex-wrap items-center gap-4 md:gap-6">
                 <div className="flex items-center gap-2 text-care-gray-500 text-sm">
                   <CheckCircle className="w-5 h-5 text-care-red" />
                   <span>Licensed & Insured</span>
