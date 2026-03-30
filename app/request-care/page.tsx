@@ -263,12 +263,12 @@ export default function RequestCarePage() {
             {/* Side Content with Images */}
             <div className="space-y-6">
               {/* Image */}
-              <div className="relative rounded-2xl overflow-hidden h-64">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
                   src="/images/request-care-hero.jpeg"
                   alt="Compassionate caregiver providing care to senior"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
 
@@ -287,12 +287,12 @@ export default function RequestCarePage() {
               </div>
 
               {/* Trust Image */}
-              <div className="relative rounded-2xl overflow-hidden h-48">
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                 <Image
                   src="/images/caregiver-family.jpeg"
                   alt="ArayoLight caregiver with happy family"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
                   <p className="text-white font-medium">Trusted by 10,000+ families nationwide</p>

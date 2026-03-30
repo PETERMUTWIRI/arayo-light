@@ -357,12 +357,12 @@ export default function ApplyPage() {
             {/* Side Content with Images */}
             <div className="space-y-6">
               {/* Hero Image */}
-              <div className="relative rounded-2xl overflow-hidden h-64">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
                 <Image
                   src="/images/caregiver-team.jpeg"
                   alt="ArayoLight professional caregiving team"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
 
@@ -381,12 +381,12 @@ export default function ApplyPage() {
               </div>
 
               {/* Training Image */}
-              <div className="relative rounded-2xl overflow-hidden h-48">
+              <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
                 <Image
                   src="/images/caregiver-training.jpeg"
                   alt="ArayoLight caregiver training program"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
                   <p className="text-white font-medium">Comprehensive training provided</p>
