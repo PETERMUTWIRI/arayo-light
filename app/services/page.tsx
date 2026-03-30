@@ -452,10 +452,10 @@ export default function ServicesPage() {
       <section className="section-padding bg-care-navy text-white">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-heading text-3xl md:text-4xl mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl mb-4 text-white font-bold">
               Ready to Get Started?
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/90">
               Beginning care with ArayoLight is simple and stress-free. We&apos;re here to guide 
               you every step of the way.
             </p>
@@ -467,28 +467,42 @@ export default function ServicesPage() {
                 step: '01',
                 title: 'Free Consultation',
                 desc: 'Contact us for a complimentary assessment to discuss your care needs, preferences, and schedule.',
-                icon: Phone
+                icon: Phone,
+                image: '/images/step-1-submit.jpeg'
               },
               {
                 step: '02',
                 title: 'Personalized Plan',
                 desc: 'We develop a customized care plan and carefully match you with a qualified caregiver.',
-                icon: Shield
+                icon: Shield,
+                image: '/images/step-2-match.jpeg'
               },
               {
                 step: '03',
                 title: 'Care Begins',
                 desc: 'Your caregiver begins providing compassionate care with ongoing supervision and support.',
-                icon: Users
+                icon: Users,
+                image: '/images/step-3-care.jpeg'
               }
             ].map((item) => (
-              <div key={item.step} className="bg-white/10 rounded-2xl p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-care-red/20 flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-8 h-8 text-care-red" />
+              <div key={item.step} className="bg-white rounded-2xl overflow-hidden">
+                {/* Card Image */}
+                <div className="relative aspect-[16/10]">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover object-center"
+                  />
                 </div>
-                <span className="text-care-red/50 font-heading text-5xl block mb-4">{item.step}</span>
-                <h3 className="font-heading text-xl mb-3">{item.title}</h3>
-                <p className="text-white/70 text-sm">{item.desc}</p>
+                <div className="p-6 text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-care-red/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-7 h-7 text-care-red" />
+                  </div>
+                  <span className="text-care-red/30 font-heading text-4xl block mb-2">{item.step}</span>
+                  <h3 className="font-heading text-lg text-care-navy mb-2">{item.title}</h3>
+                  <p className="text-care-gray-500 text-sm">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
