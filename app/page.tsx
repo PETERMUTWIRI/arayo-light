@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { 
   Heart, 
   Clock, 
@@ -13,7 +16,9 @@ import {
   ArrowRight,
   CheckCircle,
   MapPin,
-  Award
+  Award,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 
@@ -43,6 +48,142 @@ const trustIndicators = [
   { icon: Users, label: 'Families Served', value: '10K+' },
   { icon: Shield, label: 'Screened Caregivers', value: '100%' },
 ];
+
+// Hero Carousel Component
+function HeroCarousel() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      image: '/images/hero-caregiver-senior.jpeg',
+      alt: 'ArayoLight caregiver providing compassionate care to a senior at home',
+      caption: null
+    },
+    {
+      image: '/images/team-founder.jpeg',
+      alt: 'Rahab Kinity, Founder & CEO of ArayoLight',
+      caption: {
+        name: 'Rahab Kinity',
+        title: 'Founder & CEO',
+        description: 'Registered Nurse with 25+ years of healthcare experience'
+      }
+    }
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000); // Change every 6 seconds
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const goToPrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  return (
+    <div className="relative mt-8 lg:mt-0">
+      <div className="relative">
+        {/* Main hero image carousel */}
+        <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.alt}
+                fill
+                className="object-cover"
+                priority={index === 0}
+              />
+              {/* Caption overlay for founder slide */}
+              {slide.caption && (
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-care-navy/90 via-care-navy/60 to-transparent p-6 lg:p-8">
+                  <div className="text-white">
+                    <p className="font-heading text-xl lg:text-2xl mb-1">{slide.caption.name}</p>
+                    <p className="text-care-red text-sm lg:text-base font-medium mb-2">{slide.caption.title}</p>
+                    <p className="text-white/80 text-sm hidden lg:block">{slide.caption.description}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+          
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPrev}
+            className="absolute left-3 lg:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg transition-all hover:scale-105"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-care-navy" />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-3 lg:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg transition-all hover:scale-105"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-care-navy" />
+          </button>
+          
+          {/* Slide Indicators */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${
+                  index === currentSlide 
+                    ? 'bg-care-red w-8' 
+                    : 'bg-white/80 hover:bg-white'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Floating card - Experience */}
+        <div className="absolute -bottom-4 -left-2 lg:-bottom-6 lg:-left-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card z-30">
+          <div className="flex items-center gap-2 lg:gap-3">
+            <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-red flex items-center justify-center">
+              <Award className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
+            </div>
+            <div>
+              <p className="font-heading text-lg lg:text-2xl text-care-navy">20+</p>
+              <p className="text-care-gray-500 text-xs lg:text-sm">Years Experience</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating card - Support */}
+        <div className="absolute -top-4 -right-2 lg:-top-6 lg:-right-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card z-30">
+          <div className="flex items-center gap-2 lg:gap-3">
+            <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-blue flex items-center justify-center">
+              <Clock className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
+            </div>
+            <div>
+              <p className="font-heading text-lg lg:text-2xl text-care-navy">24/7</p>
+              <p className="text-care-gray-500 text-xs lg:text-sm">Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -75,10 +216,11 @@ export default function HomePage() {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
-                  href="/apply"
-                  className="btn-outline"
+                  href="/about"
+                  className="text-care-gray-500 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2"
                 >
-                  Apply as Caregiver
+                  Learn More About Us
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
               
@@ -99,47 +241,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative mt-8 lg:mt-0">
-              <div className="relative">
-                {/* Main hero image - caregiver with senior */}
-                <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-card">
-                  <Image
-                    src="/images/hero-caregiver-senior.jpeg"
-                    alt="ArayoLight caregiver providing compassionate care to a senior at home"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                
-                {/* Floating card - Experience */}
-                <div className="absolute -bottom-4 -left-2 lg:-bottom-6 lg:-left-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card">
-                  <div className="flex items-center gap-2 lg:gap-3">
-                    <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-red flex items-center justify-center">
-                      <Award className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-lg lg:text-2xl text-care-navy">20+</p>
-                      <p className="text-care-gray-500 text-xs lg:text-sm">Years Experience</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Floating card - Support */}
-                <div className="absolute -top-4 -right-2 lg:-top-6 lg:-right-6 bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-card">
-                  <div className="flex items-center gap-2 lg:gap-3">
-                    <div className="w-8 h-8 lg:w-12 lg:h-12 rounded-lg lg:rounded-xl bg-care-blue flex items-center justify-center">
-                      <Clock className="w-4 h-4 lg:w-6 lg:h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-lg lg:text-2xl text-care-navy">24/7</p>
-                      <p className="text-care-gray-500 text-xs lg:text-sm">Support</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Hero Image Carousel */}
+            <HeroCarousel />
           </div>
         </div>
       </section>
