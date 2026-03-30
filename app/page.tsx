@@ -185,6 +185,76 @@ function HeroCarousel() {
   );
 }
 
+// View All Services Card with Image Carousel
+function ViewAllServicesCard() {
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  const images = [
+    { src: '/images/service-homecare.jpeg', alt: 'Homecare services' },
+    { src: '/images/service-medication.jpeg', alt: 'Medication reminder' },
+    { src: '/images/service-housekeeping.jpeg', alt: 'Light housekeeping' },
+    { src: '/images/service-daily-living.jpeg', alt: 'Daily living assistance' },
+    { src: '/images/service-companionship.jpeg', alt: 'Companionship' },
+    { src: '/images/hero-caregiver-senior.jpeg', alt: 'Caregiver with senior' },
+    { src: '/images/team-founder.jpeg', alt: 'Our founder' },
+    { src: '/images/social-worker-taking-care-senior-woman.jpg', alt: 'Social worker caring for senior' },
+  ];
+
+  // Auto-advance images
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <Link href="/services" className="card-care group relative flex flex-col items-center justify-center overflow-hidden min-h-[320px]">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0">
+        {images.map((image, index) => (
+          <Image
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            fill
+            className={`object-cover transition-opacity duration-1000 ${
+              index === currentImage ? 'opacity-100' : 'opacity-0'
+            }`}
+          />
+        ))}
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-care-navy/70 group-hover:bg-care-red/80 transition-colors duration-500" />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center">
+        <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+          <ArrowRight className="w-8 h-8 text-white" />
+        </div>
+        <h3 className="font-heading text-xl mb-2 text-white">View All Services</h3>
+        <p className="text-white/80 text-sm text-center">
+          Explore our complete range of homecare solutions
+        </p>
+        
+        {/* Image Indicators */}
+        <div className="flex items-center gap-1.5 mt-6">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                index === currentImage 
+                  ? 'w-6 bg-white' 
+                  : 'w-1.5 bg-white/40'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
@@ -393,16 +463,8 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* View All Services Card */}
-            <Link href="/services" className="card-care group flex flex-col items-center justify-center p-8 bg-care-navy text-white hover:bg-care-red transition-colors">
-              <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
-                <ArrowRight className="w-8 h-8" />
-              </div>
-              <h3 className="font-heading text-xl mb-2">View All Services</h3>
-              <p className="text-white/70 text-sm text-center">
-                Explore our complete range of homecare solutions
-              </p>
-            </Link>
+            {/* View All Services Card with Image Carousel */}
+            <ViewAllServicesCard />
           </div>
         </div>
       </section>
