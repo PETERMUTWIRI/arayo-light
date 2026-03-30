@@ -61,7 +61,7 @@ export default function RequestCarePage() {
 
   if (isSubmitted) {
     return (
-      <main className="min-h-screen bg-gradient-hero pt-20">
+      <main className="min-h-screen bg-gradient-hero pt-32">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-lg mx-auto text-center">
             <div className="card-care p-8 md:p-12">
@@ -97,7 +97,7 @@ export default function RequestCarePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-hero pt-20">
+    <main className="min-h-screen bg-gradient-hero pt-32">
       {/* Header */}
       <section className="py-16 md:py-20">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">

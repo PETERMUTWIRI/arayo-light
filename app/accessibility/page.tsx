@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <main className="min-h-screen bg-gradient-hero pt-32 pb-16">
+    <main className="min-h-screen bg-gradient-hero pt-36 md:pt-44 pb-16">
       {/* Header */}
       <section className="mb-12">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">

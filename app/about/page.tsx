@@ -44,7 +44,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-hero pt-32 pb-16 md:pb-24">
+      <section className="bg-gradient-hero pt-36 md:pt-44 pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">

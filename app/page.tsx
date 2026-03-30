@@ -189,7 +189,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[auto] lg:min-h-screen flex items-center bg-gradient-hero pt-16 md:pt-20">
+      <section className="relative min-h-[auto] lg:min-h-screen flex items-center bg-gradient-hero pt-28 md:pt-36">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Hero Content */}
