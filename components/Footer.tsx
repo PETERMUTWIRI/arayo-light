@@ -43,8 +43,8 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <span className="font-heading text-xl block">ArayoLight</span>
-                <span className="text-care-gray-400 text-sm">Homecare Services</span>
+                <span className="font-heading text-xl font-bold text-white block">ArayoLight</span>
+                <span className="text-white/70 text-sm">Homecare Services</span>
               </div>
             </Link>
             <p className="text-care-gray-300 text-sm leading-relaxed mb-6">

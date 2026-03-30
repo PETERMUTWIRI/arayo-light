@@ -570,8 +570,10 @@ export default function HomePage() {
       </section>
 
       {/* Trust Section */}
-      <section className="section-padding bg-white">
-        <div className="container-care mx-auto">
+      <section className="section-padding relative bg-care-navy">
+        {/* White Overlay */}
+        <div className="absolute inset-0 bg-white/90" />
+        <div className="container-care mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Trust Content */}
             <div>
