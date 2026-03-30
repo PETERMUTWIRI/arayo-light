@@ -93,19 +93,28 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-care-gray-500 leading-relaxed">
                 <p>
-                  ArayoLight began with a simple belief: everyone deserves to age with dignity 
-                  in the comfort of their own home. Founded in 2004 by a registered nurse who 
-                  saw the need for more personalized, compassionate care options, we&apos;ve grown 
-                  from a small local service to a nationwide network of dedicated caregivers.
+                  ArayoLight was born from one woman&apos;s unwavering belief that aging with dignity 
+                  isn&apos;t a privilege—it&apos;s a fundamental right. In 2004, Rahab Kinity, a registered 
+                  nurse with over 25 years of clinical experience, founded ArayoLight after witnessing 
+                  countless families struggle to find care that truly honored their loved ones. She 
+                  saw patients discharged to environments that felt cold and institutional, and she 
+                  knew there had to be a better way.
                 </p>
                 <p>
-                  Over the past two decades, we&apos;ve had the privilege of serving over 10,000 families 
-                  across all 50 states. Each family&apos;s story has shaped our approach to care, 
-                  teaching us that true quality comes from treating every client like family.
+                  Rahab&apos;s passion stems from her deep-rooted conviction that healing happens best 
+                  where love lives—at home. She built ArayoLight not as a business, but as a promise 
+                  to every family: that their parents, their grandparents, their loved ones would 
+                  receive the same level of care she would want for her own family. From hand-picking 
+                  the first caregivers to personally training them in her philosophy of compassionate 
+                  excellence, Rahab infused every aspect of the company with her clinical expertise 
+                  and heartfelt dedication.
                 </p>
                 <p>
-                  Today, our team of over 5,000 screened and trained caregivers continues to 
-                  deliver on our founding promise: professional care with a personal touch.
+                  Today, that same spirit guides over 5,000 caregivers nationwide. What started as 
+                  one nurse&apos;s vision has grown into a trusted network serving thousands of families 
+                  across all 50 states—yet we remain deeply personal in our approach. Because at 
+                  ArayoLight, we understand that behind every care plan is a human being deserving 
+                  of respect, comfort, and the warmth of genuine connection.
                 </p>
               </div>
             </div>
