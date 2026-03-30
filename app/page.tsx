@@ -106,7 +106,7 @@ function HeroCarousel() {
                 src={slide.image}
                 alt={slide.alt}
                 fill
-                className="object-cover"
+                className={`object-cover ${slide.caption ? 'object-top' : ''}`}
                 priority={index === 0}
               />
               {/* Caption overlay for founder slide */}
