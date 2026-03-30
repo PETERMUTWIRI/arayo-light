@@ -223,8 +223,8 @@ function ViewAllServicesCard() {
             }`}
           />
         ))}
-        {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-care-navy/70 group-hover:bg-care-red/80 transition-colors duration-500" />
+        {/* Light Overlay for text readability */}
+        <div className="absolute inset-0 bg-care-navy/40 group-hover:bg-care-red/50 transition-colors duration-500" />
       </div>
       
       {/* Content */}

@@ -58,9 +58,9 @@ export default function Navbar() {
             {/* Left: Proud Statement & Logos */}
             <div className="flex items-center gap-3 md:gap-6">
               <div className="hidden sm:block">
-                <p className="text-care-navy">
-                  <span className="font-bold italic text-sm md:text-base">We are proud</span>
-                  <span className="text-care-gray-500 text-xs md:text-sm ml-1">to be rated 5 star by</span>
+                <p>
+                  <span className="font-bold italic text-sm md:text-base text-care-red">We are proud</span>
+                  <span className="text-care-navy font-bold text-xs md:text-sm ml-1">to be rated 5 star by</span>
                 </p>
               </div>
               
