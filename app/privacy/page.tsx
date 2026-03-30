@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-care-gray-50 rounded-xl p-6 mt-4">
                   <p className="mb-1 font-semibold text-care-navy">ArayoLight Homecare</p>
                   <p className="text-care-gray-500">Email: <a href="mailto:privacy@arayolight.com" className="text-care-red hover:underline">privacy@arayolight.com</a></p>
-                  <p className="text-care-gray-500">Phone: <a href="tel:+19842565837" className="text-care-red hover:underline">(984) 256-5837</a></p>
+                  <p className="text-care-gray-500">Phone: <a href="tel:+19194498913" className="text-care-red hover:underline">+1 (919) 449-8913</a></p>
                 </div>
               </div>
 

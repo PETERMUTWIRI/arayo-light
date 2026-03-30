@@ -90,7 +90,7 @@ export default function AccessibilityPage() {
                 
                 <div className="bg-care-gray-50 rounded-xl p-6 mb-6">
                   <p className="text-care-gray-500">Email: <a href="mailto:accessibility@arayolight.com" className="text-care-red hover:underline">accessibility@arayolight.com</a></p>
-                  <p className="text-care-gray-500">Phone: <a href="tel:+19842565837" className="text-care-red hover:underline">(984) 256-5837</a></p>
+                  <p className="text-care-gray-500">Phone: <a href="tel:+19194498913" className="text-care-red hover:underline">+1 (919) 449-8913</a></p>
                 </div>
 
                 <p className="text-care-gray-500 mb-4">

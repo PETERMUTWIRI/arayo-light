@@ -268,13 +268,13 @@ export default function HomePage() {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Homecare Services */}
-            <Link href="/request-care" className="card-care group block overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Link href="/services#homecare" className="card-care group block overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/service-homecare.jpeg"
                   alt="Professional homecare services - caregiver assisting senior at home"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -291,13 +291,13 @@ export default function HomePage() {
             </Link>
 
             {/* Medication Reminder */}
-            <Link href="/request-care" className="card-care group block overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Link href="/services#medication" className="card-care group block overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/service-medication.jpeg"
                   alt="Medication reminder service - caregiver helping with medication management"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -314,13 +314,13 @@ export default function HomePage() {
             </Link>
 
             {/* Light Housekeeping */}
-            <Link href="/request-care" className="card-care group block overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Link href="/services#housekeeping" className="card-care group block overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/service-housekeeping.jpeg"
                   alt="Light housekeeping service - caregiver maintaining clean living space"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -337,13 +337,13 @@ export default function HomePage() {
             </Link>
 
             {/* Daily Living Assistance */}
-            <Link href="/request-care" className="card-care group block overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Link href="/services#daily-living" className="card-care group block overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/service-daily-living.jpeg"
                   alt="Daily living assistance - caregiver helping senior with daily activities"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -360,13 +360,13 @@ export default function HomePage() {
             </Link>
 
             {/* Companionship */}
-            <Link href="/request-care" className="card-care group block overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
+            <Link href="/services#companionship" className="card-care group block overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/service-companionship.jpeg"
                   alt="Companionship service - caregiver and senior enjoying conversation"
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-6">
@@ -383,7 +383,7 @@ export default function HomePage() {
             </Link>
 
             {/* View All Services Card */}
-            <Link href="/request-care" className="card-care group flex flex-col items-center justify-center p-8 bg-care-navy text-white hover:bg-care-red transition-colors">
+            <Link href="/services" className="card-care group flex flex-col items-center justify-center p-8 bg-care-navy text-white hover:bg-care-red transition-colors">
               <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-4">
                 <ArrowRight className="w-8 h-8" />
               </div>
@@ -418,12 +418,12 @@ export default function HomePage() {
             {/* Step 1 */}
             <div className="relative">
               <div className="card-care overflow-hidden">
-                <div className="relative h-48">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/step-1-submit.jpeg"
                     alt="Submit care request - family filling out form"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -445,12 +445,12 @@ export default function HomePage() {
             {/* Step 2 */}
             <div className="relative">
               <div className="card-care overflow-hidden">
-                <div className="relative h-48">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/step-2-match.jpeg"
                     alt="Caregiver matching - professional team selecting the right caregiver"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -472,12 +472,12 @@ export default function HomePage() {
             {/* Step 3 */}
             <div className="relative">
               <div className="card-care overflow-hidden">
-                <div className="relative h-48">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/step-3-care.jpeg"
                     alt="Care begins - caregiver providing in-home care to senior"
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -574,7 +574,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-heading text-care-navy">Sarah Johnson</p>
-                  <p className="text-care-gray-500 text-sm">Daughter of Client</p>
+                  <p className="text-care-gray-500 text-sm">HR Director, Meridian Health</p>
                 </div>
               </div>
               <p className="text-care-gray-500 text-sm italic">
@@ -596,7 +596,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-heading text-care-navy">Michael Chen</p>
-                  <p className="text-care-gray-500 text-sm">Son of Client</p>
+                  <p className="text-care-gray-500 text-sm">Managing Partner, Chen & Associates</p>
                 </div>
               </div>
               <p className="text-care-gray-500 text-sm italic">
@@ -618,7 +618,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-heading text-care-navy">Emily Rodriguez</p>
-                  <p className="text-care-gray-500 text-sm">Daughter of Client</p>
+                  <p className="text-care-gray-500 text-sm">VP Operations, Apex Solutions</p>
                 </div>
               </div>
               <p className="text-care-gray-500 text-sm italic">

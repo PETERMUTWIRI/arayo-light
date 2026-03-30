@@ -9,8 +9,8 @@ import Image from 'next/image';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
   { href: '/request-care', label: 'Request Care' },
-  { href: '/apply', label: 'Join Our Team' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+19842565837"
+              href="tel:+19194498913"
               className="flex items-center gap-2 text-sm font-medium text-white hover:text-white/80 transition-colors"
             >
               <Phone className="w-4 h-4" />
@@ -126,7 +126,7 @@ export default function Navbar() {
             ))}
             <div className="pt-2 border-t border-care-gray-200">
               <a
-                href="tel:+19842565837"
+                href="tel:+19194498913"
                 className="flex items-center gap-2 py-3 px-4 text-sm font-medium text-care-navy"
               >
                 <Phone className="w-4 h-4" />

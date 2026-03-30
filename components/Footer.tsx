@@ -119,8 +119,8 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-care-gray-300">Phone</p>
-                  <a href="tel:+19842565837" className="text-white hover:text-care-red transition-colors">
-                    (984) 256-5837
+                  <a href="tel:+19194498913" className="text-white hover:text-care-red transition-colors">
+                    +1 (919) 449-8913
                   </a>
                 </div>
               </li>
@@ -128,8 +128,8 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-care-gray-300">Email</p>
-                  <a href="mailto:care@arayolight.com" className="text-white hover:text-care-red transition-colors">
-                    care@arayolight.com
+                  <a href="mailto:raylightcare76@gmail.com" className="text-white hover:text-care-red transition-colors">
+                    raylightcare76@gmail.com
                   </a>
                 </div>
               </li>

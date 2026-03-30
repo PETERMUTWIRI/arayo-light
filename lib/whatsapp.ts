@@ -2,7 +2,7 @@
 // Format and send messages via WhatsApp API
 
 // Default WhatsApp number - should be set in environment variables
-const DEFAULT_WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '19842565837';
+const DEFAULT_WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '19194498913';
 
 interface ClientRequestData {
   name: string;

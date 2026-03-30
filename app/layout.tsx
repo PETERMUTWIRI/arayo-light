@@ -172,7 +172,7 @@ export default function RootLayout({
               description: 'Professional homecare services serving all states across the USA. 20+ years of experience providing compassionate care for seniors and individuals needing assistance.',
               url: 'https://www.arayolight.com',
               telephone: '+1-123-456-7890',
-              email: 'care@arayolight.com',
+              email: 'raylightcare76@gmail.com',
               image: 'https://www.arayolight.com/images/logo.png',
               address: {
                 '@type': 'PostalAddress',

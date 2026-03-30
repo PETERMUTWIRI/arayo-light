@@ -9,8 +9,8 @@ const contactMethods = [
     icon: Phone,
     title: 'Phone',
     description: 'Speak directly with our care coordinators',
-    action: '(984) 256-5837',
-    href: 'tel:+19842565837',
+    action: '+1 (919) 449-8913',
+    href: 'tel:+19194498913',
     cta: 'Call Now',
   },
   {
@@ -26,8 +26,8 @@ const contactMethods = [
     icon: Mail,
     title: 'Email',
     description: 'Send us your questions anytime',
-    action: 'care@arayolight.com',
-    href: 'mailto:care@arayolight.com',
+    action: 'raylightcare76@gmail.com',
+    href: 'mailto:raylightcare76@gmail.com',
     cta: 'Send Email',
   },
 ];
