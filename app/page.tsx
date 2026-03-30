@@ -248,8 +248,19 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-white">
-        <div className="container-care mx-auto">
+      <section className="section-padding relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/social-worker-taking-care-senior-woman.jpg"
+            alt="Social worker caring for senior"
+            fill
+            className="object-cover"
+          />
+          {/* White Overlay */}
+          <div className="absolute inset-0 bg-white/85" />
+        </div>
+        <div className="container-care mx-auto relative z-10">
           {/* Section Header */}
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-blue/10 text-care-blue text-sm font-medium mb-4">
