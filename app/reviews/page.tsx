@@ -5,6 +5,8 @@ import ReviewForm from '@/components/ReviewForm';
 import StarRating from '@/components/StarRating';
 import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
   title: 'Client Reviews',
   description: 'Read genuine reviews from families who trust ArayoLight Homecare. Share your own experience and help others find quality care.',
