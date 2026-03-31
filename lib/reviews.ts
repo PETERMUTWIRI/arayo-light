@@ -78,7 +78,7 @@ export async function createReview(formData: FormData) {
       overallExperience,
       wouldRecommend,
       comment,
-      approved: false,
+      approved: true,
     },
   });
 

@@ -92,10 +92,6 @@ export default async function ReviewsPage() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-6 border border-care-red/10">
-                <Star className="w-4 h-4" />
-                <span>Client Reviews</span>
-              </div>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-[1.1]">
                 What Families Say About <span className="text-care-red">ArayoLight</span>
               </h1>
@@ -164,51 +160,20 @@ export default async function ReviewsPage() {
       {/* Submit Review Section */}
       <section className="pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
-            {/* Left: Info */}
-            <FadeIn direction="right">
-              <div className="lg:sticky lg:top-32">
-                <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-6">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn>
+              <div className="text-center mb-10">
+                <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
                   Share Your <span className="text-care-red">Experience</span>
                 </h2>
-                <p className="text-care-gray-500 text-lg leading-relaxed mb-8">
+                <p className="text-care-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
                   Your feedback matters. By sharing your experience, you help other families discover 
-                  the compassionate care that ArayoLight provides. Every review is read and appreciated.
+                  the compassionate care that ArayoLight provides.
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-care-gray-100">
-                    <div className="w-10 h-10 rounded-lg bg-care-red/8 flex items-center justify-center flex-shrink-0 border border-care-red/10">
-                      <Star className="w-5 h-5 text-care-red" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-care-navy text-sm">Rate Our Services</p>
-                      <p className="text-care-gray-500 text-sm">Help us understand what we&apos;re doing well and where we can improve.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-care-gray-100">
-                    <div className="w-10 h-10 rounded-lg bg-care-red/8 flex items-center justify-center flex-shrink-0 border border-care-red/10">
-                      <Users className="w-5 h-5 text-care-red" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-care-navy text-sm">Help Other Families</p>
-                      <p className="text-care-gray-500 text-sm">Your honest review guides families searching for quality homecare.</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-care-gray-100">
-                    <div className="w-10 h-10 rounded-lg bg-care-red/8 flex items-center justify-center flex-shrink-0 border border-care-red/10">
-                      <ThumbsUp className="w-5 h-5 text-care-red" />
-                    </div>
-                    <div>
-                      <p className="font-heading text-care-navy text-sm">Quick & Easy</p>
-                      <p className="text-care-gray-500 text-sm">Takes less than 2 minutes. Upload a photo to add authenticity.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </FadeIn>
 
-            {/* Right: Form */}
-            <FadeIn direction="left" delay={0.15}>
+            <FadeIn delay={0.1}>
               <ReviewForm />
             </FadeIn>
           </div>

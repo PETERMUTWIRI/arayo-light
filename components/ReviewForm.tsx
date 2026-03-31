@@ -6,11 +6,11 @@ import { Star, Upload, CheckCircle, Loader2, User } from 'lucide-react';
 import { createReview } from '@/lib/reviews';
 
 const ratingQuestions = [
-  { key: 'serviceQuality', label: '1. Please rate the quality of the services you received from us:' },
-  { key: 'websiteInfo', label: '2. Please rate the information we provided on our website:' },
-  { key: 'staffEfficiency', label: '3. Please rate our staff in terms of efficiency:' },
-  { key: 'responsiveness', label: '4. Please rate our responsiveness to feedback:' },
-  { key: 'overallExperience', label: '5. Please rate your overall experience with our services:' },
+  { key: 'serviceQuality', label: 'Service quality' },
+  { key: 'websiteInfo', label: 'Website information' },
+  { key: 'staffEfficiency', label: 'Staff efficiency' },
+  { key: 'responsiveness', label: 'Responsiveness' },
+  { key: 'overallExperience', label: 'Overall experience' },
 ];
 
 const ratingOptions = [
@@ -112,7 +112,7 @@ export default function ReviewForm() {
           Thank You for Your Feedback!
         </h3>
         <p className="text-care-gray-500 mb-6 max-w-md mx-auto">
-          Your review has been submitted successfully and is pending approval. Once approved, it will appear on our reviews page.
+          Your review has been submitted successfully and is now live on our reviews page. Thank you for helping other families discover ArayoLight!
         </p>
         <button
           onClick={() => {
@@ -139,74 +139,73 @@ export default function ReviewForm() {
   }
 
   return (
-    <div className="card-care p-6 md:p-10">
-      <h3 className="font-heading text-2xl text-care-navy mb-6">Share Your Experience</h3>
-
+    <div className="card-care p-6 md:p-8">
       {error && (
         <div className="mb-6 p-4 rounded-xl bg-red-50 text-red-600 text-sm">
           {error}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-8">
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="form-label flex items-center gap-2">
-            <User className="w-4 h-4 text-care-gray-400" />
-            Your Name *
-          </label>
-          <input
-            type="text"
-            id="name"
-            required
-            value={formData.name}
-            onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
-            placeholder="Enter your full name"
-            className="form-input"
-          />
-        </div>
-
-        {/* Photo Upload */}
-        <div>
-          <label className="form-label flex items-center gap-2">
-            <Upload className="w-4 h-4 text-care-gray-400" />
-            Upload Your Photo (Optional)
-          </label>
-          <div
-            onClick={() => fileInputRef.current?.click()}
-            className="border-2 border-dashed border-care-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-care-red hover:bg-care-red/5 transition-colors"
-          >
-            {imagePreview ? (
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden">
-                  <Image src={imagePreview} alt="Preview" fill className="object-cover" />
-                </div>
-                <p className="text-sm text-care-navy font-medium">{imageFile?.name}</p>
-                <p className="text-xs text-care-gray-400">Click to change image</p>
-              </div>
-            ) : (
-              <>
-                <Upload className="w-8 h-8 text-care-gray-400 mx-auto mb-2" />
-                <p className="text-sm text-care-navy font-medium">Click to upload a photo</p>
-                <p className="text-xs text-care-gray-400 mt-1">JPG, PNG (max 5MB)</p>
-              </>
-            )}
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Top Row: Name + Photo */}
+        <div className="grid md:grid-cols-[1fr_auto] gap-6 items-start">
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className="form-label flex items-center gap-2">
+              <User className="w-4 h-4 text-care-gray-400" />
+              Your Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+              placeholder="Enter your full name"
+              className="form-input"
+            />
           </div>
-          <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
+
+          {/* Photo Upload */}
+          <div className="md:w-40">
+            <label className="form-label flex items-center gap-2">
+              <Upload className="w-4 h-4 text-care-gray-400" />
+              Photo
+            </label>
+            <div
+              onClick={() => fileInputRef.current?.click()}
+              className="border-2 border-dashed border-care-gray-300 rounded-xl p-3 text-center cursor-pointer hover:border-care-red hover:bg-care-red/5 transition-colors"
+            >
+              {imagePreview ? (
+                <div className="flex flex-col items-center gap-2">
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                    <Image src={imagePreview} alt="Preview" fill className="object-cover" />
+                  </div>
+                  <p className="text-xs text-care-gray-400">Change</p>
+                </div>
+              ) : (
+                <>
+                  <Upload className="w-6 h-6 text-care-gray-400 mx-auto mb-1" />
+                  <p className="text-xs text-care-navy font-medium">Upload photo</p>
+                </>
+              )}
+            </div>
+            <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
+          </div>
         </div>
 
-        {/* Rating Questions */}
-        <div className="space-y-6">
+        {/* Rating Questions Grid */}
+        <div className="grid md:grid-cols-2 gap-4">
           {ratingQuestions.map((question) => (
-            <div key={question.key} className="bg-care-gray-50 rounded-xl p-5">
-              <p className="text-sm font-medium text-care-navy mb-4">{question.label}</p>
-              <div className="flex flex-wrap gap-3">
+            <div key={question.key} className="bg-care-gray-50 rounded-xl p-4">
+              <p className="text-sm font-medium text-care-navy mb-3">{question.label}</p>
+              <div className="flex flex-wrap gap-2">
                 {ratingOptions.map((option) => {
                   const isSelected = formData[question.key as keyof typeof formData] === option.value;
                   return (
                     <label
                       key={option.value}
-                      className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border cursor-pointer transition-all ${
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border cursor-pointer transition-all ${
                         isSelected
                           ? 'border-care-red bg-care-red/5 text-care-red'
                           : 'border-care-gray-200 bg-white hover:border-care-gray-300'
@@ -220,8 +219,8 @@ export default function ReviewForm() {
                         onChange={() => handleRatingChange(question.key, option.value)}
                         className="sr-only"
                       />
-                      <Star className={`w-4 h-4 ${isSelected ? 'fill-care-red text-care-red' : 'text-care-gray-300'}`} />
-                      <span className="text-sm font-medium">{option.label}</span>
+                      <Star className={`w-3.5 h-3.5 ${isSelected ? 'fill-care-red text-care-red' : 'text-care-gray-300'}`} />
+                      <span className="text-xs font-medium">{option.label}</span>
                     </label>
                   );
                 })}
@@ -230,73 +229,77 @@ export default function ReviewForm() {
           ))}
         </div>
 
-        {/* Would Recommend */}
-        <div className="bg-care-gray-50 rounded-xl p-5">
-          <p className="text-sm font-medium text-care-navy mb-4">6. Would you recommend us to your friends and family?</p>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { value: true, label: 'Yes' },
-              { value: false, label: 'No' },
-            ].map((option) => {
-              const isSelected = formData.wouldRecommend === option.value;
-              return (
-                <label
-                  key={String(option.value)}
-                  className={`flex items-center gap-2 px-6 py-2.5 rounded-lg border cursor-pointer transition-all ${
-                    isSelected
-                      ? 'border-care-red bg-care-red/5 text-care-red'
-                      : 'border-care-gray-200 bg-white hover:border-care-gray-300'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="wouldRecommend"
-                    value={String(option.value)}
-                    checked={isSelected}
-                    onChange={() => setFormData((prev) => ({ ...prev, wouldRecommend: option.value }))}
-                    className="sr-only"
-                  />
-                  <span className="text-sm font-medium">{option.label}</span>
-                </label>
-              );
-            })}
+        {/* Bottom Row: Recommend + Comment */}
+        <div className="grid md:grid-cols-[auto_1fr] gap-6">
+          {/* Would Recommend */}
+          <div className="bg-care-gray-50 rounded-xl p-4 md:w-56">
+            <p className="text-sm font-medium text-care-navy mb-3">Recommend us?</p>
+            <div className="flex gap-2">
+              {[
+                { value: true, label: 'Yes' },
+                { value: false, label: 'No' },
+              ].map((option) => {
+                const isSelected = formData.wouldRecommend === option.value;
+                return (
+                  <label
+                    key={String(option.value)}
+                    className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border cursor-pointer transition-all ${
+                      isSelected
+                        ? 'border-care-red bg-care-red/5 text-care-red'
+                        : 'border-care-gray-200 bg-white hover:border-care-gray-300'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="wouldRecommend"
+                      value={String(option.value)}
+                      checked={isSelected}
+                      onChange={() => setFormData((prev) => ({ ...prev, wouldRecommend: option.value }))}
+                      className="sr-only"
+                    />
+                    <span className="text-sm font-medium">{option.label}</span>
+                  </label>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Comment */}
+          <div>
+            <label htmlFor="comment" className="form-label">
+              Additional Comments (Optional)
+            </label>
+            <textarea
+              id="comment"
+              value={formData.comment}
+              onChange={(e) => setFormData((prev) => ({ ...prev, comment: e.target.value }))}
+              placeholder="Tell us more about your experience..."
+              className="form-textarea"
+              rows={3}
+            />
           </div>
         </div>
 
-        {/* Comment */}
-        <div>
-          <label htmlFor="comment" className="form-label">
-            Additional Comments (Optional)
-          </label>
-          <textarea
-            id="comment"
-            value={formData.comment}
-            onChange={(e) => setFormData((prev) => ({ ...prev, comment: e.target.value }))}
-            placeholder="Tell us more about your experience..."
-            className="form-textarea"
-            rows={4}
-          />
-        </div>
-
         {/* Submit */}
-        <button
-          type="submit"
-          disabled={isSubmitting || !formData.name.trim()}
-          className="btn-primary w-full disabled:opacity-70 disabled:cursor-not-allowed"
-        >
-          {isSubmitting ? (
-            <>
-              <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-              Submitting...
-            </>
-          ) : (
-            'Submit Review'
-          )}
-        </button>
-
-        <p className="text-care-gray-400 text-xs text-center">
-          By submitting, you agree to have your review displayed on our website.
-        </p>
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={isSubmitting || !formData.name.trim()}
+            className="btn-primary w-full disabled:opacity-70 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                Submitting...
+              </>
+            ) : (
+              'Submit Review'
+            )}
+          </button>
+          <p className="text-care-gray-400 text-xs text-center mt-3">
+            By submitting, you agree to have your review displayed on our website.
+          </p>
+        </div>
       </form>
     </div>
   );
