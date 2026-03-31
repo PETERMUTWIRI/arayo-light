@@ -208,7 +208,7 @@ function ViewAllServicesCard() {
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-care-navy/50 group-hover:bg-care-red/60 transition-colors duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
       
       <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center">
@@ -290,10 +290,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn direction="up" delay={0.1}>
               <div className="max-w-2xl">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-5 border border-care-red/10">
-                  <Heart className="w-4 h-4" />
-                  <span>Trusted Homecare Services</span>
-                </div>
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy leading-[1.1] mb-5">
                   <span className="text-care-red">ArayoLight</span>{' '}
                   Professional Homecare Services
@@ -368,7 +364,7 @@ export default function HomePage() {
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
                 Comprehensive Care for Your Loved Ones
               </h2>
-              <p className="text-care-gray-500 text-lg">
+              <p className="text-white text-lg">
                 We offer a wide range of homecare services designed to support independence 
                 while ensuring safety and comfort at home.
               </p>
