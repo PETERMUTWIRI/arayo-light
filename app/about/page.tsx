@@ -131,7 +131,7 @@ export default function AboutPage() {
                 </div>
                 
                 <div className="absolute -bottom-6 -left-6 bg-care-navy rounded-2xl p-6 shadow-[0_20px_50px_rgba(15,23,42,0.25)] max-w-xs border border-white/10">
-                  <h3 className="font-heading text-xl text-white mb-4">Our Journey</h3>
+                  <h3 className="font-heading text-xl !text-white mb-4">Our Journey</h3>
                   <div className="space-y-3">
                     {milestones.slice(0, 3).map((milestone) => (
                       <div key={milestone.year} className="flex gap-3">

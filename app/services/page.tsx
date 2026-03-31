@@ -221,7 +221,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="bg-care-navy rounded-2xl p-6 text-white">
-                  <h4 className="font-heading text-white mb-3">Daily Medication Process</h4>
+                  <h4 className="font-heading !text-white mb-3">Daily Medication Process</h4>
                   <ul className="space-y-2 text-white/70 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-care-red font-bold">1.</span>
@@ -471,7 +471,7 @@ export default function ServicesPage() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
             <FadeIn>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-4 text-white">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-4 !text-white">
                 Ready to Get Started?
               </h2>
               <p className="text-white/70 text-lg">

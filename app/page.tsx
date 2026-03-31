@@ -215,7 +215,7 @@ function ViewAllServicesCard() {
         <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
           <ArrowRight className="w-8 h-8 text-white" />
         </div>
-        <h3 className="font-heading text-xl mb-2 text-white">View All Services</h3>
+        <h3 className="font-heading text-xl mb-2 !text-white">View All Services</h3>
         <p className="text-white/80 text-sm text-center">
           Explore our complete range of homecare solutions
         </p>
@@ -616,7 +616,7 @@ export default function HomePage() {
                   <Shield className="w-4 h-4" />
                   <span>Why Choose ArayoLight</span>
                 </div>
-                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-6">
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl !text-white mb-6">
                   Trusted Care for Over 20 Years
                 </h2>
                 <p className="text-white/70 text-lg mb-10 leading-relaxed">
@@ -632,7 +632,7 @@ export default function HomePage() {
                         <indicator.icon className="w-6 h-6 text-care-red" />
                       </div>
                       <div>
-                        <p className="font-heading text-2xl text-white">{indicator.value}</p>
+                        <p className="font-heading text-2xl !text-white">{indicator.value}</p>
                         <p className="text-white/60 text-sm font-medium">{indicator.label}</p>
                       </div>
                     </div>

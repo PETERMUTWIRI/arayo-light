@@ -113,7 +113,7 @@ export default function CTASection({
       <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-5">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl !text-white mb-5">
               {title}
             </h2>
             <p className="text-white/70 text-lg md:text-xl mb-10">

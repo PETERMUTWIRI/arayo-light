@@ -62,20 +62,20 @@ export default function Navbar() {
               
               {/* Logos */}
               <div className="flex items-center gap-2 md:gap-3 ml-1">
-                <div className="relative w-10 h-5 md:w-12 md:h-6 opacity-90">
+                <div className="relative w-10 h-5 md:w-12 md:h-6 bg-white rounded-md p-1">
                   <Image
                     src="/images/cmc-logo.png"
                     alt="CMC Accreditation"
                     fill
-                    className="object-contain brightness-0 invert"
+                    className="object-contain"
                   />
                 </div>
-                <div className="relative w-10 h-5 md:w-12 md:h-6 opacity-90">
+                <div className="relative w-10 h-5 md:w-12 md:h-6 bg-white rounded-md p-1">
                   <Image
                     src="/images/the-joint-commission.png"
                     alt="The Joint Commission"
                     fill
-                    className="object-contain brightness-0 invert"
+                    className="object-contain"
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 md:w-14 md:h-14">
+              <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-care-navy p-1.5 shadow-md">
                 <Image
                   src="/Arayolight-logo.png"
                   alt="ArayoLight Homecare Services"

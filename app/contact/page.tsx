@@ -171,7 +171,7 @@ export default function ContactPage() {
               <FadeIn direction="up">
                 <div className="bg-care-navy rounded-3xl p-8 md:p-10 shadow-[0_20px_60px_rgba(15,23,42,0.2)]">
                   <Clock className="w-12 h-12 text-care-red mb-5" />
-                  <h2 className="font-heading text-2xl md:text-3xl text-white mb-4">Fast Response Times</h2>
+                  <h2 className="font-heading text-2xl md:text-3xl !text-white mb-4">Fast Response Times</h2>
                   <p className="text-white/70 mb-8">
                     We understand that care needs can be urgent. That&apos;s why ArayoLight prioritizes 
                     quick responses to all inquiries.

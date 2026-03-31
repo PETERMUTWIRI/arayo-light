@@ -39,16 +39,16 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 group mb-6">
-              <div className="relative w-12 h-12">
+              <div className="relative w-12 h-12 rounded-xl bg-white/10 p-1.5 backdrop-blur-sm">
                 <Image
                   src="/Arayolight-logo.png"
                   alt="ArayoLight Homecare Services"
                   fill
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                 />
               </div>
               <div>
-                <span className="font-heading text-xl font-bold text-white block tracking-tight">ArayoLight</span>
+                <span className="font-heading text-xl font-bold !text-white block tracking-tight">ArayoLight</span>
                 <span className="text-white/60 text-xs font-medium uppercase tracking-wider">Homecare Services</span>
               </div>
             </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="font-heading text-base mb-5 text-white/90">Our Services</h3>
+            <h3 className="font-heading text-base mb-5 !text-white">Our Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading text-base mb-5 text-white/90">Company</h3>
+            <h3 className="font-heading text-base mb-5 !text-white">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="font-heading text-base mb-5 text-white/90">Contact Us</h3>
+            <h3 className="font-heading text-base mb-5 !text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-care-red flex-shrink-0 mt-0.5" />
