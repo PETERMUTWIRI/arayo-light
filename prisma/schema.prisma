@@ -451,3 +451,31 @@ model CampaignStat {
   
   @@index([date])
 }
+
+// ==========================================
+// ARAYOLIGHT - CLIENT REVIEWS
+// ==========================================
+
+model Review {
+  id                String   @id @default(uuid())
+  name              String   @db.VarChar(255)
+  imageUrl          String?  @db.VarChar(500) // ImgBB URL
+  
+  // Ratings: 5=Excellent, 4=Good, 3=Fair, 2=Poor
+  serviceQuality    Int
+  websiteInfo       Int
+  staffEfficiency   Int
+  responsiveness    Int
+  overallExperience Int      // Drives the displayed star rating
+  
+  wouldRecommend    Boolean
+  comment           String?  @db.Text
+  
+  // Moderation
+  approved          Boolean  @default(false)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@index([approved])
+  @@index([createdAt])
+}

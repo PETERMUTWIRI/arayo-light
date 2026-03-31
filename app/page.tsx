@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 // How it works steps
 const steps = [
@@ -654,108 +655,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section-padding bg-white">
-        <div className="container-care mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-4 border border-care-red/10">
-                <Star className="w-4 h-4" />
-                <span>Testimonials</span>
-              </div>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
-                What Families Say About ArayoLight
-              </h2>
-            </FadeIn>
-          </div>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.1}>
-            <StaggerItem>
-              <div className="card-care p-7 h-full">
-                <div className="flex items-center gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-care-gray-500 leading-relaxed mb-6">
-                  &ldquo;ArayoLight has been a blessing for our family. The caregiver is compassionate, 
-                  reliable, and truly cares about my mother&apos;s well-being.&rdquo;
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonial-1.jpeg"
-                      alt="Happy family client"
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-heading text-care-navy text-sm">Sarah Johnson</p>
-                    <p className="text-care-gray-400 text-xs">HR Director, Meridian Health</p>
-                  </div>
-                </div>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="card-care p-7 h-full">
-                <div className="flex items-center gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-care-gray-500 leading-relaxed mb-6">
-                  &ldquo;The peace of mind ArayoLight provides is priceless. Knowing my father is in 
-                  good hands allows me to focus on my work without worry.&rdquo;
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonial-2.jpeg"
-                      alt="Satisfied family member"
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-heading text-care-navy text-sm">Michael Chen</p>
-                    <p className="text-care-gray-400 text-xs">Managing Partner, Chen & Associates</p>
-                  </div>
-                </div>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="card-care p-7 h-full">
-                <div className="flex items-center gap-1 mb-5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-care-gray-500 leading-relaxed mb-6">
-                  &ldquo;Professional, caring, and responsive. ArayoLight exceeded our expectations 
-                  in every way. Highly recommend their services!&rdquo;
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                    <Image
-                      src="/images/testimonial-3.jpeg"
-                      alt="Grateful family member"
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <p className="font-heading text-care-navy text-sm">Emily Rodriguez</p>
-                    <p className="text-care-gray-400 text-xs">VP Operations, Apex Solutions</p>
-                  </div>
-                </div>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="relative bg-care-navy overflow-hidden">
