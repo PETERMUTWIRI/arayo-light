@@ -257,7 +257,7 @@ export default function RootLayout({
       </head>
       
       <body 
-        className={`${inter.className} antialiased bg-care-gray-50 text-care-navy`}
+        className={`${inter.className} antialiased bg-white text-care-navy`}
       >
         {/* Navigation */}
         <Navbar />

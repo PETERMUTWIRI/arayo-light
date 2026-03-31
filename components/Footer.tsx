@@ -27,59 +27,63 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-care-navy text-white">
+    <footer className="bg-care-navy text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-care-blue/30 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-care-red/20 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/3" />
+      </div>
+
       {/* Main Footer */}
-      <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="relative w-14 h-14">
+            <Link href="/" className="flex items-center gap-3 group mb-6">
+              <div className="relative w-12 h-12">
                 <Image
                   src="/Arayolight-logo.png"
                   alt="ArayoLight Homecare Services"
                   fill
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                 />
               </div>
               <div>
-                <span className="font-heading text-2xl font-bold text-white block drop-shadow-lg">ArayoLight</span>
-                <span className="text-white text-sm font-medium">Homecare Services</span>
+                <span className="font-heading text-xl font-bold text-white block tracking-tight">ArayoLight</span>
+                <span className="text-white/60 text-xs font-medium uppercase tracking-wider">Homecare Services</span>
               </div>
             </Link>
             <p className="text-care-gray-300 text-sm leading-relaxed mb-6">
               Professional, compassionate homecare services you can trust. 
               Serving families across all states for over 20 years.
             </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-all duration-300 hover:scale-110"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-colors"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-care-red transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Services Column */}
           <div>
-            <h3 className="font-heading text-lg mb-6">Our Services</h3>
+            <h3 className="font-heading text-base mb-5 text-white/90">Our Services</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -96,7 +100,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="font-heading text-lg mb-6">Company</h3>
+            <h3 className="font-heading text-base mb-5 text-white/90">Company</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -113,38 +117,38 @@ export default function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h3 className="font-heading text-lg mb-6">Contact Us</h3>
+            <h3 className="font-heading text-base mb-5 text-white/90">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-care-gray-300">Phone</p>
-                  <a href="tel:+19194498913" className="text-white hover:text-care-red transition-colors">
+                  <p className="text-xs text-care-gray-400 uppercase tracking-wider mb-0.5">Phone</p>
+                  <a href="tel:+19194498913" className="text-white hover:text-care-red transition-colors text-sm">
                     +1 (919) 449-8913
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-care-gray-300">Email</p>
-                  <a href="mailto:raylightcare76@gmail.com" className="text-white hover:text-care-red transition-colors">
+                  <p className="text-xs text-care-gray-400 uppercase tracking-wider mb-0.5">Email</p>
+                  <a href="mailto:raylightcare76@gmail.com" className="text-white hover:text-care-red transition-colors text-sm">
                     raylightcare76@gmail.com
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-care-gray-300">Coverage</p>
-                  <p className="text-white">All States (USA)</p>
+                  <p className="text-xs text-care-gray-400 uppercase tracking-wider mb-0.5">Coverage</p>
+                  <p className="text-white text-sm">All States (USA)</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-care-red flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm text-care-gray-300">Availability</p>
-                  <p className="text-white">24/7 Support</p>
+                  <p className="text-xs text-care-gray-400 uppercase tracking-wider mb-0.5">Availability</p>
+                  <p className="text-white text-sm">24/7 Support</p>
                 </div>
               </li>
             </ul>
@@ -153,7 +157,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative z-10">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-care-gray-400 text-sm text-center md:text-left">

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
 
 const contactMethods = [
   {
@@ -44,17 +45,19 @@ export default function ContactPage() {
       <section className="py-16 md:py-20">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
-              <MessageCircle className="w-4 h-4" />
-              <span>Contact Us</span>
-            </div>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
-              Get in Touch with ArayoLight
-            </h1>
-            <p className="text-care-gray-500 text-lg">
-              Have questions about our services? We&apos;re here to help. Reach out to us through 
-              any of the channels below.
-            </p>
+            <FadeIn>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-6 border border-care-red/10">
+                <MessageCircle className="w-4 h-4" />
+                <span>Contact Us</span>
+              </div>
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-5 leading-[1.1]">
+                Get in Touch with ArayoLight
+              </h1>
+              <p className="text-care-gray-500 text-lg md:text-xl">
+                Have questions about our services? We&apos;re here to help. Reach out to us through 
+                any of the channels below.
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -62,27 +65,29 @@ export default function ContactPage() {
       {/* Contact Methods */}
       <section className="pb-16 md:pb-24">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" staggerDelay={0.1}>
             {contactMethods.map((method) => (
-              <div key={method.title} className="card-care p-6 md:p-8 text-center">
-                <div className="w-16 h-16 rounded-2xl bg-care-red/10 flex items-center justify-center mx-auto mb-6">
-                  <method.icon className="w-8 h-8 text-care-red" />
+              <StaggerItem key={method.title}>
+                <div className="card-care p-7 md:p-8 text-center h-full flex flex-col">
+                  <div className="w-16 h-16 rounded-2xl bg-care-red/8 flex items-center justify-center mx-auto mb-6 border border-care-red/10">
+                    <method.icon className="w-8 h-8 text-care-red" />
+                  </div>
+                  <h3 className="font-heading text-xl text-care-navy mb-2">{method.title}</h3>
+                  <p className="text-care-gray-500 text-sm mb-3">{method.description}</p>
+                  <p className="font-medium text-care-navy mb-6">{method.action}</p>
+                  <a
+                    href={method.href}
+                    target={method.external ? '_blank' : undefined}
+                    rel={method.external ? 'noopener noreferrer' : undefined}
+                    className="btn-primary w-full text-sm py-3 mt-auto"
+                  >
+                    {method.cta}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
                 </div>
-                <h3 className="font-heading text-xl text-care-navy mb-2">{method.title}</h3>
-                <p className="text-care-gray-500 text-sm mb-4">{method.description}</p>
-                <p className="font-medium text-care-navy mb-6">{method.action}</p>
-                <a
-                  href={method.href}
-                  target={method.external ? '_blank' : undefined}
-                  rel={method.external ? 'noopener noreferrer' : undefined}
-                  className="btn-primary w-full text-sm py-3"
-                >
-                  {method.cta}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -91,66 +96,68 @@ export default function ContactPage() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Coverage Info with Image */}
-              <div className="card-care overflow-hidden">
-                <div className="relative h-48">
-                  <Image
-                    src="/images/contact-office.jpeg"
-                    alt="ArayoLight support team ready to help"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading text-xl text-care-navy mb-6">Coverage Information</h3>
-                  <div className="space-y-4">
-                    {coverageInfo.map((info) => (
-                      <div key={info.title} className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-care-blue/10 flex items-center justify-center flex-shrink-0">
-                          <info.icon className="w-6 h-6 text-care-blue" />
+              <FadeIn direction="up" delay={0.1}>
+                <div className="card-care overflow-hidden h-full">
+                  <div className="relative h-52">
+                    <Image
+                      src="/images/contact-office.jpeg"
+                      alt="ArayoLight support team ready to help"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-7">
+                    <h3 className="font-heading text-xl text-care-navy mb-6">Coverage Information</h3>
+                    <div className="space-y-4">
+                      {coverageInfo.map((info) => (
+                        <div key={info.title} className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-xl bg-care-blue/8 flex items-center justify-center flex-shrink-0 border border-care-blue/10">
+                            <info.icon className="w-6 h-6 text-care-blue" />
+                          </div>
+                          <div>
+                            <p className="text-sm text-care-gray-500">{info.title}</p>
+                            <p className="font-medium text-care-navy">{info.value}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-sm text-care-gray-500">{info.title}</p>
-                          <p className="font-medium text-care-navy">{info.value}</p>
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
 
-              {/* Quick Actions */}
-              <div className="card-care p-6">
-                <h3 className="font-heading text-xl text-care-navy mb-6">Quick Actions</h3>
-                <div className="space-y-4">
-                  <Link
-                    href="/request-care"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-care-red/5 hover:bg-care-red/10 transition-colors group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-medium text-care-navy group-hover:text-care-red transition-colors">Request Care</p>
-                      <p className="text-sm text-care-gray-500">Get matched with a caregiver</p>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-care-gray-400 group-hover:text-care-red group-hover:translate-x-1 transition-all" />
-                  </Link>
-                  <Link
-                    href="/apply"
-                    className="flex items-center gap-4 p-4 rounded-xl bg-care-blue/5 hover:bg-care-blue/10 transition-colors group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-care-blue flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-medium text-care-navy group-hover:text-care-blue transition-colors">Apply as Caregiver</p>
-                      <p className="text-sm text-care-gray-500">Join our team of caregivers</p>
-                    </div>
-                    <ArrowRight className="w-5 h-5 text-care-gray-400 group-hover:text-care-blue group-hover:translate-x-1 transition-all" />
-                  </Link>
+              <FadeIn direction="up" delay={0.2}>
+                <div className="card-care p-7 h-full">
+                  <h3 className="font-heading text-xl text-care-navy mb-6">Quick Actions</h3>
+                  <div className="space-y-4">
+                    <Link
+                      href="/request-care"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-care-red/5 hover:bg-care-red/10 transition-colors group border border-care-red/10"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-care-red flex items-center justify-center flex-shrink-0 shadow-[0_4px_14px_rgba(198,40,40,0.25)]">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-care-navy group-hover:text-care-red transition-colors">Request Care</p>
+                        <p className="text-sm text-care-gray-500">Get matched with a caregiver</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-care-gray-400 group-hover:text-care-red group-hover:translate-x-1 transition-all" />
+                    </Link>
+                    <Link
+                      href="/apply"
+                      className="flex items-center gap-4 p-4 rounded-xl bg-care-blue/5 hover:bg-care-blue/10 transition-colors group border border-care-blue/10"
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-care-blue flex items-center justify-center flex-shrink-0 shadow-[0_4px_14px_rgba(30,58,138,0.2)]">
+                        <Mail className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-medium text-care-navy group-hover:text-care-blue transition-colors">Apply as Caregiver</p>
+                        <p className="text-sm text-care-gray-500">Join our team of caregivers</p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-care-gray-400 group-hover:text-care-blue group-hover:translate-x-1 transition-all" />
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
             </div>
           </div>
         </div>
@@ -161,34 +168,37 @@ export default function ContactPage() {
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6 items-center">
-              <div className="bg-care-navy rounded-2xl p-8 md:p-12">
-                <Clock className="w-12 h-12 text-care-red mb-4" />
-                <h2 className="font-heading text-2xl text-white mb-4">Fast Response Times</h2>
-                <p className="text-white/80 mb-6">
-                  We understand that care needs can be urgent. That&apos;s why ArayoLight prioritizes 
-                  quick responses to all inquiries.
-                </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <p className="font-heading text-3xl text-care-red">30 min</p>
-                    <p className="text-white/70 text-sm">Average WhatsApp response</p>
-                  </div>
-                  <div>
-                    <p className="font-heading text-3xl text-care-red">24/7</p>
-                    <p className="text-white/70 text-sm">Emergency support available</p>
+              <FadeIn direction="up">
+                <div className="bg-care-navy rounded-3xl p-8 md:p-10 shadow-[0_20px_60px_rgba(15,23,42,0.2)]">
+                  <Clock className="w-12 h-12 text-care-red mb-5" />
+                  <h2 className="font-heading text-2xl md:text-3xl text-white mb-4">Fast Response Times</h2>
+                  <p className="text-white/70 mb-8">
+                    We understand that care needs can be urgent. That&apos;s why ArayoLight prioritizes 
+                    quick responses to all inquiries.
+                  </p>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <p className="font-heading text-3xl text-care-red">30 min</p>
+                      <p className="text-white/60 text-sm">Average response</p>
+                    </div>
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <p className="font-heading text-3xl text-care-red">24/7</p>
+                      <p className="text-white/60 text-sm">Emergency support</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
               
-              {/* Support Image */}
-              <div className="relative rounded-2xl overflow-hidden h-80">
-                <Image
-                  src="/images/support-team.jpeg"
-                  alt="ArayoLight customer support team"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <FadeIn direction="up" delay={0.15}>
+                <div className="relative rounded-3xl overflow-hidden h-80 md:h-full min-h-[320px] shadow-[0_20px_60px_rgba(15,23,42,0.12)]">
+                  <Image
+                    src="/images/support-team.jpeg"
+                    alt="ArayoLight customer support team"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </FadeIn>
             </div>
           </div>
         </div>

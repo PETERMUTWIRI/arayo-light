@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ==========================================
-   CAREGIVER SERVICES - PROFESSIONAL HOMECARE
+   ARAYOLIGHT - PREMIUM HOMECARE
    Global Styles & Design System
    ========================================== */
 
@@ -46,7 +46,7 @@
   --border: 214 32% 91%;
   --input: 214 32% 91%;
   --ring: 0 72% 46%;
-  --radius: 0.75rem;
+  --radius: 1rem;
 }
 
 /* ==========================================
@@ -74,7 +74,7 @@ body {
 }
 
 /* ==========================================
-   GRADIENT BACKGROUNDS
+   PREMIUM GRADIENT BACKGROUNDS
    ========================================== */
 
 .bg-gradient-care {
@@ -93,14 +93,22 @@ body {
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
+.bg-gradient-navy {
+  background: linear-gradient(180deg, #1E293B 0%, #0F172A 100%);
+}
+
+.bg-gradient-soft {
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+}
+
 /* ==========================================
-   TYPOGRAPHY SYSTEM
+   TYPOGRAPHY SYSTEM - PREMIUM
    ========================================== */
 
 .font-heading {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--care-navy);
 }
 
@@ -117,37 +125,37 @@ body {
 }
 
 /* ==========================================
-   BUTTON STYLES - CAREGIVER BRAND
+   BUTTON STYLES - PREMIUM
    ========================================== */
 
 @layer components {
-  /* Primary CTA - Red for urgency/action */
+  /* Primary CTA - Refined red */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all duration-300;
     background: linear-gradient(135deg, #C62828 0%, #991B1B 100%);
-    box-shadow: 0 4px 14px rgba(198, 40, 40, 0.35);
+    box-shadow: 0 4px 20px rgba(198, 40, 40, 0.3);
   }
   
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.45);
+    box-shadow: 0 8px 30px rgba(198, 40, 40, 0.4);
   }
 
   /* Secondary - Navy for trust */
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white transition-all duration-300;
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.2);
   }
   
   .btn-secondary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.3);
   }
 
   /* Outline - Clean for secondary actions */
   .btn-outline {
-    @apply inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold border-2 transition-all duration-300;
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold border-2 transition-all duration-300;
     border-color: var(--care-navy);
     color: var(--care-navy);
     background: transparent;
@@ -163,18 +171,18 @@ body {
   .btn-whatsapp {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-white transition-all duration-300;
     background: #25D366;
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
   }
   
   .btn-whatsapp:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
     background: #128C7E;
   }
 
   /* Ghost button */
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-300;
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300;
     background: rgba(15, 23, 42, 0.05);
     color: var(--care-navy);
   }
@@ -185,30 +193,42 @@ body {
 }
 
 /* ==========================================
-   CARD STYLES - CLEAN & PROFESSIONAL
+   CARD STYLES - PREMIUM ELEVATION
    ========================================== */
 
 @layer components {
   .card-care {
     @apply bg-white rounded-2xl overflow-hidden transition-all duration-300;
-    border: 1px solid var(--care-gray-200);
-    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    box-shadow: 
+      0 1px 2px rgba(15, 23, 42, 0.02),
+      0 4px 12px rgba(15, 23, 42, 0.04);
   }
   
   .card-care:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
-    border-color: var(--care-gray-300);
+    transform: translateY(-6px);
+    box-shadow: 
+      0 12px 40px rgba(15, 23, 42, 0.08),
+      0 4px 12px rgba(15, 23, 42, 0.04);
+    border-color: rgba(226, 232, 240, 0.9);
   }
 
   .card-dark {
     @apply rounded-2xl overflow-hidden transition-all duration-300;
     background: linear-gradient(145deg, #1E293B 0%, #0F172A 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
   
   .card-dark:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .card-glass {
+    @apply rounded-2xl overflow-hidden transition-all duration-300;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
   }
 }
 
@@ -218,7 +238,7 @@ body {
 
 @layer components {
   .section-padding {
-    @apply py-10 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
   }
 
   .container-care {
@@ -232,24 +252,24 @@ body {
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
+    animation: slideUp 0.6s ease-out forwards;
   }
 
   .transition-smooth {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
   }
 }
 
@@ -265,7 +285,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -278,7 +298,7 @@ body {
    ========================================== */
 
 .form-input {
-  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300;
+  @apply w-full px-5 py-4 rounded-xl border transition-all duration-300;
   background: white;
   border-color: var(--care-gray-200);
   color: var(--care-navy);
@@ -287,7 +307,7 @@ body {
 .form-input:focus {
   outline: none;
   border-color: var(--care-blue-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
 }
 
 .form-input::placeholder {
@@ -300,40 +320,40 @@ body {
 }
 
 .form-select {
-  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300 appearance-none;
+  @apply w-full px-5 py-4 rounded-xl border transition-all duration-300 appearance-none;
   background: white;
   border-color: var(--care-gray-200);
   color: var(--care-navy);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
+  background-position: right 16px center;
   background-size: 20px;
-  padding-right: 40px;
+  padding-right: 48px;
 }
 
 .form-select:focus {
   outline: none;
   border-color: var(--care-blue-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
 }
 
 .form-textarea {
-  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300 resize-none;
+  @apply w-full px-5 py-4 rounded-xl border transition-all duration-300 resize-none;
   background: white;
   border-color: var(--care-gray-200);
   color: var(--care-navy);
-  min-height: 120px;
+  min-height: 140px;
 }
 
 .form-textarea:focus {
   outline: none;
   border-color: var(--care-blue-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
 }
 
 /* File upload */
 .form-file {
-  @apply w-full px-4 py-3 rounded-xl border transition-all duration-300;
+  @apply w-full px-5 py-4 rounded-xl border transition-all duration-300;
   background: white;
   border-color: var(--care-gray-200);
   color: var(--care-navy);
@@ -342,29 +362,32 @@ body {
 .form-file:focus {
   outline: none;
   border-color: var(--care-blue-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.08);
 }
 
 /* ==========================================
-   BADGE STYLES
+   BADGE STYLES - PREMIUM
    ========================================== */
 
 .badge-red {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(198, 40, 40, 0.1);
+  @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold;
+  background: rgba(198, 40, 40, 0.08);
   color: var(--care-red);
+  border: 1px solid rgba(198, 40, 40, 0.12);
 }
 
 .badge-blue {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(30, 58, 138, 0.1);
+  @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold;
+  background: rgba(30, 58, 138, 0.08);
   color: var(--care-blue);
+  border: 1px solid rgba(30, 58, 138, 0.12);
 }
 
 .badge-navy {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
-  background: rgba(15, 23, 42, 0.1);
+  @apply inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold;
+  background: rgba(15, 23, 42, 0.06);
   color: var(--care-navy);
+  border: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 /* ==========================================
@@ -432,16 +455,17 @@ body {
 .prose-care h2 {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--care-navy);
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .prose-care h3 {
   font-family: 'Inter', system-ui, sans-serif;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: var(--care-navy);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
@@ -449,7 +473,7 @@ body {
 
 .prose-care p {
   color: var(--care-gray-500);
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 1rem;
 }
 
