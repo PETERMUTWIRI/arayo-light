@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Heart, 
   ArrowRight, 
@@ -19,6 +20,7 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
+import SectionBackground, { SectionBadge, FloatingCard, BlurredOrb } from '@/components/SectionBackground';
 
 const comparisonCriteria = [
   { key: 'cost', label: 'Average Monthly Cost', icon: DollarSign },
@@ -146,37 +148,58 @@ const whenToChoose = [
 export default function ResourcesPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero */}
-      <section className="bg-gradient-hero pt-32 md:pt-40 pb-16 md:pb-24">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-6 border border-care-red/10">
-                <Heart className="w-4 h-4" />
-                <span>Family Resources</span>
-              </div>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-[1.1]">
-                Compare Your{' '}
-                <span className="text-care-red">Care Options</span>
-              </h1>
-              <p className="text-care-gray-500 text-lg md:text-xl leading-relaxed">
-                Choosing the right care for a loved one is one of the most important decisions a family can make. 
-                We&apos;ve broken down the key differences so you can decide with confidence.
-              </p>
-            </FadeIn>
+      {/* Hero - Image Background */}
+      <SectionBackground
+        imageSrc="/images/hero-caregiver-senior.jpeg"
+        imageAlt="Caregiver comparing care options with family"
+        overlay="white-heavy"
+        className="relative"
+      >
+        {/* Decorative Orbs */}
+        <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
+        <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
+        
+        <div className="pt-32 md:pt-40 pb-16 md:pb-24">
+          <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <FadeIn>
+                <SectionBadge 
+                  icon={<Heart className="w-4 h-4" />}
+                  variant="red"
+                  className="mb-6"
+                >
+                  Family Resources
+                </SectionBadge>
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-tight tracking-tight">
+                  Compare Your{' '}
+                  <span className="text-care-red">Care Options</span>
+                </h1>
+                <p className="text-care-gray-600 text-lg md:text-xl leading-relaxed">
+                  Choosing the right care for a loved one is one of the most important decisions a family can make. 
+                  We&apos;ve broken down the key differences so you can decide with confidence.
+                </p>
+              </FadeIn>
+            </div>
           </div>
         </div>
-      </section>
+      </SectionBackground>
 
-      {/* Comparison Table */}
-      <section className="section-padding bg-white">
+      {/* Comparison Table - Gradient Background */}
+      <section className="section-padding bg-gradient-lift relative">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              <SectionBadge 
+                icon={<Sparkles className="w-4 h-4" />}
+                variant="blue"
+                className="mb-6"
+              >
                 Side-by-Side Comparison
+              </SectionBadge>
+              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4 tracking-tight">
+                See How ArayoLight Compares
               </h2>
-              <p className="text-care-gray-500 text-lg">
+              <p className="text-care-gray-600 text-lg">
                 See how ArayoLight in-home care stacks up against assisted living and nursing homes.
               </p>
             </div>
@@ -184,10 +207,10 @@ export default function ResourcesPage() {
 
           {/* Desktop Table */}
           <FadeIn delay={0.1}>
-            <div className="hidden lg:block rounded-3xl border border-care-gray-200 overflow-hidden shadow-soft">
+            <div className="hidden lg:block rounded-3xl border border-care-gray-200 overflow-hidden shadow-elevated bg-white">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-care-gray-50">
+                  <tr className="bg-gradient-warm">
                     <th className="p-6 text-sm font-semibold text-care-gray-500 uppercase tracking-wider w-1/4">
                       Criteria
                     </th>
@@ -209,7 +232,7 @@ export default function ResourcesPage() {
                           </span>
                         </div>
                         {option.highlight && (
-                          <span className="inline-block mt-2 px-3 py-1 rounded-full bg-care-red text-white text-xs font-semibold">
+                          <span className="inline-block mt-2 px-3 py-1 rounded-full bg-gradient-red text-white text-xs font-semibold">
                             Recommended
                           </span>
                         )}
@@ -253,8 +276,8 @@ export default function ResourcesPage() {
           <div className="lg:hidden space-y-8">
             {options.map((option) => (
               <FadeIn key={option.id} delay={0.1}>
-                <div className={`rounded-3xl border overflow-hidden ${option.highlight ? 'border-care-red/20 shadow-[0_8px_30px_rgba(198,40,40,0.1)]' : 'border-care-gray-200 shadow-soft'}`}>
-                  <div className={`p-6 ${option.highlight ? 'bg-care-red/5' : 'bg-care-gray-50'}`}>
+                <div className={`rounded-3xl border overflow-hidden ${option.highlight ? 'border-care-red/20 shadow-elevated' : 'border-care-gray-200 shadow-soft'} bg-white`}>
+                  <div className={`p-6 ${option.highlight ? 'bg-care-red/5' : 'bg-gradient-warm'}`}>
                     <div className="flex items-center gap-3 mb-3">
                       <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${option.highlight ? 'bg-care-red text-white' : 'bg-white text-care-navy border border-care-gray-200'}`}>
                         {option.id === 'in-home' && <Home className="w-5 h-5" />}
@@ -266,7 +289,7 @@ export default function ResourcesPage() {
                       </h3>
                     </div>
                     {option.highlight && (
-                      <span className="inline-block px-3 py-1 rounded-full bg-care-red text-white text-xs font-semibold">
+                      <span className="inline-block px-3 py-1 rounded-full bg-gradient-red text-white text-xs font-semibold">
                         Recommended
                       </span>
                     )}
@@ -295,79 +318,97 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Quick Verdict */}
-      <section className="section-padding bg-care-gray-50">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <FadeIn direction="right">
-                <div className="card-care p-8 md:p-10 border-care-red/10 bg-gradient-to-br from-white to-care-red/[0.02]">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-care-red flex items-center justify-center shadow-[0_8px_30px_rgba(198,40,40,0.25)]">
-                      <ShieldCheck className="w-7 h-7 text-white" />
+      {/* Quick Verdict - Image Background */}
+      <SectionBackground
+        imageSrc="/images/about-story.jpeg"
+        imageAlt="Happy family with caregiver"
+        overlay="gradient"
+        className="relative"
+      >
+        <div className="section-padding">
+          <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-10 items-center">
+                <FadeIn direction="right">
+                  <FloatingCard variant="white" className="border-care-red/10">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-red flex items-center justify-center shadow-glow-red">
+                        <ShieldCheck className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="font-heading text-2xl md:text-3xl text-care-navy">The ArayoLight Advantage</h2>
+                        <p className="text-care-gray-500">Why families choose us</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="font-heading text-2xl md:text-3xl text-care-navy">The ArayoLight Advantage</h2>
-                      <p className="text-care-gray-500">Why families choose us</p>
+                    <ul className="space-y-4">
+                      {[
+                        'Stay in the comfort and familiarity of home',
+                        'Receive dedicated, one-on-one caregiver attention',
+                        'Maintain complete control over schedule and routines',
+                        'Keep family closely involved in every care decision',
+                        'Often more affordable than facility-based care',
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                          <span className="text-care-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </FloatingCard>
+                </FadeIn>
+                
+                <FadeIn direction="left" delay={0.15}>
+                  <div className="space-y-6">
+                    <h3 className="font-heading text-2xl md:text-3xl text-care-navy tracking-tight">
+                      Still Unsure?
+                    </h3>
+                    <p className="text-care-gray-600 text-lg leading-relaxed">
+                      Every family situation is unique. Take our free, 2-minute Care Assessment Quiz to get a personalized recommendation based on your loved one&apos;s specific needs.
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                      <Link
+                        href="/assessment"
+                        className="btn-primary group"
+                      >
+                        Take the Quiz
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                      <Link
+                        href="/request-care"
+                        className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group"
+                      >
+                        Talk to a Care Advisor
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </div>
                   </div>
-                  <ul className="space-y-4">
-                    {[
-                      'Stay in the comfort and familiarity of home',
-                      'Receive dedicated, one-on-one caregiver attention',
-                      'Maintain complete control over schedule and routines',
-                      'Keep family closely involved in every care decision',
-                      'Often more affordable than facility-based care',
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
-                        <span className="text-care-gray-500">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-              
-              <FadeIn direction="left" delay={0.15}>
-                <div className="space-y-6">
-                  <h3 className="font-heading text-2xl md:text-3xl text-care-navy">
-                    Still Unsure?
-                  </h3>
-                  <p className="text-care-gray-500 text-lg leading-relaxed">
-                    Every family situation is unique. Take our free, 2-minute Care Assessment Quiz to get a personalized recommendation based on your loved one&apos;s specific needs.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <Link
-                      href="/assessment"
-                      className="btn-primary"
-                    >
-                      Take the Quiz
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
-                    <Link
-                      href="/request-care"
-                      className="text-care-gray-500 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group"
-                    >
-                      Talk to a Care Advisor
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </SectionBackground>
 
-      {/* When to Choose */}
-      <section className="section-padding bg-white">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+      {/* When to Choose - Dark Navy */}
+      <section className="section-padding relative bg-care-navy overflow-hidden">
+        {/* Decorative Orbs */}
+        <BlurredOrb color="blue" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/2" />
+        <BlurredOrb color="red" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/3 opacity-40" />
+        
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              <SectionBadge 
+                icon={<Sparkles className="w-4 h-4" />}
+                variant="white"
+                className="mb-6"
+              >
                 Which Option Is Right for You?
+              </SectionBadge>
+              <h2 className="font-heading text-3xl md:text-4xl text-white mb-4 tracking-tight">
+                Making the Right Choice
               </h2>
-              <p className="text-care-gray-500 text-lg">
+              <p className="text-white/70 text-lg">
                 A quick guide to help you identify the best care setting for your loved one&apos;s current situation.
               </p>
             </div>
@@ -376,20 +417,20 @@ export default function ResourcesPage() {
           <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.12}>
             {whenToChoose.map((item) => (
               <StaggerItem key={item.id}>
-                <div className="card-care p-8 h-full flex flex-col">
-                  <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-5`}>
+                <FloatingCard variant="glass" className="h-full flex flex-col">
+                  <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-5 shadow-lg`}>
                     <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-heading text-xl text-care-navy mb-5">{item.title}</h3>
                   <ul className="space-y-3 flex-1">
                     {item.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-care-gray-500">
+                      <li key={idx} className="flex items-start gap-3 text-sm text-care-gray-600">
                         <div className={`w-1.5 h-1.5 rounded-full ${item.color} flex-shrink-0 mt-2`} />
                         {point}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </FloatingCard>
               </StaggerItem>
             ))}
           </StaggerContainer>

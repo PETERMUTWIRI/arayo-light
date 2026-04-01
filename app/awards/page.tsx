@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   Award, 
   ArrowRight, 
@@ -16,6 +17,8 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
+import SectionBackground, { SectionBadge, FloatingCard, BlurredOrb } from '@/components/SectionBackground';
+import StatCard from '@/components/StatCard';
 
 const awards = [
   {
@@ -99,54 +102,84 @@ const trustIndicators = [
 export default function AwardsPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-hero pt-32 md:pt-40 pb-16 md:pb-24">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/8 text-care-red text-sm font-semibold mb-6 border border-care-red/10">
-                <Award className="w-4 h-4" />
-                <span>Awards & Recognition</span>
-              </div>
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-[1.1]">
-                Trusted by Families.{' '}
-                <span className="text-care-red">Recognized by Industry Leaders.</span>
-              </h1>
-              <p className="text-care-gray-500 text-lg md:text-xl leading-relaxed">
-                For over two decades, ArayoLight has set the standard for compassionate, 
-                professional homecare. These recognitions reflect our unwavering commitment 
-                to excellence, transparency, and the families we serve.
-              </p>
-            </FadeIn>
+      {/* Hero Section - Image Background */}
+      <SectionBackground
+        imageSrc="/images/trust-team.jpeg"
+        imageAlt="ArayoLight award-winning caregiving team"
+        overlay="white-heavy"
+        className="relative"
+      >
+        {/* Decorative Orbs */}
+        <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
+        <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
+        
+        <div className="pt-32 md:pt-40 pb-16 md:pb-24">
+          <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <FadeIn>
+                <SectionBadge 
+                  icon={<Award className="w-4 h-4" />}
+                  variant="red"
+                  className="mb-6"
+                >
+                  Awards & Recognition
+                </SectionBadge>
+                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-tight tracking-tight">
+                  Trusted by Families.{' '}
+                  <span className="text-care-red">Recognized by Industry Leaders.</span>
+                </h1>
+                <p className="text-care-gray-600 text-lg md:text-xl leading-relaxed">
+                  For over two decades, ArayoLight has set the standard for compassionate, 
+                  professional homecare. These recognitions reflect our unwavering commitment 
+                  to excellence, transparency, and the families we serve.
+                </p>
+              </FadeIn>
+            </div>
           </div>
         </div>
-      </section>
+      </SectionBackground>
 
-      {/* Stats Bar */}
-      <section className="py-14 bg-white border-y border-care-gray-100">
+      {/* Stats Bar - Gradient Background */}
+      <section className="py-14 bg-gradient-lift border-y border-care-gray-100">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.1}>
             {stats.map((stat) => (
               <StaggerItem key={stat.label}>
-                <div className="text-center">
-                  <p className="font-heading text-4xl md:text-5xl text-care-red mb-2">{stat.value}</p>
-                  <p className="text-care-gray-500 text-sm md:text-base font-medium">{stat.label}</p>
-                </div>
+                <StatCard
+                  icon={stat.label.includes('Service') ? <Award className="w-5 h-5 lg:w-6 lg:h-6" /> : stat.label.includes('Families') ? <Heart className="w-5 h-5 lg:w-6 lg:h-6" /> : stat.label.includes('Satisfaction') ? <Star className="w-5 h-5 lg:w-6 lg:h-6" /> : <Trophy className="w-5 h-5 lg:w-6 lg:h-6" />}
+                  value={stat.value}
+                  label={stat.label}
+                  variant="glass"
+                  animate={false}
+                  className="text-center"
+                />
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
       </section>
 
-      {/* Awards Grid */}
-      <section className="section-padding bg-care-gray-50">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Awards Grid - White Background */}
+      <section className="section-padding bg-white relative">
+        <div className="absolute inset-0 opacity-50">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-care-red/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-care-blue/5 rounded-full blur-[120px]" />
+        </div>
+        
+        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-14 md:mb-20">
-              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4">
+              <SectionBadge 
+                icon={<Medal className="w-4 h-4" />}
+                variant="blue"
+                className="mb-6"
+              >
                 Our Accolades
+              </SectionBadge>
+              <h2 className="font-heading text-3xl md:text-4xl text-care-navy mb-4 tracking-tight">
+                Awards and Certifications
               </h2>
-              <p className="text-care-gray-500 text-lg">
+              <p className="text-care-gray-600 text-lg">
                 Awards and certifications that reflect our dedication to delivering 
                 exceptional homecare services across the United States.
               </p>
@@ -156,7 +189,7 @@ export default function AwardsPage() {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" staggerDelay={0.1}>
             {awards.map((award) => (
               <StaggerItem key={award.id}>
-                <div className={`card-care p-8 h-full flex flex-col ${award.highlight ? 'ring-2 ring-care-red/10' : ''}`}>
+                <div className={`card-feature p-8 h-full flex flex-col hover:-translate-y-2 ${award.highlight ? 'ring-2 ring-care-red/10' : ''}`}>
                   <div className="flex items-start justify-between mb-5">
                     <div className={`w-14 h-14 rounded-2xl ${award.color} flex items-center justify-center shadow-lg`}>
                       <award.icon className="w-7 h-7 text-white" />
@@ -171,7 +204,7 @@ export default function AwardsPage() {
                   <p className="text-care-red text-sm font-medium mb-4">
                     {award.organization}
                   </p>
-                  <p className="text-care-gray-500 text-sm leading-relaxed flex-1">
+                  <p className="text-care-gray-600 text-sm leading-relaxed flex-1">
                     {award.description}
                   </p>
                   {award.highlight && (
@@ -189,65 +222,72 @@ export default function AwardsPage() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="section-padding bg-white">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <FadeIn direction="right">
-                <div className="card-care p-8 md:p-10 bg-gradient-to-br from-white to-care-gray-50">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-care-red flex items-center justify-center shadow-[0_8px_30px_rgba(198,40,40,0.25)]">
-                      <Users className="w-7 h-7 text-white" />
+      {/* Trust Section - Image Background */}
+      <SectionBackground
+        imageSrc="/images/about-story.jpeg"
+        imageAlt="ArayoLight trusted caregiving team"
+        overlay="gradient"
+        className="relative"
+      >
+        <div className="section-padding">
+          <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <FadeIn direction="right">
+                  <FloatingCard variant="white" className="h-full">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-red flex items-center justify-center shadow-glow-red">
+                        <Users className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="font-heading text-2xl md:text-3xl text-care-navy">Why Families Trust Us</h2>
+                        <p className="text-care-gray-500">Beyond the awards</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="font-heading text-2xl md:text-3xl text-care-navy">Why Families Trust Us</h2>
-                      <p className="text-care-gray-500">Beyond the awards</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-4">
-                    {trustIndicators.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
-                        <span className="text-care-gray-500">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
+                    <ul className="space-y-4">
+                      {trustIndicators.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle2 className="w-5 h-5 text-care-red flex-shrink-0 mt-0.5" />
+                          <span className="text-care-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </FloatingCard>
+                </FadeIn>
 
-              <FadeIn direction="left" delay={0.15}>
-                <div className="space-y-6">
-                  <h3 className="font-heading text-2xl md:text-3xl text-care-navy">
-                    Ready to Experience Award-Winning Care?
-                  </h3>
-                  <p className="text-care-gray-500 text-lg leading-relaxed">
-                    Recognition is nice, but what truly matters is the peace of mind we bring 
-                    to families every single day. Let us show you why thousands of families 
-                    across the USA choose ArayoLight.
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <Link
-                      href="/request-care"
-                      className="btn-primary"
-                    >
-                      Request Care
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Link>
-                    <Link
-                      href="/assessment"
-                      className="text-care-gray-500 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group"
-                    >
-                      Take the Assessment
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                <FadeIn direction="left" delay={0.15}>
+                  <div className="space-y-6">
+                    <h3 className="font-heading text-2xl md:text-3xl text-care-navy tracking-tight">
+                      Ready to Experience Award-Winning Care?
+                    </h3>
+                    <p className="text-care-gray-600 text-lg leading-relaxed">
+                      Recognition is nice, but what truly matters is the peace of mind we bring 
+                      to families every single day. Let us show you why thousands of families 
+                      across the USA choose ArayoLight.
+                    </p>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                      <Link
+                        href="/request-care"
+                        className="btn-primary group"
+                      >
+                        Request Care
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                      <Link
+                        href="/assessment"
+                        className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group"
+                      >
+                        Take the Assessment
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </FadeIn>
+                </FadeIn>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </SectionBackground>
 
       {/* CTA Section */}
       <section className="relative bg-care-navy overflow-hidden">

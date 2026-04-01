@@ -2,8 +2,11 @@
 
 import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { Heart, ArrowRight, CheckCircle, User, Phone, Mail, Award, FileUp, Briefcase, FileText } from 'lucide-react';
+import { Heart, ArrowRight, CheckCircle, User, Phone, Mail, Award, FileUp, Briefcase, FileText, Clock, MapPin } from 'lucide-react';
 import { submitCaregiverApplication, generateCVMailto } from '@/lib/whatsapp';
+import FadeIn, { StaggerContainer, StaggerItem } from '@/components/FadeIn';
+import SectionBackground, { SectionBadge, FloatingCard, BlurredOrb } from '@/components/SectionBackground';
+import StatCard from '@/components/StatCard';
 
 const experienceOptions = [
   { value: '', label: 'Select years of experience' },
@@ -135,282 +138,312 @@ export default function ApplyPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-hero pt-32">
-      {/* Header */}
-      <section className="py-16 md:py-20">
-        <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-care-red/10 text-care-red text-sm font-medium mb-6">
-              <Briefcase className="w-4 h-4" />
-              <span>Join Our Team</span>
+    <main className="min-h-screen">
+      {/* Hero Section - Image Background */}
+      <SectionBackground
+        imageSrc="/images/caregiver-team.jpeg"
+        imageAlt="ArayoLight professional caregiving team"
+        overlay="white-heavy"
+        className="relative"
+      >
+        {/* Decorative Orbs */}
+        <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
+        <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
+        
+        <div className="pt-32 md:pt-40 pb-16 md:pb-20">
+          <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center">
+              <FadeIn>
+                <SectionBadge 
+                  icon={<Briefcase className="w-4 h-4" />}
+                  variant="red"
+                  className="mb-6"
+                >
+                  Join Our Team
+                </SectionBadge>
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-5 leading-tight tracking-tight">
+                  Apply to Be an ArayoLight Caregiver
+                </h1>
+                <p className="text-care-gray-600 text-lg md:text-xl">
+                  Join our team of compassionate caregivers. Fill out the form below and we&apos;ll connect with you via WhatsApp.
+                </p>
+              </FadeIn>
             </div>
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-4">
-              Apply to Be an ArayoLight Caregiver
-            </h1>
-            <p className="text-care-gray-500 text-lg">
-              Join our team of compassionate caregivers. Fill out the form below and we&apos;ll connect with you via WhatsApp.
-            </p>
           </div>
         </div>
-      </section>
+      </SectionBackground>
 
       {/* Form Section */}
-      <section className="pb-16 md:pb-24">
+      <section className="pb-16 md:pb-24 bg-gradient-lift">
         <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Form */}
-            <div className="card-care p-6 md:p-10">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
-                <div>
-                  <label htmlFor="name" className="form-label flex items-center gap-2">
-                    <User className="w-4 h-4 text-care-gray-400" />
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    className="form-input"
-                  />
-                </div>
+            <FadeIn direction="up">
+              <div className="card-feature p-6 md:p-10">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="name" className="form-label flex items-center gap-2">
+                      <User className="w-4 h-4 text-care-gray-400" />
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      className="form-input"
+                    />
+                  </div>
 
-                {/* Phone */}
-                <div>
-                  <label htmlFor="phone" className="form-label flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-care-gray-400" />
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Enter your phone number"
-                    className="form-input"
-                  />
-                </div>
+                  {/* Phone */}
+                  <div>
+                    <label htmlFor="phone" className="form-label flex items-center gap-2">
+                      <Phone className="w-4 h-4 text-care-gray-400" />
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Enter your phone number"
+                      className="form-input"
+                    />
+                  </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="form-label flex items-center gap-2">
-                    <Mail className="w-4 h-4 text-care-gray-400" />
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                    className="form-input"
-                  />
-                </div>
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="form-label flex items-center gap-2">
+                      <Mail className="w-4 h-4 text-care-gray-400" />
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your email address"
+                      className="form-input"
+                    />
+                  </div>
 
-                {/* Experience */}
-                <div>
-                  <label htmlFor="experience" className="form-label flex items-center gap-2">
-                    <Award className="w-4 h-4 text-care-gray-400" />
-                    Years of Experience *
-                  </label>
-                  <select
-                    id="experience"
-                    name="experience"
-                    required
-                    value={formData.experience}
-                    onChange={handleChange}
-                    className="form-select"
-                  >
-                    {experienceOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                  {/* Experience */}
+                  <div>
+                    <label htmlFor="experience" className="form-label flex items-center gap-2">
+                      <Award className="w-4 h-4 text-care-gray-400" />
+                      Years of Experience *
+                    </label>
+                    <select
+                      id="experience"
+                      name="experience"
+                      required
+                      value={formData.experience}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      {experienceOptions.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-                {/* Services */}
-                <div>
-                  <label className="form-label flex items-center gap-2 mb-3">
-                    <Heart className="w-4 h-4 text-care-gray-400" />
-                    Services You Can Provide *
-                  </label>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {serviceOptions.map((service) => (
-                      <label
-                        key={service}
-                        className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
-                          formData.services.includes(service)
-                            ? 'border-care-red bg-care-red/5'
-                            : 'border-care-gray-200 hover:border-care-gray-300'
-                        }`}
-                      >
+                  {/* Services */}
+                  <div>
+                    <label className="form-label flex items-center gap-2 mb-3">
+                      <Heart className="w-4 h-4 text-care-gray-400" />
+                      Services You Can Provide *
+                    </label>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {serviceOptions.map((service) => (
+                        <label
+                          key={service}
+                          className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
+                            formData.services.includes(service)
+                              ? 'border-care-red bg-care-red/5'
+                              : 'border-care-gray-200 hover:border-care-gray-300'
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={formData.services.includes(service)}
+                            onChange={() => handleServiceToggle(service)}
+                            className="w-4 h-4 text-care-red rounded border-care-gray-300 focus:ring-care-red"
+                          />
+                          <span className="text-sm text-care-navy">{service}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CV Upload */}
+                  <div>
+                    <label className="form-label flex items-center gap-2">
+                      <FileUp className="w-4 h-4 text-care-gray-400" />
+                      Upload Your CV/Resume *
+                    </label>
+                    
+                    {/* Upload Method Selection */}
+                    <div className="flex gap-4 mb-4">
+                      <label className="flex items-center gap-2 cursor-pointer">
                         <input
-                          type="checkbox"
-                          checked={formData.services.includes(service)}
-                          onChange={() => handleServiceToggle(service)}
-                          className="w-4 h-4 text-care-red rounded border-care-gray-300 focus:ring-care-red"
+                          type="radio"
+                          name="cvMethod"
+                          checked={cvUploadMethod === 'upload'}
+                          onChange={() => setCvUploadMethod('upload')}
+                          className="text-care-red focus:ring-care-red"
                         />
-                        <span className="text-sm text-care-navy">{service}</span>
+                        <span className="text-sm text-care-navy">Upload File</span>
                       </label>
-                    ))}
-                  </div>
-                </div>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="cvMethod"
+                          checked={cvUploadMethod === 'email'}
+                          onChange={() => setCvUploadMethod('email')}
+                          className="text-care-red focus:ring-care-red"
+                        />
+                        <span className="text-sm text-care-navy">Send via Email</span>
+                      </label>
+                    </div>
 
-                {/* CV Upload */}
-                <div>
-                  <label className="form-label flex items-center gap-2">
-                    <FileUp className="w-4 h-4 text-care-gray-400" />
-                    Upload Your CV/Resume *
-                  </label>
-                  
-                  {/* Upload Method Selection */}
-                  <div className="flex gap-4 mb-4">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="cvMethod"
-                        checked={cvUploadMethod === 'upload'}
-                        onChange={() => setCvUploadMethod('upload')}
-                        className="text-care-red focus:ring-care-red"
-                      />
-                      <span className="text-sm text-care-navy">Upload File</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="cvMethod"
-                        checked={cvUploadMethod === 'email'}
-                        onChange={() => setCvUploadMethod('email')}
-                        className="text-care-red focus:ring-care-red"
-                      />
-                      <span className="text-sm text-care-navy">Send via Email</span>
-                    </label>
-                  </div>
-
-                  {cvUploadMethod === 'upload' ? (
-                    <div className="space-y-3">
-                      <div
-                        onClick={() => fileInputRef.current?.click()}
-                        className="border-2 border-dashed border-care-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-care-red hover:bg-care-red/5 transition-colors"
-                      >
-                        <FileText className="w-8 h-8 text-care-gray-400 mx-auto mb-2" />
-                        <p className="text-sm text-care-navy font-medium">
-                          {cvFile ? cvFile.name : 'Click to upload your CV'}
-                        </p>
-                        <p className="text-xs text-care-gray-400 mt-1">
-                          PDF, DOC, or DOCX (max 5MB)
+                    {cvUploadMethod === 'upload' ? (
+                      <div className="space-y-3">
+                        <div
+                          onClick={() => fileInputRef.current?.click()}
+                          className="border-2 border-dashed border-care-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-care-red hover:bg-care-red/5 transition-colors"
+                        >
+                          <FileText className="w-8 h-8 text-care-gray-400 mx-auto mb-2" />
+                          <p className="text-sm text-care-navy font-medium">
+                            {cvFile ? cvFile.name : 'Click to upload your CV'}
+                          </p>
+                          <p className="text-xs text-care-gray-400 mt-1">
+                            PDF, DOC, or DOCX (max 5MB)
+                          </p>
+                        </div>
+                        <input
+                          ref={fileInputRef}
+                          type="file"
+                          accept=".pdf,.doc,.docx"
+                          onChange={handleFileChange}
+                          className="hidden"
+                        />
+                        {cvFile && (
+                          <p className="text-xs text-care-gray-500">
+                            Note: File uploads require email submission. We&apos;ll open your email client.
+                          </p>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="bg-care-blue/5 rounded-xl p-4">
+                        <p className="text-sm text-care-navy">
+                          We&apos;ll open your email client after you submit the form so you can attach your CV.
                         </p>
                       </div>
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept=".pdf,.doc,.docx"
-                        onChange={handleFileChange}
-                        className="hidden"
-                      />
-                      {cvFile && (
-                        <p className="text-xs text-care-gray-500">
-                          Note: File uploads require email submission. We&apos;ll open your email client.
-                        </p>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="bg-care-blue/5 rounded-xl p-4">
-                      <p className="text-sm text-care-navy">
-                        We&apos;ll open your email client after you submit the form so you can attach your CV.
-                      </p>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
 
-                {/* Submit */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting || formData.services.length === 0}
-                  className="btn-primary w-full disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? (
-                    'Submitting...'
-                  ) : (
-                    <>
-                      Submit Application
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </>
-                  )}
-                </button>
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || formData.services.length === 0}
+                    className="btn-primary w-full disabled:opacity-70 disabled:cursor-not-allowed group"
+                  >
+                    {isSubmitting ? (
+                      'Submitting...'
+                    ) : (
+                      <>
+                        Submit Application
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
 
-                <p className="text-care-gray-400 text-xs text-center">
-                  By submitting, you agree to be contacted via WhatsApp and email about your application.
-                </p>
-              </form>
-            </div>
+                  <p className="text-care-gray-400 text-xs text-center">
+                    By submitting, you agree to be contacted via WhatsApp and email about your application.
+                  </p>
+                </form>
+              </div>
+            </FadeIn>
 
             {/* Side Content with Images */}
             <div className="space-y-6">
               {/* Hero Image */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image
-                  src="/images/caregiver-team.jpeg"
-                  alt="ArayoLight professional caregiving team"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
+              <FadeIn direction="up" delay={0.1}>
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-elevated">
+                  <Image
+                    src="/images/caregiver-team.jpeg"
+                    alt="ArayoLight professional caregiving team"
+                    fill
+                    className="object-cover object-center"
+                  />
+                </div>
+              </FadeIn>
 
               {/* Benefits Cards */}
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="card-care p-6">
-                  <Heart className="w-8 h-8 text-care-red mb-3" />
-                  <h3 className="font-heading text-care-navy mb-1">Why Join Us?</h3>
-                  <p className="text-care-gray-500 text-sm">Competitive pay, flexible schedules, and ongoing training.</p>
-                </div>
-                <div className="card-care p-6">
-                  <Award className="w-8 h-8 text-care-red mb-3" />
-                  <h3 className="font-heading text-care-navy mb-1">Requirements</h3>
-                  <p className="text-care-gray-500 text-sm">Background check, references, and passion for helping others.</p>
-                </div>
-              </div>
+              <FadeIn direction="up" delay={0.15}>
+                <StaggerContainer className="grid sm:grid-cols-2 gap-4" staggerDelay={0.1}>
+                  <StaggerItem>
+                    <div className="card-care p-6 hover:shadow-elevated transition-shadow">
+                      <Heart className="w-8 h-8 text-care-red mb-3" />
+                      <h3 className="font-heading text-care-navy mb-1">Why Join Us?</h3>
+                      <p className="text-care-gray-500 text-sm">Competitive pay, flexible schedules, and ongoing training.</p>
+                    </div>
+                  </StaggerItem>
+                  <StaggerItem>
+                    <div className="card-care p-6 hover:shadow-elevated transition-shadow">
+                      <Award className="w-8 h-8 text-care-red mb-3" />
+                      <h3 className="font-heading text-care-navy mb-1">Requirements</h3>
+                      <p className="text-care-gray-500 text-sm">Background check, references, and passion for helping others.</p>
+                    </div>
+                  </StaggerItem>
+                </StaggerContainer>
+              </FadeIn>
 
               {/* Training Image */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
-                <Image
-                  src="/images/caregiver-training.jpeg"
-                  alt="ArayoLight caregiver training program"
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
-                  <p className="text-white font-medium">Comprehensive training provided</p>
+              <FadeIn direction="up" delay={0.2}>
+                <div className="relative rounded-2xl overflow-hidden aspect-[16/10] shadow-elevated">
+                  <Image
+                    src="/images/caregiver-training.jpeg"
+                    alt="ArayoLight caregiver training program"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-care-navy/80 to-transparent flex items-end p-6">
+                    <p className="text-white font-medium">Comprehensive training provided</p>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
 
-              {/* Stats */}
-              <div className="card-care p-6 bg-care-navy text-white">
-                <h3 className="font-heading text-lg mb-4">Join 5,000+ ArayoLight Caregivers</h3>
-                <div className="grid grid-cols-3 gap-4 text-center">
-                  <div>
-                    <p className="font-heading text-2xl text-care-red">$25</p>
-                    <p className="text-white/70 text-xs">Avg. Hourly Rate</p>
+              {/* Stats Card */}
+              <FadeIn direction="up" delay={0.25}>
+                <FloatingCard variant="dark" className="text-center">
+                  <h3 className="font-heading text-lg !text-white mb-6">Join 5,000+ ArayoLight Caregivers</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <p className="font-heading text-2xl text-care-red">$25</p>
+                      <p className="text-white/70 text-xs">Avg. Hourly Rate</p>
+                    </div>
+                    <div>
+                      <p className="font-heading text-2xl text-care-red">Flexible</p>
+                      <p className="text-white/70 text-xs">Scheduling</p>
+                    </div>
+                    <div>
+                      <p className="font-heading text-2xl text-care-red">50</p>
+                      <p className="text-white/70 text-xs">States</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-heading text-2xl text-care-red">Flexible</p>
-                    <p className="text-white/70 text-xs">Scheduling</p>
-                  </div>
-                  <div>
-                    <p className="font-heading text-2xl text-care-red">50</p>
-                    <p className="text-white/70 text-xs">States</p>
-                  </div>
-                </div>
-              </div>
+                </FloatingCard>
+              </FadeIn>
             </div>
           </div>
         </div>
