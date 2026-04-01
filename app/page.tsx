@@ -277,7 +277,7 @@ export default function HomePage() {
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-40" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-30" />
         
-        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-24">
+        <div className="pt-28 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-24">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
               {/* Mobile: Carousel comes first (order-1), Desktop: Content first (lg:order-1) */}
@@ -371,7 +371,7 @@ export default function HomePage() {
                 >
                   Our Services
                 </SectionBadge>
-                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-5 tracking-tight">
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-5 tracking-tight text-center">
                   Comprehensive Care for Your Loved Ones
                 </h2>
                 <p className="text-care-gray-600 text-lg leading-relaxed">
@@ -628,7 +628,7 @@ export default function HomePage() {
         <div className="container-care mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn direction="right">
-              <div>
+              <div className="text-center md:text-left">
                 <SectionBadge 
                   icon={<Shield className="w-4 h-4" />}
                   variant="white"

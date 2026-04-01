@@ -47,14 +47,14 @@ export default function ContactPage() {
       <SectionBackground
         imageSrc="/images/contact-office.jpeg"
         imageAlt="ArayoLight support team ready to help"
-        overlay="white-heavy"
+        overlay="white-light"
         className="relative"
       >
         {/* Decorative Orbs */}
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
         
-        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-20">
+        <div className="pt-28 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-20">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <FadeIn>

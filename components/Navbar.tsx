@@ -177,7 +177,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-care-navy p-1.5 shadow-md">
+              <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-care-navy p-1.5 shadow-md flex-shrink-0">
                 <Image
                   src="/Arayolight-logo.png"
                   alt="ArayoLight Homecare Services"
@@ -186,11 +186,17 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
+              {/* Mobile: Single line title with colors; Desktop: Stacked */}
+              <span className="font-heading text-base sm:text-lg md:text-xl lg:text-2xl leading-tight font-bold tracking-tight sm:hidden whitespace-nowrap">
+                <span className="text-care-red">ArayoLight</span>
+                <span className="text-care-red"> Homecare </span>
+                <span className="text-care-navy">Services</span>
+              </span>
+              <div className="hidden sm:flex flex-col">
                 <span className="font-heading text-lg md:text-xl lg:text-2xl leading-tight text-care-navy font-bold tracking-tight">
                   ArayoLight
                 </span>
-                <span className="text-[10px] md:text-xs lg:text-sm text-care-gray-500 font-medium hidden sm:block tracking-wide uppercase">
+                <span className="text-[10px] md:text-xs lg:text-sm text-care-gray-500 font-medium tracking-wide uppercase">
                   Homecare Services
                 </span>
               </div>
@@ -337,15 +343,11 @@ export default function Navbar() {
             <div className="py-4 space-y-1 bg-care-navy rounded-2xl mb-4 px-3 shadow-2xl border border-white/10">
               {/* Logo Text in Menu */}
               <div className="px-4 py-3 border-b border-white/10 mb-2">
-                <div className="flex flex-col">
-                  <span className="font-heading text-xl leading-tight text-white font-bold tracking-tight">
-                    ArayoLight
-                  </span>
-                  <span className="text-xs tracking-wide">
-                    <span className="text-care-red font-semibold">Homecare</span>
-                    <span className="text-white/80 font-medium ml-1">Services</span>
-                  </span>
-                </div>
+                <span className="font-heading text-lg leading-tight font-bold tracking-tight whitespace-nowrap">
+                  <span className="text-care-red">ArayoLight</span>
+                  <span className="text-care-red"> Homecare </span>
+                  <span className="text-white">Services</span>
+                </span>
               </div>
 
               {topNavLinks.map((link) => (
