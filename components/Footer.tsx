@@ -32,9 +32,30 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-care-navy text-white relative overflow-hidden">
+      {/* Background decorative gradient orbs */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-care-blue/30 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/2" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-care-red/20 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/3" />
+      </div>
+
+      {/* Large Logo Background - Wing effect from lower left to upper right */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div 
+          className="absolute -bottom-20 -left-20 w-[600px] h-[600px] md:w-[800px] md:h-[800px] lg:w-[1000px] lg:h-[1000px] opacity-20"
+          style={{
+            transform: 'rotate(-15deg)',
+          }}
+        >
+          <Image
+            src="/Arayolight-logo.png"
+            alt=""
+            fill
+            className="object-contain"
+            priority={false}
+          />
+        </div>
+        {/* Navy overlay with 96% opacity */}
+        <div className="absolute inset-0 bg-care-navy/96" />
       </div>
 
       {/* Main Footer */}
