@@ -13,6 +13,7 @@ import {
   Scale,
   Sparkles,
   MessageSquareHeart,
+  Award,
   ArrowRight
 } from 'lucide-react';
 import Image from 'next/image';
@@ -44,6 +45,12 @@ const resourcesDropdown = {
       label: 'Reviews', 
       description: 'Hear from families who trust ArayoLight',
       icon: MessageSquareHeart,
+    },
+    { 
+      href: '/awards', 
+      label: 'Awards & Recognition', 
+      description: 'BBB A+ Rated, Home Care Pulse Leader & more',
+      icon: Award,
     },
   ],
 };

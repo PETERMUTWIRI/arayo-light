@@ -17,6 +17,7 @@ const footerLinks = {
     { label: 'Resources', href: '/resources' },
     { label: 'Care Assessment', href: '/assessment' },
     { label: 'Reviews', href: '/reviews' },
+    { label: 'Awards', href: '/awards' },
     { label: 'Join Our Team', href: '/apply' },
     { label: 'Contact', href: '/contact' },
     { label: 'Request Care', href: '/request-care' },
