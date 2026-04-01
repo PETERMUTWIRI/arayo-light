@@ -101,7 +101,7 @@ export default async function ReviewsPage() {
       <SectionBackground
         imageSrc="/images/caregiver-family.jpeg"
         imageAlt="Happy family with ArayoLight caregiver"
-        overlay="white-medium"
+        overlay="white-light"
         className="relative"
       >
         {/* Decorative Orbs */}

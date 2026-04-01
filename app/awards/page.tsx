@@ -106,7 +106,7 @@ export default function AwardsPage() {
       <SectionBackground
         imageSrc="/images/trust-team.jpeg"
         imageAlt="ArayoLight award-winning caregiving team"
-        overlay="white-medium"
+        overlay="white-light"
         className="relative"
       >
         {/* Decorative Orbs */}

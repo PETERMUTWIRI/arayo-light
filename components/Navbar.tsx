@@ -331,18 +331,31 @@ export default function Navbar() {
           {/* Mobile Navigation */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+              isOpen ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <div className="py-4 space-y-1 bg-care-gray-50 rounded-2xl mb-4 px-3 shadow-lg border border-care-gray-100">
+            <div className="py-4 space-y-1 bg-care-navy rounded-2xl mb-4 px-3 shadow-2xl border border-white/10">
+              {/* Logo Text in Menu */}
+              <div className="px-4 py-3 border-b border-white/10 mb-2">
+                <div className="flex flex-col">
+                  <span className="font-heading text-xl leading-tight text-white font-bold tracking-tight">
+                    ArayoLight
+                  </span>
+                  <span className="text-xs tracking-wide">
+                    <span className="text-care-red font-semibold">Homecare</span>
+                    <span className="text-white/80 font-medium ml-1">Services</span>
+                  </span>
+                </div>
+              </div>
+
               {topNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
+                  className={`block py-3 px-4 rounded-xl text-sm font-bold transition-colors ${
                     pathname === link.href
-                      ? 'bg-white text-care-red shadow-sm'
-                      : 'text-care-navy hover:bg-white'
+                      ? 'bg-care-red text-white shadow-lg'
+                      : 'text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
@@ -353,25 +366,25 @@ export default function Navbar() {
               <div className="rounded-xl overflow-hidden">
                 <button
                   onClick={() => setMobileResourcesOpen(v => !v)}
-                  className={`w-full flex items-center justify-between py-3 px-4 text-sm font-medium transition-colors ${
+                  className={`w-full flex items-center justify-between py-3 px-4 text-sm font-bold transition-colors ${
                     isResourcesActive
-                      ? 'bg-white text-care-red shadow-sm'
-                      : 'text-care-navy hover:bg-white'
+                      ? 'bg-care-red text-white shadow-lg'
+                      : 'text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{resourcesDropdown.label}</span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileResourcesOpen ? 'rotate-180' : ''}`} />
                 </button>
-                <div className={`overflow-hidden transition-all duration-200 ${mobileResourcesOpen ? 'max-h-60' : 'max-h-0'}`}>
-                  <div className="px-3 pb-2 space-y-1">
+                <div className={`overflow-hidden transition-all duration-200 ${mobileResourcesOpen ? 'max-h-72' : 'max-h-0'}`}>
+                  <div className="px-3 pb-2 space-y-1 bg-care-navy/50">
                     {resourcesDropdown.items.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className={`flex items-center gap-3 py-2.5 px-3 rounded-xl text-sm transition-colors ${
+                        className={`flex items-center gap-3 py-3 px-3 rounded-xl text-sm transition-colors ${
                           pathname === item.href
-                            ? 'bg-care-red/10 text-care-red font-medium'
-                            : 'text-care-gray-600 hover:bg-white'
+                            ? 'bg-care-red/20 text-white font-bold'
+                            : 'text-white/80 hover:bg-white/10 font-medium'
                         }`}
                       >
                         <item.icon className="w-4 h-4" />
@@ -380,7 +393,7 @@ export default function Navbar() {
                     ))}
                     <Link
                       href={resourcesDropdown.href}
-                      className="flex items-center gap-3 py-2.5 px-3 rounded-xl text-sm text-care-navy hover:bg-white transition-colors font-medium"
+                      className="flex items-center gap-3 py-3 px-3 rounded-xl text-sm text-white hover:bg-white/10 transition-colors font-bold"
                     >
                       <ArrowRight className="w-4 h-4" />
                       View All Resources
@@ -393,33 +406,33 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
+                  className={`block py-3 px-4 rounded-xl text-sm font-bold transition-colors ${
                     pathname === link.href
-                      ? 'bg-white text-care-red shadow-sm'
-                      : 'text-care-navy hover:bg-white'
+                      ? 'bg-care-red text-white shadow-lg'
+                      : 'text-white hover:bg-white/10'
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2 mt-2 border-t border-care-gray-200 space-y-1">
+              <div className="pt-3 mt-3 border-t border-white/10 space-y-2">
                 <a
                   href="tel:+19194498913"
-                  className="flex items-center gap-2 py-3 px-4 text-sm font-medium text-care-navy hover:bg-white rounded-xl transition-colors"
+                  className="flex items-center gap-2 py-3 px-4 text-sm font-bold text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   <span>+1 (919) 449-8913</span>
                 </a>
                 <a
                   href="mailto:raylightcare76@gmail.com"
-                  className="flex items-center gap-2 py-3 px-4 text-sm font-medium text-care-navy hover:bg-white rounded-xl transition-colors"
+                  className="flex items-center gap-2 py-3 px-4 text-sm font-bold text-white hover:bg-white/10 rounded-xl transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   <span>raylightcare76@gmail.com</span>
                 </a>
                 <Link
                   href="/request-care"
-                  className="block bg-care-red text-white text-center text-sm font-semibold py-3 mt-2 rounded-xl hover:bg-care-red-dark transition-colors"
+                  className="block bg-care-red text-white text-center text-sm font-bold py-3 mt-2 rounded-xl hover:bg-care-red-600 transition-colors shadow-lg"
                 >
                   Request Care Now
                 </Link>

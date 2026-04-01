@@ -152,7 +152,7 @@ export default function ResourcesPage() {
       <SectionBackground
         imageSrc="/images/hero-caregiver-senior.jpeg"
         imageAlt="Caregiver comparing care options with family"
-        overlay="white-medium"
+        overlay="white-light"
         className="relative"
       >
         {/* Decorative Orbs */}
