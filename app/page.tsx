@@ -69,9 +69,9 @@ function HeroCarousel() {
   const goToNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
 
   return (
-    <div className="relative">
+    <div className="relative max-w-md mx-auto lg:max-w-none">
       <div className="relative">
-        <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-floating border border-white/40">
+        <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/10] md:aspect-[4/3] shadow-floating border border-white/40">
           {slides.map((slide, index) => (
             <div
               key={index}
@@ -129,8 +129,8 @@ function HeroCarousel() {
           </div>
         </div>
         
-        {/* Floating Stats Cards */}
-        <div className="absolute -bottom-6 -left-4 lg:-bottom-8 lg:-left-8 z-30">
+        {/* Floating Stats Cards - Hidden on mobile */}
+        <div className="hidden md:block absolute -bottom-6 -left-4 lg:-bottom-8 lg:-left-8 z-30">
           <StatCard
             icon={<Award className="w-5 h-5 lg:w-6 lg:h-6" />}
             value="20+"
@@ -141,7 +141,7 @@ function HeroCarousel() {
           />
         </div>
 
-        <div className="absolute -top-5 -right-4 lg:-top-8 lg:-right-8 z-30">
+        <div className="hidden md:block absolute -top-5 -right-4 lg:-top-8 lg:-right-8 z-30">
           <StatCard
             icon={<Clock className="w-5 h-5 lg:w-6 lg:h-6" />}
             value="24/7"
@@ -277,47 +277,47 @@ export default function HomePage() {
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-40" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-30" />
         
-        <div className="pt-32 md:pt-40 lg:pt-44 pb-16 md:pb-24 lg:pb-32">
+        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-24">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
               <FadeIn direction="up" delay={0.1}>
                 <div className="max-w-2xl">
                   <SectionBadge 
                     icon={<Heart className="w-4 h-4" />}
                     variant="red"
-                    className="mb-6"
+                    className="mb-3 md:mb-6"
                   >
                     Professional Homecare Services
                   </SectionBadge>
                   
-                  <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy leading-tight mb-6 tracking-tight">
+                  <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-care-navy leading-tight mb-3 md:mb-6 tracking-tight">
                     <span className="text-care-red">Compassionate Care</span>{' '}
                     for Your Loved Ones
                   </h1>
-                  <p className="text-care-gray-600 text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
+                  <p className="text-care-gray-600 text-base md:text-lg lg:text-xl mb-4 md:mb-8 leading-relaxed max-w-xl">
                     ArayoLight provides professional, reliable homecare services that help seniors 
                     maintain independence and dignity in the comfort of their own homes. 
                     Serving families nationwide for over 20 years.
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 mb-4 md:mb-8">
                     <Link
                       href="/request-care"
-                      className="btn-primary text-base group"
+                      className="btn-primary text-sm md:text-base group"
                     >
                       Request Care
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                       href="/about"
-                      className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group"
+                      className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group text-sm md:text-base"
                     >
                       Learn More About Us
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                   
-                  <div className="flex flex-wrap items-center gap-5 md:gap-7">
+                  <div className="hidden md:flex flex-wrap items-center gap-3 md:gap-7">
                     <div className="flex items-center gap-2 text-care-gray-600 text-sm">
                       <CheckCircle className="w-5 h-5 text-care-red" />
                       <span>Licensed & Insured</span>
