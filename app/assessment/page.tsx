@@ -203,7 +203,7 @@ export default function AssessmentPage() {
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
         
-        <div className="pt-32 md:pt-40 pb-16 md:pb-20">
+        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-20">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             {/* Header */}
             <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
@@ -211,7 +211,7 @@ export default function AssessmentPage() {
                 <SectionBadge 
                   icon={<Sparkles className="w-4 h-4" />}
                   variant="red"
-                  className="mb-6"
+                  className="mb-3 md:mb-6"
                 >
                   Free Care Assessment
                 </SectionBadge>
@@ -219,7 +219,7 @@ export default function AssessmentPage() {
                   Find the Right{' '}
                   <span className="text-care-red">Care Level</span>
                 </h1>
-                <p className="text-care-gray-600 text-lg md:text-xl">
+                <p className="text-care-gray-600 text-base md:text-lg lg:text-xl">
                   Answer 5 quick questions about your loved one&apos;s daily needs and get a personalized recommendation in seconds.
                 </p>
               </FadeIn>

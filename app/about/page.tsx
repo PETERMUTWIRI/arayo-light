@@ -59,22 +59,22 @@ export default function AboutPage() {
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-40" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-30" />
         
-        <div className="pt-32 md:pt-40 lg:pt-44 pb-16 md:pb-24 lg:pb-32">
+        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-24">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <FadeIn>
                 <SectionBadge 
                   icon={<Heart className="w-4 h-4" />}
                   variant="red"
-                  className="mb-6"
+                  className="mb-3 md:mb-6"
                 >
                   About Us
                 </SectionBadge>
-                <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-care-navy mb-6 leading-tight tracking-tight">
+                <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-care-navy mb-6 leading-tight tracking-tight">
                   Two Decades of{' '}
                   <span className="text-care-red">Compassionate Care</span>
                 </h1>
-                <p className="text-care-gray-600 text-lg md:text-xl leading-relaxed">
+                <p className="text-care-gray-600 text-base md:text-lg lg:text-xl leading-relaxed">
                   For over 20 years, ArayoLight has been a trusted partner for families seeking 
                   quality homecare services. Our mission is simple: to help seniors and individuals 
                   with care needs live with dignity, comfort, and independence in their own homes.
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   <SectionBadge 
                     icon={<Clock className="w-4 h-4" />}
                     variant="blue"
-                    className="mb-6"
+                    className="mb-3 md:mb-6"
                   >
                     Our Story
                   </SectionBadge>
@@ -193,14 +193,14 @@ export default function AboutPage() {
               <SectionBadge 
                 icon={<Target className="w-4 h-4" />}
                 variant="red"
-                className="mb-6"
+                className="mb-3 md:mb-6"
               >
                 Our Mission
               </SectionBadge>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-6 tracking-tight">
                 Enabling Dignified, Independent Living
               </h2>
-              <p className="text-care-gray-600 text-lg md:text-xl leading-relaxed mb-12">
+              <p className="text-care-gray-600 text-base md:text-lg lg:text-xl leading-relaxed mb-12">
                 Our mission is to enhance the quality of life for seniors and individuals with 
                 care needs by providing compassionate, professional homecare services that promote 
                 independence, dignity, and peace of mind for both clients and their families.
@@ -248,7 +248,7 @@ export default function AboutPage() {
                 <SectionBadge 
                   icon={<Users className="w-4 h-4" />}
                   variant="blue"
-                  className="mb-6"
+                  className="mb-3 md:mb-6"
                 >
                   Our Team
                 </SectionBadge>
@@ -326,7 +326,7 @@ export default function AboutPage() {
               <SectionBadge 
                 icon={<Award className="w-4 h-4" />}
                 variant="white"
-                className="mb-6"
+                className="mb-3 md:mb-6"
               >
                 Our Values
               </SectionBadge>

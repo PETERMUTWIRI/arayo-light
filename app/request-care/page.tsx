@@ -112,21 +112,21 @@ export default function RequestCarePage() {
         <BlurredOrb color="red" size="xl" className="top-0 right-0 translate-x-1/3 -translate-y-1/3 opacity-30" />
         <BlurredOrb color="blue" size="lg" className="bottom-0 left-0 -translate-x-1/4 translate-y-1/4 opacity-20" />
         
-        <div className="pt-32 md:pt-40 pb-16 md:pb-20">
+        <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-20">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <FadeIn>
                 <SectionBadge 
                   icon={<Heart className="w-4 h-4" />}
                   variant="red"
-                  className="mb-6"
+                  className="mb-3 md:mb-6"
                 >
                   Request Care
                 </SectionBadge>
                 <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-care-navy mb-5 leading-tight tracking-tight">
                   Get the Care Your Loved One Deserves
                 </h1>
-                <p className="text-care-gray-600 text-lg md:text-xl">
+                <p className="text-care-gray-600 text-base md:text-lg lg:text-xl">
                   Fill out the form below and we&apos;ll connect with you via WhatsApp to discuss your care needs.
                 </p>
               </FadeIn>
