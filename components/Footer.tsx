@@ -14,6 +14,8 @@ const footerLinks = {
   ],
   company: [
     { label: 'About Us', href: '/about' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Care Assessment', href: '/assessment' },
     { label: 'Reviews', href: '/reviews' },
     { label: 'Join Our Team', href: '/apply' },
     { label: 'Contact', href: '/contact' },

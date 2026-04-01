@@ -10,6 +10,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/assessment', label: 'Assessment' },
   { href: '/reviews', label: 'Reviews' },
   { href: '/request-care', label: 'Request Care' },
   { href: '/apply', label: 'Join Our Team' },
