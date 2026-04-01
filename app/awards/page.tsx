@@ -106,7 +106,7 @@ export default function AwardsPage() {
       <SectionBackground
         imageSrc="/images/trust-team.jpeg"
         imageAlt="ArayoLight award-winning caregiving team"
-        overlay="white-heavy"
+        overlay="white-medium"
         className="relative"
       >
         {/* Decorative Orbs */}
@@ -226,7 +226,7 @@ export default function AwardsPage() {
       <SectionBackground
         imageSrc="/images/about-story.jpeg"
         imageAlt="ArayoLight trusted caregiving team"
-        overlay="gradient"
+        overlay="white-light"
         className="relative"
       >
         <div className="section-padding">

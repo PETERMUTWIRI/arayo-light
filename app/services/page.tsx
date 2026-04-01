@@ -37,7 +37,7 @@ export default function ServicesPage() {
       <SectionBackground
         imageSrc="/images/service-homecare.jpeg"
         imageAlt="Professional homecare services"
-        overlay="white-full"
+        overlay="white-medium"
         className="relative"
       >
         <div className="pt-32 md:pt-40 pb-16 md:pb-24">

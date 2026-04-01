@@ -152,7 +152,7 @@ export default function ResourcesPage() {
       <SectionBackground
         imageSrc="/images/hero-caregiver-senior.jpeg"
         imageAlt="Caregiver comparing care options with family"
-        overlay="white-heavy"
+        overlay="white-medium"
         className="relative"
       >
         {/* Decorative Orbs */}
@@ -322,7 +322,7 @@ export default function ResourcesPage() {
       <SectionBackground
         imageSrc="/images/about-story.jpeg"
         imageAlt="Happy family with caregiver"
-        overlay="gradient"
+        overlay="white-light"
         className="relative"
       >
         <div className="section-padding">

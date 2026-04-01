@@ -196,7 +196,7 @@ export default function AssessmentPage() {
       <SectionBackground
         imageSrc="/images/hero-caregiver-senior.jpeg"
         imageAlt="Caregiver helping senior with daily activities"
-        overlay="white-heavy"
+        overlay="white-medium"
         className="relative"
       >
         {/* Decorative Orbs */}
