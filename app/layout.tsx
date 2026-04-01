@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import BackToTop from '@/components/BackToTop';
+import CookieConsent from '@/components/CookieConsent';
 
 // ==========================================
 // ARAYOLIGHT - PROFESSIONAL HOMECARE
@@ -171,7 +172,7 @@ export default function RootLayout({
               name: 'ArayoLight Homecare',
               description: 'Professional homecare services serving all states across the USA. 20+ years of experience providing compassionate care for seniors and individuals needing assistance.',
               url: 'https://www.arayolight.com',
-              telephone: '+1-123-456-7890',
+              telephone: '+1 (919) 449-8913',
               email: 'raylightcare76@gmail.com',
               image: 'https://www.arayolight.com/images/logo.png',
               address: {
@@ -275,6 +276,9 @@ export default function RootLayout({
         
         {/* Back to top button */}
         <BackToTop />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsent />
       </body>
     </html>
   );
