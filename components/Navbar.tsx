@@ -1,18 +1,54 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, Mail, Star } from 'lucide-react';
+import { 
+  Menu, 
+  X, 
+  Phone, 
+  Mail, 
+  Star, 
+  ChevronDown,
+  Scale,
+  Sparkles,
+  MessageSquareHeart,
+  ArrowRight
+} from 'lucide-react';
 import Image from 'next/image';
 
-const navLinks = [
+const topNavLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/resources', label: 'Resources' },
-  { href: '/assessment', label: 'Assessment' },
-  { href: '/reviews', label: 'Reviews' },
+];
+
+const resourcesDropdown = {
+  label: 'Resources',
+  href: '/resources',
+  items: [
+    { 
+      href: '/resources', 
+      label: 'Compare Care Options', 
+      description: 'See how in-home care compares to alternatives',
+      icon: Scale,
+    },
+    { 
+      href: '/assessment', 
+      label: 'Care Assessment', 
+      description: 'Take our 2-minute quiz to find the right care level',
+      icon: Sparkles,
+    },
+    { 
+      href: '/reviews', 
+      label: 'Reviews', 
+      description: 'Hear from families who trust ArayoLight',
+      icon: MessageSquareHeart,
+    },
+  ],
+};
+
+const ctaNavLinks = [
   { href: '/request-care', label: 'Request Care' },
   { href: '/apply', label: 'Join Our Team' },
   { href: '/contact', label: 'Contact' },
@@ -20,8 +56,11 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +73,21 @@ export default function Navbar() {
 
   useEffect(() => {
     setIsOpen(false);
+    setResourcesOpen(false);
+    setMobileResourcesOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setResourcesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const isResourcesActive = resourcesDropdown.items.some(item => item.href === pathname) || pathname === resourcesDropdown.href;
 
   return (
     <>
@@ -138,7 +191,92 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
+              {topNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative text-sm font-medium transition-colors hover:text-care-red py-2 ${
+                    pathname === link.href
+                      ? 'text-care-navy font-semibold'
+                      : 'text-care-gray-500'
+                  }`}
+                >
+                  {link.label}
+                  {pathname === link.href && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-care-red rounded-full" />
+                  )}
+                </Link>
+              ))}
+
+              {/* Resources Dropdown */}
+              <div 
+                className="relative"
+                ref={dropdownRef}
+                onMouseEnter={() => setResourcesOpen(true)}
+                onMouseLeave={() => setResourcesOpen(false)}
+              >
+                <button
+                  onClick={() => setResourcesOpen(v => !v)}
+                  className={`relative text-sm font-medium transition-colors hover:text-care-red py-2 inline-flex items-center gap-1 ${
+                    isResourcesActive
+                      ? 'text-care-navy font-semibold'
+                      : 'text-care-gray-500'
+                  }`}
+                >
+                  {resourcesDropdown.label}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
+                  {isResourcesActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-care-red rounded-full" />
+                  )}
+                </button>
+
+                <div 
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                    resourcesOpen 
+                      ? 'opacity-100 translate-y-0 pointer-events-auto' 
+                      : 'opacity-0 -translate-y-2 pointer-events-none'
+                  }`}
+                >
+                  <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(15,23,42,0.15)] border border-care-gray-100 p-2 w-72">
+                    {resourcesDropdown.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`flex items-start gap-3 p-3 rounded-xl transition-colors ${
+                          pathname === item.href 
+                            ? 'bg-care-red/5' 
+                            : 'hover:bg-care-gray-50'
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                          pathname === item.href ? 'bg-care-red text-white' : 'bg-care-gray-100 text-care-navy'
+                        }`}>
+                          <item.icon className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className={`text-sm font-semibold ${pathname === item.href ? 'text-care-red' : 'text-care-navy'}`}>
+                            {item.label}
+                          </p>
+                          <p className="text-xs text-care-gray-500 mt-0.5 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                    <div className="pt-2 mt-2 border-t border-care-gray-100">
+                      <Link
+                        href={resourcesDropdown.href}
+                        className="flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-sm font-medium text-care-navy hover:bg-care-gray-50 transition-colors"
+                      >
+                        View All Resources
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {ctaNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -186,11 +324,65 @@ export default function Navbar() {
           {/* Mobile Navigation */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+              isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
             <div className="py-4 space-y-1 bg-care-gray-50 rounded-2xl mb-4 px-3 shadow-lg border border-care-gray-100">
-              {navLinks.map((link) => (
+              {topNavLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`block py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
+                    pathname === link.href
+                      ? 'bg-white text-care-red shadow-sm'
+                      : 'text-care-navy hover:bg-white'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* Mobile Resources Accordion */}
+              <div className="rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setMobileResourcesOpen(v => !v)}
+                  className={`w-full flex items-center justify-between py-3 px-4 text-sm font-medium transition-colors ${
+                    isResourcesActive
+                      ? 'bg-white text-care-red shadow-sm'
+                      : 'text-care-navy hover:bg-white'
+                  }`}
+                >
+                  <span>{resourcesDropdown.label}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileResourcesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-200 ${mobileResourcesOpen ? 'max-h-60' : 'max-h-0'}`}>
+                  <div className="px-3 pb-2 space-y-1">
+                    {resourcesDropdown.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`flex items-center gap-3 py-2.5 px-3 rounded-xl text-sm transition-colors ${
+                          pathname === item.href
+                            ? 'bg-care-red/10 text-care-red font-medium'
+                            : 'text-care-gray-600 hover:bg-white'
+                        }`}
+                      >
+                        <item.icon className="w-4 h-4" />
+                        {item.label}
+                      </Link>
+                    ))}
+                    <Link
+                      href={resourcesDropdown.href}
+                      className="flex items-center gap-3 py-2.5 px-3 rounded-xl text-sm text-care-navy hover:bg-white transition-colors font-medium"
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                      View All Resources
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {ctaNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
