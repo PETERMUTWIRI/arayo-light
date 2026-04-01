@@ -280,39 +280,51 @@ export default function HomePage() {
         <div className="pt-20 md:pt-32 lg:pt-40 pb-8 md:pb-16 lg:pb-24">
           <div className="container-care mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
-              <FadeIn direction="up" delay={0.1}>
+              {/* Mobile: Carousel comes first (order-1), Desktop: Content first (lg:order-1) */}
+              <FadeIn direction="up" delay={0.2} className="order-1 lg:order-2">
+                <HeroCarousel />
+              </FadeIn>
+
+              {/* Mobile: Content comes second (order-2), Desktop: Content first */}
+              <FadeIn direction="up" delay={0.1} className="order-2 lg:order-1">
                 <div className="max-w-2xl">
                   <SectionBadge 
                     icon={<Heart className="w-4 h-4" />}
                     variant="red"
-                    className="mb-3 md:mb-6"
+                    className="mb-3 md:mb-6 hidden md:inline-flex"
                   >
                     Professional Homecare Services
                   </SectionBadge>
                   
-                  <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-care-navy leading-tight mb-3 md:mb-6 tracking-tight">
-                    <span className="text-care-red">Compassionate Care</span>{' '}
-                    for Your Loved Ones
+                  {/* Mobile: Centered title with line break; Desktop: Left aligned, no break */}
+                  <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-care-navy leading-tight mb-3 md:mb-6 tracking-tight text-center lg:text-left">
+                    <span className="text-care-red">Compassionate Care</span>
+                    <br className="md:hidden" />
+                    <span className="hidden md:inline"> </span>
+                    <span>for Your Loved Ones</span>
                   </h1>
-                  <p className="text-care-gray-600 text-base md:text-lg lg:text-xl mb-4 md:mb-8 leading-relaxed max-w-xl">
+                  
+                  <p className="text-care-gray-600 text-base md:text-lg lg:text-xl mb-4 md:mb-8 leading-relaxed max-w-xl text-center lg:text-left">
                     ArayoLight provides professional, reliable homecare services that help seniors 
                     maintain independence and dignity in the comfort of their own homes. 
                     Serving families nationwide for over 20 years.
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 mb-4 md:mb-8">
+                  {/* Mobile: Horizontal buttons centered; Desktop: Row layout */}
+                  <div className="flex flex-row items-center justify-center lg:justify-start gap-3 md:gap-4 mb-4 md:mb-8">
                     <Link
                       href="/request-care"
-                      className="btn-primary text-sm md:text-base group"
+                      className="btn-primary text-sm md:text-base group flex-shrink-0"
                     >
                       Request Care
                       <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link
                       href="/about"
-                      className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-2 group text-sm md:text-base"
+                      className="text-care-gray-600 hover:text-care-red font-medium transition-colors inline-flex items-center gap-1 md:gap-2 group text-sm md:text-base whitespace-nowrap"
                     >
-                      Learn More About Us
+                      Learn More
+                      <span className="hidden sm:inline">About Us</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -332,10 +344,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-              </FadeIn>
-
-              <FadeIn direction="up" delay={0.2}>
-                <HeroCarousel />
               </FadeIn>
             </div>
           </div>
