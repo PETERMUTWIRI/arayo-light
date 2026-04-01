@@ -52,7 +52,7 @@ export default function AboutPage() {
       <SectionBackground
         imageSrc="/images/team-founder.jpeg"
         imageAlt="Rahab Kinity, Founder of ArayoLight"
-        overlay="white-medium"
+        overlay="white-heavy"
         className="relative"
       >
         <div className="pt-32 md:pt-40 pb-16 md:pb-24">

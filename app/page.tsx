@@ -502,36 +502,41 @@ export default function HomePage() {
         </div>
       </SectionBackground>
 
-      {/* How It Works Section - Image Background with Glass Cards */}
-      <SectionBackground
-        imageSrc="/images/step-3-care.jpeg"
-        imageAlt="Caregiver providing compassionate care"
-        overlay="navy"
-        className="relative"
-      >
+      {/* How It Works Section - Dark Navy Background with Glass Cards */}
+      <section className="section-padding relative bg-care-navy overflow-hidden">
+        {/* Background Image with Navy Overlay */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/step-3-care.jpeg"
+            alt="Caregiver providing compassionate care"
+            fill
+            className="object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-care-navy/85" />
+        </div>
+        
         {/* Decorative Orbs */}
         <BlurredOrb color="red" size="lg" className="top-0 right-1/4 -translate-y-1/2 opacity-30" />
         <BlurredOrb color="blue" size="xl" className="bottom-0 left-1/4 translate-y-1/2 opacity-20" />
         
-        <div className="section-padding relative z-10">
-          <div className="container-care mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
-              <FadeIn>
-                <SectionBadge 
-                  icon={<Clock className="w-4 h-4" />}
-                  variant="white"
-                  className="mb-6"
-                >
-                  Simple Process
-                </SectionBadge>
-                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-5 tracking-tight">
-                  How It Works
-                </h2>
-                <p className="text-white/70 text-lg leading-relaxed">
-                  Getting started with ArayoLight homecare services is easy. Three simple steps to quality care.
-                </p>
-              </FadeIn>
-            </div>
+        <div className="container-care mx-auto relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+            <FadeIn>
+              <SectionBadge 
+                icon={<Clock className="w-4 h-4" />}
+                variant="white"
+                className="mb-6"
+              >
+                Simple Process
+              </SectionBadge>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl text-white mb-5 tracking-tight drop-shadow-lg">
+                How It Works
+              </h2>
+              <p className="text-white/90 text-lg leading-relaxed drop-shadow-md">
+                Getting started with ArayoLight homecare services is easy. Three simple steps to quality care.
+              </p>
+            </FadeIn>
+          </div>
 
             <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
               <StaggerItem>
@@ -604,8 +609,7 @@ export default function HomePage() {
               </StaggerItem>
             </StaggerContainer>
           </div>
-        </div>
-      </SectionBackground>
+      </section>
 
       {/* Trust Section - Dark Navy with Orbs */}
       <section className="section-padding relative bg-care-navy overflow-hidden">
