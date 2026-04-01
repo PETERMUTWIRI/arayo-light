@@ -7,7 +7,7 @@ interface SectionBackgroundProps {
   children: ReactNode;
   imageSrc?: string;
   imageAlt?: string;
-  overlay?: 'white-light' | 'white-medium' | 'white-heavy' | 'navy' | 'gradient' | 'none';
+  overlay?: 'white-light' | 'white-medium' | 'white-heavy' | 'white-full' | 'navy' | 'gradient' | 'none';
   className?: string;
   contentClassName?: string;
   parallax?: boolean;
@@ -46,6 +46,7 @@ export default function SectionBackground({
     'white-light': 'bg-gradient-to-br from-white/85 via-white/90 to-white/85',
     'white-medium': 'bg-gradient-to-br from-white/90 via-white/92 to-white/88',
     'white-heavy': 'bg-gradient-to-br from-white/95 via-white/96 to-white/94',
+    'white-full': 'bg-gradient-to-br from-white/97 via-white/98 to-white/96',
     'navy': 'bg-gradient-to-br from-care-navy/92 via-care-blue/88 to-care-navy/90',
     'gradient': 'bg-gradient-to-b from-white/95 via-care-gray-50/90 to-care-gray-100/85',
     'none': '',
