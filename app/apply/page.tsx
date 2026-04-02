@@ -430,8 +430,8 @@ export default function ApplyPage() {
                   <h3 className="font-heading text-lg !text-white mb-6">Join 5,000+ ArayoLight Caregivers</h3>
                   <div className="grid grid-cols-3 gap-4">
                     <div>
-                      <p className="font-heading text-2xl text-care-red">$25</p>
-                      <p className="text-white/70 text-xs">Avg. Hourly Rate</p>
+                      <p className="font-heading text-2xl text-care-red">Competitive</p>
+                      <p className="text-white/70 text-xs">Pay Rates</p>
                     </div>
                     <div>
                       <p className="font-heading text-2xl text-care-red">Flexible</p>
