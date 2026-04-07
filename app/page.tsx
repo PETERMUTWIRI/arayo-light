@@ -47,7 +47,7 @@ function HeroCarousel() {
       caption: null
     },
     {
-      image: '/images/team-founder.jpeg',
+      image: '/rahab-ceo.jpeg',
       alt: 'Rahab Kinity, Founder & CEO of ArayoLight',
       caption: {
         name: 'Rahab Kinity',
